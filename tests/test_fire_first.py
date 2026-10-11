@@ -83,7 +83,9 @@ class FakeBackend:
 
 
 class LocalBurnBackend(FakeBackend):
-    """Гарь кругом радиусом 1 км вокруг точки огня: пятно замкнуто внутри буфера 3 км."""
+    """Гарь кругом вокруг точки огня: пятно замкнуто внутри буфера 3 км."""
+
+    radius_px = 50  # 1 км
 
     def model(self, root, bounds, selected):
         from pyproj import Transformer
@@ -92,7 +94,7 @@ class LocalBurnBackend(FakeBackend):
         x, y = Transformer.from_crs(4326, bounds["epsg"], always_xy=True).transform(*FIRE)
         col, row = (x - bounds["x_min"]) / 20, (bounds["y_max"] - y) / 20
         rows, cols = np.mgrid[0:512, 0:512]
-        return np.where((rows - row) ** 2 + (cols - col) ** 2 <= 50 ** 2, 2, 0).astype(np.uint8)
+        return np.where((rows - row) ** 2 + (cols - col) ** 2 <= self.radius_px ** 2, 2, 0).astype(np.uint8)
 
 
 # Снимки-заглушки сохраняются во временный кеш, а не в artifacts/ сервиса.
@@ -129,7 +131,9 @@ class FireFirstTests(TestCase):
     def test_model_runs_only_inside_event_buffers(self):
         backend = FakeBackend()
         points = [point(*FIRE, date(2024, 8, 10)), point(FIRE[0] + 0.003, FIRE[1], date(2024, 8, 11))]
-        dataset, prediction = predictor(FakeArchive(points), backend).predict(spec())
+        instance = predictor(FakeArchive(points), backend)
+        instance.config["events"]["expand_buffer_m"] = []  # здесь проверяется сам буфер 3 км
+        dataset, prediction = instance.predict(spec())
         self.assertEqual(prediction["status"], "ok")
         self.assertEqual(len(prediction["events"]), 1)
         event = prediction["events"][0]
@@ -218,6 +222,7 @@ class FireFirstTests(TestCase):
     def test_reliable_pair_beats_clearer_distant_scene(self):
         # Прежнее правило брало безоблачный снимок через 20 дн.; надёжная пара важнее.
         backend = LocalBurnBackend(cloudy={"2024-08-15": 0.25})
+        backend.radius_px = 12  # ~18 га на точку, как у настоящих пожаров
         backend.days = [date(2024, 8, 5), date(2024, 8, 15), date(2024, 8, 25)]
         _, prediction = predictor(FakeArchive([point(*FIRE, date(2024, 8, 10))]), backend).predict(spec())
         event = prediction["events"][0]
@@ -587,6 +592,7 @@ class HarvestBackend(LocalBurnBackend):
     (сгоревшая зелень: хлорофилл ушёл, уголь затемнил синий и зелёный)."""
 
     cover = 40  # пашня (ESA WorldCover)
+    straw_offset_px = 25  # солома — край пятна (~20 %), уголь — у точки
 
     def aux(self, bounds):
         data = np.zeros((3, 512, 512), np.float32)
@@ -601,7 +607,7 @@ class HarvestBackend(LocalBurnBackend):
         if when.date() >= date(2024, 8, 25):
             # Граница половин проходит через точку огня: пятно делится пополам.
             x, _ = Transformer.from_crs(4326, bounds["epsg"], always_xy=True).transform(*FIRE)
-            split = int((x - bounds["x_min"]) / 20)
+            split = int((x - bounds["x_min"]) / 20) - self.straw_offset_px
             data[0][:, :split], data[1][:, :split], data[2][:, :split] = 900, 1100, 1300  # солома: ярче везде
             data[0][:, split:], data[1][:, split:], data[2][:, split:] = 280, 400, 450  # уголь: красный выше
         return data
@@ -622,7 +628,8 @@ class HarvestCheckTests(TestCase):
         event = prediction["events"][0]
         check = event["harvest_check"]
         self.assertTrue(check["performed"])
-        self.assertTrue(check["passed"])  # уборкой — около половины, но меньше её
+        self.assertTrue(check["passed"])  # уборкой ~20 % изменений — меньше порога 0,35
+        self.assertTrue(check["near_points"]["confirmed"])  # у самой точки — уголь
         self.assertGreater(check["removed_ha"], 0)
         self.assertGreater(event["burn_area_ha"], 0)  # правая половина — гарь на зелёном покрове осталась
         self.assertLess(check["removed_share"], 0.9)
@@ -646,10 +653,13 @@ class SuspicionSignalTests(TestCase):
         event = prediction["events"][0]  # гарь по всей плитке: упирается в буфер со всех сторон
         self.assertTrue(event["buffer_edge"]["touches"])
         self.assertEqual(event["reliability"], "unreliable")
-        self.assertTrue(any("упирается в границу" in r for r in event["reliability_reasons"]))
+        # Зона расширялась, но гарь продолжается и за ней (подмена рисует её по всей плитке).
+        self.assertFalse(event["buffer_expansion"]["closed"])
+        self.assertTrue(any("продолжается и за расширенной зоной" in r for r in event["reliability_reasons"]))
 
     def test_closed_scar_is_reliable_and_area_per_point_is_reported(self):
         backend = LocalBurnBackend()
+        backend.radius_px = 16
         backend.days = [date(2024, 8, 5), date(2024, 8, 15)]
         points = [point(*FIRE, date(2024, 8, 10)), point(FIRE[0] + 0.002, FIRE[1], date(2024, 8, 10))]
         _, prediction = predictor(FakeArchive(points), backend).predict(spec())
@@ -706,3 +716,48 @@ class PersistentMaskPathTests(TestCase):
             sources = PersistentSources([path], 500)
         self.assertEqual(sources.loaded, ["mask.geojson"])  # вне проекта — только имя файла
         self.assertEqual(sources.paths, [path])
+
+
+class ReliabilitySignalTests(TestCase):
+    def test_area_per_point_above_clms_maximum_is_unreliable(self):
+        # Круг 1 км вокруг одной точки — 314 га на точку при максимуме у пожаров CLMS 40 га.
+        backend = LocalBurnBackend()
+        backend.days = [date(2024, 8, 5), date(2024, 8, 15)]
+        _, prediction = predictor(FakeArchive([point(*FIRE, date(2024, 8, 10))]), backend).predict(spec())
+        event = prediction["events"][0]
+        self.assertGreater(event["area_per_point_ha"], 40)
+        self.assertEqual(event["reliability"], "unreliable")
+        self.assertTrue(any("на одну термоточку" in r for r in event["reliability_reasons"]))
+
+    def run_season(self, months):
+        backend = HarvestBackend()
+        backend.straw_offset_px = -5  # солома захватывает и круг вокруг самой точки
+        backend.days = [date(2024, 8, 5), date(2024, 8, 25)]
+        instance = predictor(FakeArchive([point(*FIRE, date(2024, 8, 10))]), backend)
+        instance.config["events"]["harvest_season_months"] = months
+        return instance.predict(spec())[1]["events"][0]
+
+    def test_harvest_season_needs_burn_confirmed_at_the_points(self):
+        event = self.run_season([8])
+        self.assertFalse(event["harvest_check"]["near_points"]["confirmed"])
+        self.assertEqual(event["reliability"], "unreliable")
+        self.assertTrue(any(r.startswith("требует подтверждения") for r in event["reliability_reasons"]))
+        outside = self.run_season([9, 10])
+        self.assertFalse(any(r.startswith("требует подтверждения") for r in outside["reliability_reasons"]))
+
+
+class BufferExpansionTests(TestCase):
+    def test_scar_closing_within_wider_zone_is_not_penalised(self):
+        # Пятно радиусом 3,5 км вокруг точки: упирается в буфер 3 км, но замыкается в 6 км.
+        backend = LocalBurnBackend()
+        backend.radius_px = 175
+        backend.days = [date(2024, 8, 5), date(2024, 8, 15)]
+        points = [point(*FIRE, date(2024, 8, 10)) for _ in range(120)]  # ~32 га на точку
+        _, prediction = predictor(FakeArchive(points), backend).predict(spec())
+        event = prediction["events"][0]
+        expansion = event["buffer_expansion"]
+        self.assertTrue(expansion["closed"])
+        self.assertEqual(expansion["final_buffer_m"], 6000)
+        self.assertFalse(event["buffer_edge"]["touches"])
+        self.assertFalse(any("контур" in r for r in event["reliability_reasons"]))
+        self.assertGreater(event["burn_area_ha"], 3000)  # пятно целиком, а не обрезанное буфером 3 км

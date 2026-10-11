@@ -1,0 +1,353 @@
+{
+ "method": "Сигналы надёжности на событиях, подтверждённых Copernicus CLMS: откуда берутся пороги.",
+ "clms_confirmed_events": [
+  {
+   "fire": "clms-a27ed692dc740cdb",
+   "month": "07",
+   "event_id": "fire-bdeb7a612f",
+   "n_points": 127,
+   "area_per_point_ha": 26.97,
+   "removed_share": 0.0057,
+   "near_burned_ha": 1709.4,
+   "near_removed_share": 0.0053
+  },
+  {
+   "fire": "clms-b7e26b1fe331f0ab",
+   "month": "09",
+   "event_id": "fire-c1f6abcec4",
+   "n_points": 318,
+   "area_per_point_ha": 3.31,
+   "removed_share": 0.3068,
+   "near_burned_ha": 1347.72,
+   "near_removed_share": 0.3314
+  },
+  {
+   "fire": "clms-d8113fcdf137b53b",
+   "month": "09",
+   "event_id": "fire-9ede675524",
+   "n_points": 223,
+   "area_per_point_ha": 5.77,
+   "removed_share": 0.0957,
+   "near_burned_ha": 1078.92,
+   "near_removed_share": 0.1262
+  },
+  {
+   "fire": "clms-ebd5a63ee6c7b1fc",
+   "month": "09",
+   "event_id": "fire-eba5369aae",
+   "n_points": 46,
+   "area_per_point_ha": 9.09,
+   "removed_share": 0.0017,
+   "near_burned_ha": 383.16,
+   "near_removed_share": 0.001
+  },
+  {
+   "fire": "clms-08e64a483c8d1077",
+   "month": "07",
+   "event_id": "fire-7b6a1e2990",
+   "n_points": 20,
+   "area_per_point_ha": 39.81,
+   "removed_share": 0.0053,
+   "near_burned_ha": 142.24,
+   "near_removed_share": 0.0231
+  },
+  {
+   "fire": "clms-dc87a31bb9eccecf",
+   "month": "10",
+   "event_id": "fire-3925412a69",
+   "n_points": 127,
+   "area_per_point_ha": 2.86,
+   "removed_share": 0.0,
+   "near_burned_ha": 359.12,
+   "near_removed_share": 0.0
+  },
+  {
+   "fire": "clms-beb31c6f35894561",
+   "month": "08",
+   "event_id": "fire-afa2f848d9",
+   "n_points": 52,
+   "area_per_point_ha": 15.38,
+   "removed_share": 0.0361,
+   "near_burned_ha": 503.08,
+   "near_removed_share": 0.056
+  },
+  {
+   "fire": "clms-ad1e6caae2e3e1ab",
+   "month": "08",
+   "event_id": "fire-f2ec6b37ca",
+   "n_points": 28,
+   "area_per_point_ha": 21.55,
+   "removed_share": 0.0001,
+   "near_burned_ha": 244.12,
+   "near_removed_share": 0.0
+  },
+  {
+   "fire": "clms-ac4388e151fd8677",
+   "month": "09",
+   "event_id": "fire-a3c355b9fb",
+   "n_points": 73,
+   "area_per_point_ha": 9.98,
+   "removed_share": 0.0055,
+   "near_burned_ha": 528.08,
+   "near_removed_share": 0.0014
+  },
+  {
+   "fire": "clms-9beea21509574880",
+   "month": "08",
+   "event_id": "fire-7555b41a98",
+   "n_points": 147,
+   "area_per_point_ha": 8.73,
+   "removed_share": 0.0141,
+   "near_burned_ha": 1076.04,
+   "near_removed_share": 0.0158
+  },
+  {
+   "fire": "clms-9dedbb07b836f31d",
+   "month": "07",
+   "event_id": "fire-8eecc4f882",
+   "n_points": 28,
+   "area_per_point_ha": 27.96,
+   "removed_share": 0.0466,
+   "near_burned_ha": 304.4,
+   "near_removed_share": 0.0523
+  },
+  {
+   "fire": "clms-40e42bb12cfd9206",
+   "month": "08",
+   "event_id": "fire-cdf5ee4584",
+   "n_points": 12,
+   "area_per_point_ha": 36.38,
+   "removed_share": 0.0,
+   "near_burned_ha": 129.12,
+   "near_removed_share": 0.0
+  },
+  {
+   "fire": "clms-7c28b0ee37791b9e",
+   "month": "08",
+   "event_id": "fire-a1c4a18a42",
+   "n_points": 71,
+   "area_per_point_ha": 8.92,
+   "removed_share": 0.0051,
+   "near_burned_ha": 550.6,
+   "near_removed_share": 0.0057
+  },
+  {
+   "fire": "clms-cfde668c36d97081",
+   "month": "08",
+   "event_id": "fire-0acbbf5d26",
+   "n_points": 291,
+   "area_per_point_ha": 4.66,
+   "removed_share": 0.0185,
+   "near_burned_ha": 1264.32,
+   "near_removed_share": 0.0197
+  },
+  {
+   "fire": "clms-6177d1a93abf91b9",
+   "month": "09",
+   "event_id": "fire-ce94d41101",
+   "n_points": 114,
+   "area_per_point_ha": 2.52,
+   "removed_share": 0.2952,
+   "near_burned_ha": 290.96,
+   "near_removed_share": 0.2371
+  },
+  {
+   "fire": "clms-9970ac7770a2ed48",
+   "month": "09",
+   "event_id": "fire-ade91228e7",
+   "n_points": 45,
+   "area_per_point_ha": 8.69,
+   "removed_share": 0.0387,
+   "near_burned_ha": 303.44,
+   "near_removed_share": 0.0
+  },
+  {
+   "fire": "clms-0c17817dfcf6a391",
+   "month": "09",
+   "event_id": "fire-b6e956dce1",
+   "n_points": 67,
+   "area_per_point_ha": 7.8,
+   "removed_share": 0.0,
+   "near_burned_ha": 459.92,
+   "near_removed_share": 0.0
+  },
+  {
+   "fire": "clms-6cf6eee1df89a89a",
+   "month": "08",
+   "event_id": "fire-a6c578ddd8",
+   "n_points": 189,
+   "area_per_point_ha": 8.16,
+   "removed_share": 0.0279,
+   "near_burned_ha": 1377.16,
+   "near_removed_share": 0.0313
+  },
+  {
+   "fire": "clms-e608ecc92102459c",
+   "month": "09",
+   "event_id": "fire-57cec996f5",
+   "n_points": 204,
+   "area_per_point_ha": 8.98,
+   "removed_share": 0.0049,
+   "near_burned_ha": 1014.96,
+   "near_removed_share": 0.0045
+  },
+  {
+   "fire": "clms-4041b83792321be7",
+   "month": "09",
+   "event_id": "fire-11b3dcbcef",
+   "n_points": 8,
+   "area_per_point_ha": 34.47,
+   "removed_share": 0.0,
+   "near_burned_ha": 102.64,
+   "near_removed_share": 0.0
+  }
+ ],
+ "distribution": {
+  "area_per_point_ha": {
+   "n": 20,
+   "min": 2.52,
+   "median": 8.98,
+   "max": 39.81
+  },
+  "removed_share": {
+   "n": 20,
+   "min": 0.0,
+   "median": 0.0057,
+   "max": 0.3068
+  },
+  "near_removed_share": {
+   "n": 20,
+   "min": 0.0,
+   "median": 0.0057,
+   "max": 0.3314
+  }
+ },
+ "compare_only_not_for_thresholds": [
+  {
+   "case": "anapa-2026-08",
+   "event_id": "fire-56b6326bf3",
+   "n_points": 72,
+   "area_per_point_ha": 12.94,
+   "removed_share": 0.0007,
+   "near_burned_ha": 604.48,
+   "near_removed_share": 0.0004
+  },
+  {
+   "case": "novotitarovskaya-2026-09",
+   "event_id": "fire-98c8dce3e8",
+   "n_points": 9,
+   "area_per_point_ha": 21.72,
+   "removed_share": 0.0124,
+   "near_burned_ha": 16.0,
+   "near_removed_share": 0.0025
+  },
+  {
+   "case": "east-2026-09",
+   "event_id": "fire-5f9d81cf75",
+   "n_points": 261,
+   "area_per_point_ha": 23.85,
+   "removed_share": 0.0046,
+   "near_burned_ha": 2603.36,
+   "near_removed_share": 0.0007
+  },
+  {
+   "case": "east-2026-09",
+   "event_id": "fire-501bdacadf",
+   "n_points": 37,
+   "area_per_point_ha": 127.53,
+   "removed_share": 0.0041,
+   "near_burned_ha": 443.96,
+   "near_removed_share": 0.0191
+  },
+  {
+   "case": "east-2026-09",
+   "event_id": "fire-63de8bf95c",
+   "n_points": 3,
+   "area_per_point_ha": 119.63,
+   "removed_share": 0.0279,
+   "near_burned_ha": 39.28,
+   "near_removed_share": 0.0214
+  },
+  {
+   "case": "east-2026-09",
+   "event_id": "fire-f4d9c9c74f",
+   "n_points": 3,
+   "area_per_point_ha": 119.64,
+   "removed_share": 0.0292,
+   "near_burned_ha": 70.52,
+   "near_removed_share": 0.0
+  },
+  {
+   "case": "east-2026-09",
+   "event_id": "fire-b9993beecc",
+   "n_points": 1,
+   "area_per_point_ha": 1012.48,
+   "removed_share": 0.0013,
+   "near_burned_ha": 27.48,
+   "near_removed_share": 0.0
+  },
+  {
+   "case": "rice-nw-krasnodar-2026-09",
+   "event_id": "fire-da855e72a4",
+   "n_points": 18,
+   "area_per_point_ha": 38.43,
+   "removed_share": 0.3366,
+   "near_burned_ha": 226.64,
+   "near_removed_share": 0.0521
+  },
+  {
+   "case": "rice-nw-krasnodar-2026-09",
+   "event_id": "fire-9011635436",
+   "n_points": 14,
+   "area_per_point_ha": 42.42,
+   "removed_share": 0.3592,
+   "near_burned_ha": 145.44,
+   "near_removed_share": 0.2302
+  },
+  {
+   "case": "rice-nw-krasnodar-2026-09",
+   "event_id": "fire-db4de010c7",
+   "n_points": 14,
+   "area_per_point_ha": 13.6,
+   "removed_share": 0.2691,
+   "near_burned_ha": 171.04,
+   "near_removed_share": 0.1791
+  },
+  {
+   "case": "rice-nw-krasnodar-2026-09",
+   "event_id": "fire-9e7e782ae0",
+   "n_points": 14,
+   "area_per_point_ha": 20.35,
+   "removed_share": 0.3324,
+   "near_burned_ha": 209.24,
+   "near_removed_share": 0.1371
+  },
+  {
+   "case": "rice-nw-krasnodar-2026-09",
+   "event_id": "fire-6a0f114c5a",
+   "n_points": 7,
+   "area_per_point_ha": 127.81,
+   "removed_share": 0.1829,
+   "near_burned_ha": 113.28,
+   "near_removed_share": 0.0049
+  },
+  {
+   "case": "rice-nw-krasnodar-2026-09",
+   "event_id": "fire-3a69fe8eeb",
+   "n_points": 6,
+   "area_per_point_ha": 19.72,
+   "removed_share": 0.156,
+   "near_burned_ha": 55.64,
+   "near_removed_share": 0.018
+  },
+  {
+   "case": "rice-nw-krasnodar-2026-09",
+   "event_id": "fire-4122303d3c",
+   "n_points": 4,
+   "area_per_point_ha": 44.72,
+   "removed_share": 0.1317,
+   "near_burned_ha": 68.56,
+   "near_removed_share": 0.0006
+  }
+ ]
+}

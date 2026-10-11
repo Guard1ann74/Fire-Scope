@@ -526,6 +526,7 @@ function renderResult(result) {
 const EVENT_STATUS = {
   ok: { label: "гарь оценена", color: "#2fbf71" },
   ok_unreliable: { label: "гарь оценена · ненадёжно", color: "#e8a33c" },
+  ok_confirm: { label: "гарь оценена · требует подтверждения", color: "#e8a33c" },
   insufficient_data: { label: "недостаточно данных", color: "#e8a33c" },
   source_unavailable: { label: "источник недоступен", color: "#e5534b" },
   not_processed: { label: "не обработано", color: "#8a8f98" },
@@ -573,7 +574,10 @@ function renderFireEvents(prediction) {
   }
   const events = prediction.events || [];
   $("fireEventList").innerHTML = events.map((event) => {
-    const key = event.status === "ok" && event.reliability === "unreliable" ? "ok_unreliable" : event.status;
+    const reasons = event.reliability_reasons || [];
+    const needsConfirmation = reasons.some((reason) => reason.startsWith("требует подтверждения"));
+    const key = event.status === "ok" && event.reliability === "unreliable"
+      ? (needsConfirmation && reasons.length === 1 ? "ok_confirm" : "ok_unreliable") : event.status;
     const status = EVENT_STATUS[key] || { label: event.status, color: "#8a8f98" };
     const evidence = event.fire_evidence;
     const lines = [
@@ -585,7 +589,7 @@ function renderFireEvents(prediction) {
         (Number.isFinite(event.burn_area_ha) && event.status === "ok" ? ` · гарь ${number(event.burn_area_ha, 0)} га` : ""));
       // Площадь на точку FIRMS — только предупреждение: один пролёт мог поймать часть фронта.
       if (event.status === "ok" && Number.isFinite(event.area_per_point_ha)) {
-        lines.push(`${number(event.area_per_point_ha, 0)} га гари на одну термоточку`);
+        lines.push(`${number(event.area_per_point_ha, event.area_per_point_ha < 100 ? 1 : 0)} га гари на одну термоточку`);
       }
     }
     const weather = weatherLine(event.weather);

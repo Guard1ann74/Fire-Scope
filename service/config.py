@@ -122,6 +122,8 @@ class Settings:
     secure_cookies: bool = False
     #: Фоновый опрос FIRMS по районам наблюдения (выключен в тестах: там нет сети).
     monitor_background: bool = False
+    #: Построить отсутствующую маску постоянных источников при запуске (выключено в тестах: там нет сети).
+    build_mask: bool = False
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -151,6 +153,7 @@ class Settings:
             secure_cookies=os.environ.get("FIRES_SECURE_COOKIES", "").strip().lower()
             in ("1", "true", "yes"),
             monitor_background=os.environ.get("FIRES_MONITOR", "1").strip().lower() not in ("0", "false", "no"),
+            build_mask=os.environ.get("FIRES_BUILD_MASK", "1").strip().lower() not in ("0", "false", "no"),
         )
 
     @property

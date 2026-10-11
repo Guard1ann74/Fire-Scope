@@ -198,7 +198,7 @@ def evaluate(args) -> None:
             'status': prediction.get('status'), 'unreliable_ha': round(unreliable_ha, 1),
             'events': [{k: e.get(k) for k in ('event_id', 'status', 'reason', 'reliability', 'reliability_reasons',
                                               'burn_area_ha', 'fire_evidence', 'pair', 'harvest_check',
-                                              'buffer_edge', 'area_per_point_ha')}
+                                              'buffer_edge', 'buffer_expansion', 'area_per_point_ha')}
                        for e in prediction.get('events', [])],
             'query_area_ha': round(transform(forward, area).area / 1e4, 1),
             'event': {'start': str(start), 'end': str(end),

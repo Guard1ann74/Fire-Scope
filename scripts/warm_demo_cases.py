@@ -56,7 +56,8 @@ def main(argv: list[str] | None = None) -> None:
                 'burn_area_ha': e.get('burn_area_ha'), 'gap_days': (e.get('pair') or {}).get('gap_days'),
                 'pre_fire_check': e.get('pre_fire_check'), 'post_fire_check': e.get('post_fire_check'),
                 'reliability_reasons': e.get('reliability_reasons'), 'harvest_check': e.get('harvest_check'),
-                'buffer_edge': e.get('buffer_edge'), 'area_per_point_ha': e.get('area_per_point_ha'),
+                'buffer_edge': e.get('buffer_edge'), 'buffer_expansion': e.get('buffer_expansion'),
+                'area_per_point_ha': e.get('area_per_point_ha'),
                 'n_points': (e.get('fire_evidence') or {}).get('n_points'),
                 'weather': {k: (e.get('weather') or {}).get(k) for k in
                             ('at', 'temperature_c', 'humidity_pct', 'wind_from', 'wind_speed_ms',

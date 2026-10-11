@@ -115,6 +115,22 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
         fire_first = FireFirstPredictor(settings)
         fire_first_default = bool(fire_first.config.get("enabled", True))
+    mask_bootstrap = None
+    if fire_first is not None:
+        from service.config import PROJECT_ROOT
+        from service.fire_evidence import PersistentSources
+        from service.persistent_mask import MaskBootstrap
+
+        persistent_cfg = fire_first.config["persistent_sources"]
+        mask_files = [PROJECT_ROOT / path for path in persistent_cfg["files"]]
+
+        def _reload_mask() -> None:
+            fire_first.persistent = PersistentSources(mask_files, persistent_cfg["radius_m"])
+
+        mask_bootstrap = MaskBootstrap(
+            mask_files, PROJECT_ROOT / persistent_cfg["region"] if persistent_cfg.get("region") else None,
+            fire_first.config, settings.firms_map_key, settings.satellite_cache_dir.parent / "firms-cache",
+            _reload_mask)
     monitor = None
     if fire_first is not None and fire_first.config.get("monitor", {}).get("enabled"):
         from service.monitor import FireMonitor
@@ -146,6 +162,11 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     app.state.firms = firms
     app.state.geocoder = geocoder
     app.state.llm = llm
+
+    @app.on_event("startup")
+    def _start_mask_bootstrap() -> None:
+        if mask_bootstrap is not None and settings.build_mask:
+            mask_bootstrap.start()
 
     @app.on_event("startup")
     def _start_monitor() -> None:
@@ -316,6 +337,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                     "enabled": fire_first_default,
                     "max_area_side_km": fire_first.config["events"]["max_area_side_km"] if fire_first else None,
                     "firms_configured": bool(settings.firms_map_key),
+                    "persistent_mask": mask_bootstrap.state if mask_bootstrap else None,
                 },
                 "prediction": {
                     "enabled": predictor.configured and model_problem is None,

@@ -33,7 +33,7 @@ from service.weather import Weather, WeatherError, observed_at
 
 # Версия логики ответа: входит в ключ кеша на диске, поэтому после изменения
 # правил старые результаты не выдаются. Повышать при любом изменении расчёта.
-RESULT_VERSION = "2026-10-12.3"
+RESULT_VERSION = "2026-10-13.3"
 
 VIIRS_LIMITATION = ("Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают "
                     "границу гари.")
@@ -243,6 +243,9 @@ class FireFirstPredictor:
                 continue
             report, event_burns, event_scenes, hidden, seen, total = self._event(
                 event, spec, selected, digest, evidence, gsd, pixels)
+            expanded = self._expand(event, spec, selected, digest, evidence, gsd, pixels,
+                                    (report, event_burns, event_scenes, hidden, seen, total))
+            report, event_burns, event_scenes, hidden, seen, total = expanded
             self._industrial(report, event.points)
             self._weather(report, event.points)
             if claimed is not None and event_burns:
@@ -251,6 +254,8 @@ class FireFirstPredictor:
                 report["burn_area_ha"] = round(
                     sum(transform(forward, burn.geometry).area for burn in event_burns) / 1e4, 2)
                 report["burn_by_landcover_ha"] = _landcover_of(event_burns)
+            if report.get("harvest_check") is not None:
+                event_burns = self._finalize_reliability(report, event, event_burns)
             if event_burns:
                 current = unary_union([burn.geometry for burn in event_burns])
                 claimed = current if claimed is None else unary_union([claimed, current])
@@ -378,7 +383,7 @@ class FireFirstPredictor:
     # ------------------------------------------------------ одно событие
 
     def _event(self, event: FireEvent, spec: QuerySpec, selected: dict, digest: str, evidence,
-               gsd: int, pixels: int):
+               gsd: int, pixels: int, pair: dict | None = None):
         from rasterio.features import shapes
         from rasterio.transform import from_origin
         from src.collector.burn_severity import _acquired, _write_raster, plan_chips
@@ -396,7 +401,8 @@ class FireFirstPredictor:
                 event.buffer, event.first_detected - timedelta(days=self.config["scenes"]["pre_window_days"]),
                 min(event.last_detected + timedelta(days=self.config["scenes"]["post_window_days"]),
                     datetime.now(timezone.utc).date()))
-            pre, post, rejected, reason = self._pair(event, items, tiles, masks, _acquired)
+            fixed = _fixed_pair(items, pair, _acquired) if pair else None
+            pre, post, rejected, reason = fixed or self._pair(event, items, tiles, masks, _acquired)
         except (OSError, RuntimeError, ValueError) as error:
             return (_event_report(event, "source_unavailable", "copernicus_unavailable",
                                   f"Copernicus недоступен: {error}", evidence), [], [], [], 0, 0)
@@ -423,7 +429,8 @@ class FireFirstPredictor:
                                                limit, newest_first=True)),
                       ("after", _days_between(items, event.last_detected, post.when.date(), _acquired,
                                               limit, newest_first=False)))}
-        harvest = {"burned_px": 0, "checked_px": 0, "removed_px": 0, "removed_by_class": {}}
+        harvest = {"burned_px": 0, "checked_px": 0, "removed_px": 0, "removed_by_class": {},
+                   "near_burned_px": 0, "near_removed_px": 0}
         try:
             for bounds, mask in zip(tiles, masks):
                 if not mask.any():
@@ -439,8 +446,9 @@ class FireFirstPredictor:
                 prediction = self.backend.model(root, bounds, selected)
                 prediction = np.where(mask, prediction, 0).astype(np.uint8)
                 landcover = np.asarray(aux)[2]
+                near = _detection_mask(event, bounds, pixels, gsd, self.config["events"]["detection_radius_m"])
                 prediction, brightened = self._harvest_filter(prediction, pre_raster, post_raster, landcover,
-                                                              harvest)
+                                                              harvest, near)
                 # Что вырезала проверка: картинка «снимки до/после» показывает это отдельным слоем.
                 _write_raster(root.parent / "filtered" / f"{chip_id}_harvest.tif",
                               brightened[None, :, :].astype(np.uint8), bounds)
@@ -524,17 +532,16 @@ class FireFirstPredictor:
         report["burn_by_landcover_ha"] = _landcover_of(burns)
         report["area_per_point_ha"] = round(report["burn_area_ha"] / max(len(event.points), 1), 2)
         report["harvest_check"] = self._harvest_report(harvest, gsd)
-        report["buffer_edge"] = _buffer_edge(burns, footprint, event.epsg, gsd,
+        report["buffer_edge"] = _buffer_edge(burns, event.buffer, spec.area, event.epsg, gsd,
                                              self.config["events"].get("buffer_edge_share", 0.10),
                                              self.config["events"].get("buffer_edge_closing_m", 50))
         reasons = (([f"между снимками {gap} дн."] if gap > self.config["scenes"]["reliable_gap_days"] else [])
                    + (["слабый ночной огонь — вероятно тление"] if weak_night else []))
         check = report["harvest_check"]
         if burns and not check["passed"]:
-            season = event.first_detected.month in (9, 10) and _mostly_crops(report["burn_by_landcover_ha"])
-            problem = ("проверка «убрано или выжжено» не проведена" if not check["performed"] else
-                       f"{check['removed_share'] * 100:.0f}% изменений у очага — уборка (поля посветлели), а не огонь")
-            reasons.append(f"сезон уборки на пашне: {problem}" if season else problem)
+            reasons.append("проверка «убрано или выжжено» не проведена" if not check["performed"] else
+                           f"{check['removed_share'] * 100:.0f}% изменений у очага — уборка (поля посветлели), "
+                           "больше, чем у любого подтверждённого пожара CLMS")
         if report["buffer_edge"]["touches"]:
             reasons.append(f"контур упирается в границу зоны поиска на "
                            f"{report['buffer_edge']['share'] * 100:.0f}% периметра — гарь не замыкается вокруг очага")
@@ -585,7 +592,8 @@ class FireFirstPredictor:
         return report, burns, scenes, hidden, seen, total
 
     def _harvest_filter(self, prediction: np.ndarray, pre_raster: np.ndarray, post_raster: np.ndarray,
-                        landcover: np.ndarray, harvest: dict) -> tuple[np.ndarray, np.ndarray]:
+                        landcover: np.ndarray, harvest: dict,
+                        near: np.ndarray | None = None) -> tuple[np.ndarray, np.ndarray]:
         """Убрать пиксели, которые посветлели во всех видимых каналах: убрано, а не выжжено.
 
         Огонь оставляет уголь: синий и зелёный каналы темнеют. Красный у сгоревшей зелени
@@ -618,6 +626,9 @@ class FireFirstPredictor:
         brightened = valid & (change.min(axis=0) > threshold * 10000)
         harvest["checked_px"] += int(np.count_nonzero(valid))
         harvest["removed_px"] += int(np.count_nonzero(brightened))
+        if near is not None:  # отдельно — в кругах вокруг самих точек огня
+            harvest["near_burned_px"] += int(np.count_nonzero(valid & near))
+            harvest["near_removed_px"] += int(np.count_nonzero(brightened & near))
         if brightened.any():
             classes, counts = np.unique(landcover[brightened], return_counts=True)
             for cls, n in zip(classes, counts):
@@ -625,17 +636,107 @@ class FireFirstPredictor:
                 harvest["removed_by_class"][name] = harvest["removed_by_class"].get(name, 0) + int(n)
         return np.where(brightened, 0, prediction).astype(np.uint8), brightened
 
+    def _expand(self, event: FireEvent, spec: QuerySpec, selected: dict, digest: str, evidence, gsd: int,
+                pixels: int, result: tuple):
+        """Если контур упирается в границу буфера, расширить зону поиска и пересчитать.
+
+        Буфер вокруг точек увеличивается по шагам `events.expand_buffer_m`, пока число плиток
+        не превышает `max_tiles_per_event`; пара снимков остаётся прежней. Замкнулся контур —
+        граница больше не причина ненадёжности; упирается и в расширенную — гарь продолжается
+        по соседним полям. Зона не растёт за выбранную пользователем область.
+        """
+        from dataclasses import replace as replace_field
+        from src.collector.burn_severity import plan_chips
+
+        events_cfg = self.config["events"]
+        report = result[0]
+        steps = []
+        for buffer_m in events_cfg.get("expand_buffer_m", []):
+            edge = report.get("buffer_edge") or {}
+            if report["status"] != "ok" or not edge.get("touches"):
+                break
+            wider = replace_field(event, buffer=_rectangle(event, buffer_m))
+            _, tiles = plan_chips(wider.buffer.bounds, anchor="area")
+            if len(tiles) > events_cfg["max_tiles_per_event"]:
+                steps.append({"buffer_m": buffer_m, "skipped": f"{len(tiles)} плиток при пределе "
+                                                                f"{events_cfg['max_tiles_per_event']}"})
+                break
+            footprint = wider.buffer.intersection(spec.area)
+            if footprint.area <= report_footprint(report, spec) * 1.001:
+                steps.append({"buffer_m": buffer_m, "skipped": "зона упирается в выбранную область"})
+                break
+            candidate = self._event(wider, spec, selected, digest, evidence, gsd, pixels, pair=report["pair"])
+            if candidate[0]["status"] != "ok":
+                steps.append({"buffer_m": buffer_m, "skipped": candidate[0].get("message") or candidate[0]["status"]})
+                break
+            steps.append({"buffer_m": buffer_m, "edge_share": candidate[0]["buffer_edge"]["share"],
+                          "burn_area_ha": candidate[0]["burn_area_ha"]})
+            result, report = candidate, candidate[0]
+        if steps:
+            touches = bool((report.get("buffer_edge") or {}).get("touches"))
+            done = [step for step in steps if "skipped" not in step]
+            report["buffer_expansion"] = {"steps": steps, "closed": not touches,
+                                          "final_buffer_m": done[-1]["buffer_m"] if done else events_cfg["buffer_m"]}
+            if touches and done:
+                report["reliability_reasons"] = [
+                    (f"контур продолжается и за расширенной зоной поиска (буфер {done[-1]['buffer_m'] / 1000:.0f} км) — "
+                     "гарь растекается по соседним полям") if reason.startswith("контур упирается") else reason
+                    for reason in report["reliability_reasons"]]
+            elif not touches:
+                report["limitations"].append(
+                    f"Контур упирался в буфер 3 км; зона поиска расширена до {done[-1]['buffer_m'] / 1000:.0f} км, "
+                    "и гарь замкнулась вокруг очага.")
+        return result
+
+    def _finalize_reliability(self, report: dict[str, Any], event: FireEvent, burns: list[Burn]) -> list[Burn]:
+        """Итоговая надёжность — после раздела площади между событиями.
+
+        К причинам из `_event` (разрыв, тление, проверка «убрано или выжжено», граница зоны)
+        добавляются площадь на точку и сезон уборки. Пороги — из 20 пожаров CLMS
+        (experiments/validation/point-signals.json), не из рисовых событий.
+        """
+        events_cfg = self.config["events"]
+        report["area_per_point_ha"] = round((report["burn_area_ha"] or 0) / max(len(event.points), 1), 2)
+        reasons = list(report.get("reliability_reasons") or [])
+        limit = float(events_cfg.get("max_area_per_point_ha", 0) or 0)
+        if burns and limit and report["area_per_point_ha"] > limit:
+            value = report["area_per_point_ha"]
+            reasons.append(f"{value:.1f} га гари на одну термоточку — больше, чем у любого ".replace(".", ",")
+                           if value < 100 else f"{value:.0f} га гари на одну термоточку — больше, чем у любого "
+                           f"подтверждённого пожара CLMS (до {limit:.0f} га): гарь, вероятно, растеклась по "
+                           "соседним полям")
+        season = event.first_detected.month in tuple(events_cfg.get("harvest_season_months", (9, 10)))
+        near = (report["harvest_check"] or {}).get("near_points") or {}
+        if burns and season and _mostly_crops(report["burn_by_landcover_ha"]) and not near.get("confirmed"):
+            reasons.append("требует подтверждения: сезон уборки на пашне, а гарь у самих точек огня проверкой "
+                           "«убрано или выжжено» не подтверждена")
+        reliable = not reasons
+        report["reliability"] = "reliable" if reliable else "unreliable"
+        report["reliability_reasons"] = reasons
+        if any(burn.extra.get("reliable") != reliable for burn in burns):
+            from dataclasses import replace as replace_field
+
+            burns = [replace_field(burn, extra={**burn.extra, "reliable": reliable}) for burn in burns]
+        return burns
+
     def _harvest_report(self, harvest: dict, gsd: int) -> dict[str, Any]:
         hectares = lambda px: round(px * gsd * gsd / 1e4, 2)
         share = harvest["checked_px"] / harvest["burned_px"] if harvest["burned_px"] else None
         removed_share = harvest["removed_px"] / harvest["burned_px"] if harvest["burned_px"] else 0.0
         performed = bool(self.config["scenes"].get("harvest_brightening"))
-        # Пройдена — если уборкой оказалось меньше половины изменений у очага. Когда поля в основном
-        # посветлели, остаток контура тоже под подозрением: это сезон уборки, а не пожар на всей площади.
-        return {"performed": performed, "passed": performed and removed_share < 0.5,
+        # Порог — из 20 пожаров Copernicus CLMS (experiments/validation/point-signals.json): у настоящих
+        # пожаров проверка срезала не больше 0,31 изменений в буфере и 0,33 — у самих точек.
+        limit = float(self.config["scenes"].get("harvest_pass_share", 0.35))
+        near_share = (harvest["near_removed_px"] / harvest["near_burned_px"]) if harvest["near_burned_px"] else None
+        return {"performed": performed, "passed": performed and removed_share <= limit,
                 "checked_share": None if share is None else round(share, 4),
                 "removed_ha": hectares(harvest["removed_px"]), "removed_share": round(removed_share, 4),
-                "removed_by_landcover_ha": {k: hectares(v) for k, v in harvest["removed_by_class"].items()}}
+                "removed_by_landcover_ha": {k: hectares(v) for k, v in harvest["removed_by_class"].items()},
+                # Гарь у самих точек: проверка подтвердила, что пиксели в кругах вокруг точек темнеют, а не
+                # светлеют. Без ясных пикселей у точек подтверждения нет.
+                "near_points": {"burned_ha": hectares(harvest["near_burned_px"]),
+                                "removed_share": None if near_share is None else round(near_share, 4),
+                                "confirmed": performed and near_share is not None and near_share <= limit}}
 
     def _timing_filter(self, prediction: np.ndarray, bounds: dict, pre_raster: np.ndarray,
                        post_raster: np.ndarray, landcover: np.ndarray, selected: dict, check: dict,
@@ -908,9 +1009,13 @@ def _mark_bright_clouds(raster: np.ndarray, threshold: float | None) -> np.ndarr
     return raster
 
 
-def _buffer_edge(burns: list[Burn], footprint, epsg: int, gsd: int, limit: float,
+def _buffer_edge(burns: list[Burn], buffer, area, epsg: int, gsd: int, limit: float,
                  closing_m: float = 50) -> dict[str, Any]:
-    """Какая доля внешнего обвода гари лежит на границе зоны поиска (буфер 3 км ∩ область).
+    """Какая доля внешнего обвода гари лежит на границе буфера вокруг огня.
+
+    Считается только граница буфера внутри выбранной области: край области выбирает
+    пользователь, и обрезка по нему — не признак того, что гарь не замыкается (для неё есть
+    пометка «контур обрезан границей области»).
 
     Гарь, замкнутая вокруг очага, границы не касается. Если заметная часть обвода лежит
     на ней, пятно продолжается за зоной поиска — обычно это соседние поля, а не огонь.
@@ -929,9 +1034,55 @@ def _buffer_edge(burns: list[Burn], footprint, epsg: int, gsd: int, limit: float
     outline = unary_union(parts).boundary if parts else None
     if outline is None or outline.length == 0:
         return {"share": 0.0, "touches": False}
-    edge = transform(forward, footprint).boundary.buffer(2 * gsd)
+    line = transform(forward, buffer).boundary.intersection(transform(forward, area).buffer(-2 * gsd))
+    if line.is_empty:
+        return {"share": 0.0, "touches": False}
+    edge = line.buffer(2 * gsd)
     share = outline.intersection(edge).length / outline.length
     return {"share": round(share, 4), "touches": share >= limit}
+
+
+def _rectangle(event: FireEvent, buffer_m: float):
+    """Прямоугольник точек события с буфером buffer_m (как в cluster_events), EPSG:4326."""
+    forward = Transformer.from_crs(4326, event.epsg, always_xy=True).transform
+    back = Transformer.from_crs(event.epsg, 4326, always_xy=True).transform
+    xy = [forward(point.lon, point.lat) for point in event.points]
+    xs, ys = [x for x, _ in xy], [y for _, y in xy]
+    return transform(back, box(min(xs) - buffer_m, min(ys) - buffer_m, max(xs) + buffer_m, max(ys) + buffer_m))
+
+
+def report_footprint(report: dict[str, Any], spec: QuerySpec) -> float:
+    """Площадь (в градусах²) текущей зоны поиска события: буфер ∩ область."""
+    return shape(report["buffer"]).intersection(spec.area).area
+
+
+def _fixed_pair(items: list[dict], pair: dict, acquired):
+    """Пара с заданными датами — при расширении зоны снимки не перевыбираются."""
+    by_day: dict[str, dict] = {}
+    for item in items:
+        if item.get("collection", "sentinel-2-l2a") == "sentinel-2-l2a":
+            by_day.setdefault(acquired(item).date().isoformat(), item)
+    if pair["pre"] not in by_day or pair["post"] not in by_day:
+        return None
+    pre, post = by_day[pair["pre"]], by_day[pair["post"]]
+    return (Candidate(pre, acquired(pre), pair.get("cloud_pre", 0.0), 0.0, []),
+            Candidate(post, acquired(post), pair.get("cloud_post", 0.0), 0.0, []), [], None)
+
+
+def _detection_mask(event: FireEvent, bounds: dict, pixels: int, gsd: int, radius_m: float) -> np.ndarray:
+    """Пиксели плитки в кругах вокруг точек огня (радиус — пиксель VIIRS)."""
+    from rasterio.features import geometry_mask
+    from rasterio.transform import from_origin
+    from shapely.geometry import Point
+
+    to_metric = Transformer.from_crs(4326, bounds["epsg"], always_xy=True).transform
+    tile = box(bounds["x_min"], bounds["y_min"], bounds["x_max"], bounds["y_max"])
+    circles = [c for c in (Point(*to_metric(p.lon, p.lat)).buffer(radius_m) for p in event.points)
+               if c.intersects(tile)]
+    if not circles:
+        return np.zeros((pixels, pixels), bool)
+    return geometry_mask(circles, out_shape=(pixels, pixels),
+                         transform=from_origin(bounds["x_min"], bounds["y_max"], gsd, gsd), invert=True)
 
 
 def _mostly_crops(by_landcover: dict[str, dict[str, float]]) -> bool:

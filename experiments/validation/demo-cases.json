@@ -46,8 +46,8 @@
         "3": 17.76
       }
     },
-    "seconds": 0.9,
-    "cached": true,
+    "seconds": 194.8,
+    "cached": false,
     "event_details": [
       {
         "event_id": "fire-56b6326bf3",
@@ -80,12 +80,18 @@
             "травяные угодья": 0.36,
             "пашня": 0.04,
             "водно-болотные угодья": 0.36
+          },
+          "near_points": {
+            "burned_ha": 572.32,
+            "removed_share": 0.0004,
+            "confirmed": true
           }
         },
         "buffer_edge": {
           "share": 0.0,
           "touches": false
         },
+        "buffer_expansion": null,
         "area_per_point_ha": 12.94,
         "n_points": 72,
         "weather": {
@@ -129,12 +135,18 @@
           "checked_share": null,
           "removed_ha": 0.0,
           "removed_share": 0.0,
-          "removed_by_landcover_ha": {}
+          "removed_by_landcover_ha": {},
+          "near_points": {
+            "burned_ha": 0.0,
+            "removed_share": null,
+            "confirmed": false
+          }
         },
         "buffer_edge": {
           "share": 0.0,
           "touches": false
         },
+        "buffer_expansion": null,
         "area_per_point_ha": 0.0,
         "n_points": 1,
         "weather": {
@@ -176,12 +188,18 @@
           "checked_share": 0.0,
           "removed_ha": 0.0,
           "removed_share": 0.0,
-          "removed_by_landcover_ha": {}
+          "removed_by_landcover_ha": {},
+          "near_points": {
+            "burned_ha": 0.0,
+            "removed_share": null,
+            "confirmed": false
+          }
         },
         "buffer_edge": {
           "share": 0.0,
           "touches": false
         },
+        "buffer_expansion": null,
         "area_per_point_ha": 0.0,
         "n_points": 1,
         "weather": {
@@ -223,12 +241,18 @@
           "checked_share": null,
           "removed_ha": 0.0,
           "removed_share": 0.0,
-          "removed_by_landcover_ha": {}
+          "removed_by_landcover_ha": {},
+          "near_points": {
+            "burned_ha": 0.0,
+            "removed_share": null,
+            "confirmed": false
+          }
         },
         "buffer_edge": {
           "share": 0.0,
           "touches": false
         },
+        "buffer_expansion": null,
         "area_per_point_ha": 0.0,
         "n_points": 1,
         "weather": {
@@ -254,7 +278,7 @@
     "unreliable_ha": null,
     "landcover_reliable_ha": null,
     "seconds": 0.0,
-    "cached": true,
+    "cached": false,
     "event_details": []
   },
   "novotitarovskaya-2026-09": {
@@ -268,8 +292,8 @@
     "reliable_ha": 0,
     "unreliable_ha": 195.44,
     "landcover_reliable_ha": {},
-    "seconds": 0.0,
-    "cached": true,
+    "seconds": 89.3,
+    "cached": false,
     "event_details": [
       {
         "event_id": "fire-98c8dce3e8",
@@ -305,12 +329,18 @@
           "removed_share": 0.0124,
           "removed_by_landcover_ha": {
             "пашня": 13.8
+          },
+          "near_points": {
+            "burned_ha": 29.4,
+            "removed_share": 0.0014,
+            "confirmed": true
           }
         },
         "buffer_edge": {
           "share": 0.0,
           "touches": false
         },
+        "buffer_expansion": null,
         "area_per_point_ha": 21.72,
         "n_points": 9,
         "weather": {
@@ -356,12 +386,18 @@
           "removed_share": 0.0001,
           "removed_by_landcover_ha": {
             "пашня": 0.04
+          },
+          "near_points": {
+            "burned_ha": 0.0,
+            "removed_share": null,
+            "confirmed": false
           }
         },
         "buffer_edge": {
           "share": 0.0,
           "touches": false
         },
+        "buffer_expansion": null,
         "area_per_point_ha": 0.0,
         "n_points": 1,
         "weather": {
@@ -385,10 +421,26 @@
     "events_by_status": {
       "ok": 5
     },
-    "reliable_ha": 0,
-    "unreliable_ha": 10609.36,
-    "landcover_reliable_ha": {},
-    "seconds": 655.5,
+    "reliable_ha": 0.04,
+    "unreliable_ha": 12523.24,
+    "landcover_reliable_ha": {
+      "лес": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "травяные угодья": {
+        "1": 0.0,
+        "2": 0.01,
+        "3": 0.0
+      },
+      "пашня": {
+        "1": 0.0,
+        "2": 0.03,
+        "3": 0.0
+      }
+    },
+    "seconds": 755.5,
     "cached": false,
     "event_details": [
       {
@@ -425,12 +477,18 @@
           "removed_by_landcover_ha": {
             "травяные угодья": 6.6,
             "пашня": 32.52
+          },
+          "near_points": {
+            "burned_ha": 2571.36,
+            "removed_share": 0.0007,
+            "confirmed": true
           }
         },
         "buffer_edge": {
-          "share": 0.0702,
+          "share": 0.0244,
           "touches": false
         },
+        "buffer_expansion": null,
         "area_per_point_ha": 23.85,
         "n_points": 261,
         "weather": {
@@ -449,7 +507,7 @@
         "event_id": "fire-501bdacadf",
         "status": "ok",
         "reliability": "unreliable",
-        "burn_area_ha": 4143.4,
+        "burn_area_ha": 5884.64,
         "gap_days": 28,
         "pre_fire_check": {
           "scenes": [],
@@ -463,30 +521,51 @@
             "2026-09-23"
           ],
           "candidate_scenes": 3,
-          "checked_share": 0.5031,
-          "removed_ha": 525.28,
+          "checked_share": 0.2307,
+          "removed_ha": 585.8,
           "error": null
         },
         "reliability_reasons": [
           "между снимками 28 дн.",
-          "контур упирается в границу зоны поиска на 44% периметра — гарь не замыкается вокруг очага"
+          "159 га гари на одну термоточку — больше, чем у любого подтверждённого пожара CLMS (до 40 га): гарь, вероятно, растеклась по соседним полям"
         ],
         "harvest_check": {
           "performed": true,
           "passed": true,
-          "checked_share": 0.9878,
-          "removed_ha": 21.84,
-          "removed_share": 0.0041,
+          "checked_share": 0.9862,
+          "removed_ha": 54.8,
+          "removed_share": 0.0045,
           "removed_by_landcover_ha": {
-            "травяные угодья": 14.0,
-            "пашня": 7.84
+            "травяные угодья": 15.28,
+            "пашня": 39.52
+          },
+          "near_points": {
+            "burned_ha": 485.92,
+            "removed_share": 0.0175,
+            "confirmed": true
           }
         },
         "buffer_edge": {
-          "share": 0.4364,
-          "touches": true
+          "share": 0.0255,
+          "touches": false
         },
-        "area_per_point_ha": 127.53,
+        "buffer_expansion": {
+          "steps": [
+            {
+              "buffer_m": 6000,
+              "edge_share": 0.1641,
+              "burn_area_ha": 6413.88
+            },
+            {
+              "buffer_m": 9000,
+              "edge_share": 0.0255,
+              "burn_area_ha": 6058.04
+            }
+          ],
+          "closed": true,
+          "final_buffer_m": 9000
+        },
+        "area_per_point_ha": 159.04,
         "n_points": 37,
         "weather": {
           "at": "2026-09-12T11:00",
@@ -521,8 +600,7 @@
           "error": null
         },
         "reliability_reasons": [
-          "слабый ночной огонь — вероятно тление",
-          "контур упирается в границу зоны поиска на 20% периметра — гарь не замыкается вокруг очага"
+          "слабый ночной огонь — вероятно тление"
         ],
         "harvest_check": {
           "performed": true,
@@ -533,13 +611,19 @@
           "removed_by_landcover_ha": {
             "травяные угодья": 6.84,
             "пашня": 13.76
+          },
+          "near_points": {
+            "burned_ha": 39.24,
+            "removed_share": 0.0214,
+            "confirmed": true
           }
         },
         "buffer_edge": {
-          "share": 0.1981,
-          "touches": true
+          "share": 0.0,
+          "touches": false
         },
-        "area_per_point_ha": 119.63,
+        "buffer_expansion": null,
+        "area_per_point_ha": 8.92,
         "n_points": 3,
         "weather": {
           "at": "2026-09-12T23:00",
@@ -556,7 +640,7 @@
       {
         "event_id": "fire-f4d9c9c74f",
         "status": "ok",
-        "reliability": "unreliable",
+        "reliability": "reliable",
         "burn_area_ha": 0.04,
         "gap_days": 3,
         "pre_fire_check": {
@@ -573,9 +657,7 @@
           "removed_ha": 0.0,
           "error": null
         },
-        "reliability_reasons": [
-          "контур упирается в границу зоны поиска на 20% периметра — гарь не замыкается вокруг очага"
-        ],
+        "reliability_reasons": [],
         "harvest_check": {
           "performed": true,
           "passed": true,
@@ -585,13 +667,19 @@
           "removed_by_landcover_ha": {
             "травяные угодья": 6.84,
             "пашня": 13.8
+          },
+          "near_points": {
+            "burned_ha": 70.52,
+            "removed_share": 0.0,
+            "confirmed": true
           }
         },
         "buffer_edge": {
-          "share": 0.198,
-          "touches": true
+          "share": 0.0,
+          "touches": false
         },
-        "area_per_point_ha": 119.64,
+        "buffer_expansion": null,
+        "area_per_point_ha": 0.01,
         "n_points": 3,
         "weather": {
           "at": "2026-09-12T13:00",
@@ -609,7 +697,7 @@
         "event_id": "fire-b9993beecc",
         "status": "ok",
         "reliability": "unreliable",
-        "burn_area_ha": 214.52,
+        "burn_area_ha": 387.2,
         "gap_days": 28,
         "pre_fire_check": {
           "scenes": [],
@@ -623,29 +711,46 @@
             "2026-09-23"
           ],
           "candidate_scenes": 3,
-          "checked_share": 0.0472,
-          "removed_ha": 29.2,
+          "checked_share": 0.064,
+          "removed_ha": 116.68,
           "error": null
         },
         "reliability_reasons": [
           "между снимками 28 дн.",
-          "контур упирается в границу зоны поиска на 43% периметра — гарь не замыкается вокруг очага"
+          "387 га гари на одну термоточку — больше, чем у любого подтверждённого пожара CLMS (до 40 га): гарь, вероятно, растеклась по соседним полям"
         ],
         "harvest_check": {
           "performed": true,
           "passed": true,
-          "checked_share": 0.9862,
-          "removed_ha": 1.4,
-          "removed_share": 0.0013,
+          "checked_share": 0.9906,
+          "removed_ha": 16.44,
+          "removed_share": 0.005,
           "removed_by_landcover_ha": {
-            "пашня": 1.4
+            "пашня": 13.84,
+            "травяные угодья": 2.6
+          },
+          "near_points": {
+            "burned_ha": 28.6,
+            "removed_share": 0.0,
+            "confirmed": true
           }
         },
         "buffer_edge": {
-          "share": 0.4344,
-          "touches": true
+          "share": 0.0,
+          "touches": false
         },
-        "area_per_point_ha": 1012.48,
+        "buffer_expansion": {
+          "steps": [
+            {
+              "buffer_m": 6000,
+              "edge_share": 0.0,
+              "burn_area_ha": 1782.6
+            }
+          ],
+          "closed": true,
+          "final_buffer_m": 6000
+        },
+        "area_per_point_ha": 387.2,
         "n_points": 1,
         "weather": {
           "at": "2026-09-13T12:00",
@@ -670,33 +775,28 @@
       "not_processed": 18,
       "ok": 7
     },
-    "reliable_ha": 2935.8,
-    "unreliable_ha": 0,
+    "reliable_ha": 1285.4,
+    "unreliable_ha": 1650.4,
     "landcover_reliable_ha": {
       "лес": {
-        "1": 2.64,
-        "2": 0.88,
+        "1": 2.36,
+        "2": 0.84,
         "3": 0.0
       },
       "травяные угодья": {
-        "1": 66.69,
-        "2": 4.44,
+        "1": 35.64,
+        "2": 2.16,
         "3": 0.0
       },
       "пашня": {
-        "1": 691.47,
-        "2": 1118.78,
-        "3": 734.04
+        "1": 288.08,
+        "2": 381.36,
+        "3": 452.68
       },
       "водно-болотные угодья": {
-        "1": 246.44,
-        "2": 66.22,
+        "1": 92.48,
+        "2": 27.16,
         "3": 1.92
-      },
-      "вода": {
-        "1": 1.28,
-        "2": 0.28,
-        "3": 0.0
       },
       "застройка": {
         "1": 0.72,
@@ -704,8 +804,8 @@
         "3": 0.0
       }
     },
-    "seconds": 14.5,
-    "cached": true,
+    "seconds": 726.0,
+    "cached": false,
     "event_details": [
       {
         "event_id": "fire-da855e72a4",
@@ -740,12 +840,18 @@
             "травяные угодья": 22.88,
             "пашня": 433.6,
             "водно-болотные угодья": 345.32
+          },
+          "near_points": {
+            "burned_ha": 226.6,
+            "removed_share": 0.0521,
+            "confirmed": true
           }
         },
         "buffer_edge": {
           "share": 0.0213,
           "touches": false
         },
+        "buffer_expansion": null,
         "area_per_point_ha": 38.43,
         "n_points": 18,
         "weather": {
@@ -763,7 +869,7 @@
       {
         "event_id": "fire-9011635436",
         "status": "ok",
-        "reliability": "reliable",
+        "reliability": "unreliable",
         "burn_area_ha": 593.88,
         "gap_days": 8,
         "pre_fire_check": {
@@ -780,10 +886,13 @@
           "removed_ha": 0.0,
           "error": null
         },
-        "reliability_reasons": [],
+        "reliability_reasons": [
+          "36% изменений у очага — уборка (поля посветлели), больше, чем у любого подтверждённого пожара CLMS",
+          "42 га гари на одну термоточку — больше, чем у любого подтверждённого пожара CLMS (до 40 га): гарь, вероятно, растеклась по соседним полям"
+        ],
         "harvest_check": {
           "performed": true,
-          "passed": true,
+          "passed": false,
           "checked_share": 0.997,
           "removed_ha": 592.8,
           "removed_share": 0.3592,
@@ -791,12 +900,18 @@
             "травяные угодья": 27.2,
             "пашня": 327.36,
             "водно-болотные угодья": 238.24
+          },
+          "near_points": {
+            "burned_ha": 144.76,
+            "removed_share": 0.2313,
+            "confirmed": true
           }
         },
         "buffer_edge": {
           "share": 0.0729,
           "touches": false
         },
+        "buffer_expansion": null,
         "area_per_point_ha": 42.42,
         "n_points": 14,
         "weather": {
@@ -844,12 +959,18 @@
             "травяные угодья": 34.56,
             "пашня": 336.48,
             "водно-болотные угодья": 63.48
+          },
+          "near_points": {
+            "burned_ha": 171.92,
+            "removed_share": 0.1782,
+            "confirmed": true
           }
         },
         "buffer_edge": {
           "share": 0.0,
           "touches": false
         },
+        "buffer_expansion": null,
         "area_per_point_ha": 13.6,
         "n_points": 14,
         "weather": {
@@ -899,12 +1020,18 @@
             "травяные угодья": 4.24,
             "пашня": 261.36,
             "водно-болотные угодья": 1.28
+          },
+          "near_points": {
+            "burned_ha": 215.72,
+            "removed_share": 0.133,
+            "confirmed": true
           }
         },
         "buffer_edge": {
           "share": 0.0,
           "touches": false
         },
+        "buffer_expansion": null,
         "area_per_point_ha": 20.35,
         "n_points": 14,
         "weather": {
@@ -950,12 +1077,18 @@
           "removed_share": 0.2494,
           "removed_by_landcover_ha": {
             "пашня": 56.24
+          },
+          "near_points": {
+            "burned_ha": 0.0,
+            "removed_share": null,
+            "confirmed": false
           }
         },
         "buffer_edge": {
           "share": 0.0,
           "touches": false
         },
+        "buffer_expansion": null,
         "area_per_point_ha": 0.0,
         "n_points": 9,
         "weather": {
@@ -973,7 +1106,7 @@
       {
         "event_id": "fire-6a0f114c5a",
         "status": "ok",
-        "reliability": "reliable",
+        "reliability": "unreliable",
         "burn_area_ha": 894.68,
         "gap_days": 13,
         "pre_fire_check": {
@@ -993,7 +1126,9 @@
           "removed_ha": 474.68,
           "error": null
         },
-        "reliability_reasons": [],
+        "reliability_reasons": [
+          "128 га гари на одну термоточку — больше, чем у любого подтверждённого пожара CLMS (до 40 га): гарь, вероятно, растеклась по соседним полям"
+        ],
         "harvest_check": {
           "performed": true,
           "passed": true,
@@ -1004,12 +1139,18 @@
             "травяные угодья": 4.24,
             "пашня": 339.96,
             "водно-болотные угодья": 65.6
+          },
+          "near_points": {
+            "burned_ha": 143.64,
+            "removed_share": 0.0039,
+            "confirmed": true
           }
         },
         "buffer_edge": {
           "share": 0.0603,
           "touches": false
         },
+        "buffer_expansion": null,
         "area_per_point_ha": 127.81,
         "n_points": 7,
         "weather": {
@@ -1056,12 +1197,18 @@
           "removed_by_landcover_ha": {
             "пашня": 0.36,
             "водно-болотные угодья": 22.76
+          },
+          "near_points": {
+            "burned_ha": 0.0,
+            "removed_share": null,
+            "confirmed": false
           }
         },
         "buffer_edge": {
           "share": 0.0,
           "touches": false
         },
+        "buffer_expansion": null,
         "area_per_point_ha": 0.0,
         "n_points": 7,
         "weather": {
@@ -1109,12 +1256,18 @@
             "травяные угодья": 0.72,
             "пашня": 166.68,
             "водно-болотные угодья": 54.16
+          },
+          "near_points": {
+            "burned_ha": 66.48,
+            "removed_share": 0.015,
+            "confirmed": true
           }
         },
         "buffer_edge": {
           "share": 0.0,
           "touches": false
         },
+        "buffer_expansion": null,
         "area_per_point_ha": 19.72,
         "n_points": 6,
         "weather": {
@@ -1132,7 +1285,7 @@
       {
         "event_id": "fire-4122303d3c",
         "status": "ok",
-        "reliability": "reliable",
+        "reliability": "unreliable",
         "burn_area_ha": 161.84,
         "gap_days": 15,
         "pre_fire_check": {
@@ -1153,7 +1306,9 @@
           "removed_ha": 148.92,
           "error": null
         },
-        "reliability_reasons": [],
+        "reliability_reasons": [
+          "40 га гари на одну термоточку — больше, чем у любого подтверждённого пожара CLMS (до 40 га): гарь, вероятно, растеклась по соседним полям"
+        ],
         "harvest_check": {
           "performed": true,
           "passed": true,
@@ -1164,13 +1319,19 @@
             "травяные угодья": 2.6,
             "пашня": 131.92,
             "водно-болотные угодья": 94.76
+          },
+          "near_points": {
+            "burned_ha": 88.0,
+            "removed_share": 0.0005,
+            "confirmed": true
           }
         },
         "buffer_edge": {
           "share": 0.0,
           "touches": false
         },
-        "area_per_point_ha": 44.72,
+        "buffer_expansion": null,
+        "area_per_point_ha": 40.46,
         "n_points": 4,
         "weather": {
           "at": "2026-09-18T14:00",
@@ -1216,12 +1377,18 @@
           "removed_by_landcover_ha": {
             "пашня": 0.64,
             "водно-болотные угодья": 0.44
+          },
+          "near_points": {
+            "burned_ha": 23.84,
+            "removed_share": 0.0453,
+            "confirmed": true
           }
         },
         "buffer_edge": {
           "share": 0.0,
           "touches": false
         },
+        "buffer_expansion": null,
         "area_per_point_ha": 0.0,
         "n_points": 4,
         "weather": {
