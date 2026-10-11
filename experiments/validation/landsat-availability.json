@@ -1,0 +1,8787 @@
+{
+ "method": "Would Landsat 8/9 shorten the Sentinel-2 pairs of real fire-first events?\n\nFor every cached event with a pair: Landsat C2 L2 scenes (Planetary Computer) in the same\npre/post search windows; cloud and no-data fractions over the event buffer from QA_PIXEL\nwith the service thresholds (cloud <= 30 %, no data <= 10 %). Then the pair chosen by the\nservice rule (cloud rounded to 5 %, then closest to the fire) among Sentinel-2's chosen\nscene plus suitable Landsat scenes.",
+ "checked_at": "2026-10-11",
+ "summary": {
+  "events": 59,
+  "errors": 0,
+  "long_gap_events": 12,
+  "long_gap_became_reliable": 4,
+  "long_gap_shortened": 9,
+  "median_gap_s2": 7.0,
+  "median_gap_combined": 7.0,
+  "all_gaps_shortened": 20
+ },
+ "events": [
+  {
+   "event_id": "fire-5f9d81cf75",
+   "fire": [
+    "2026-09-12",
+    "2026-09-14"
+   ],
+   "s2_pair": [
+    "2026-09-10",
+    "2026-10-08"
+   ],
+   "s2_gap": 28,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-17",
+     "sensor": "landsat-8",
+     "cloud": 0.578,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-18",
+     "sensor": "landsat-9",
+     "cloud": 0.609,
+     "nodata": 0.238
+    },
+    {
+     "date": "2026-07-25",
+     "sensor": "landsat-9",
+     "cloud": 0.829,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-26",
+     "sensor": "landsat-8",
+     "cloud": 0.71,
+     "nodata": 0.29
+    },
+    {
+     "date": "2026-08-02",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-03",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.205
+    },
+    {
+     "date": "2026-08-10",
+     "sensor": "landsat-9",
+     "cloud": 0.04,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-11",
+     "sensor": "landsat-8",
+     "cloud": 0.665,
+     "nodata": 0.335
+    },
+    {
+     "date": "2026-08-18",
+     "sensor": "landsat-8",
+     "cloud": 0.325,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-19",
+     "sensor": "landsat-9",
+     "cloud": 0.056,
+     "nodata": 0.309
+    },
+    {
+     "date": "2026-08-26",
+     "sensor": "landsat-9",
+     "cloud": 0.459,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-27",
+     "sensor": "landsat-8",
+     "cloud": 0.553,
+     "nodata": 0.299
+    },
+    {
+     "date": "2026-09-03",
+     "sensor": "landsat-8",
+     "cloud": 0.241,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-04",
+     "sensor": "landsat-9",
+     "cloud": 0.054,
+     "nodata": 0.264
+    },
+    {
+     "date": "2026-09-11",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-19",
+     "sensor": "landsat-8",
+     "cloud": 0.187,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-20",
+     "sensor": "landsat-9",
+     "cloud": 0.455,
+     "nodata": 0.27
+    },
+    {
+     "date": "2026-09-27",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-05",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-06",
+     "sensor": "landsat-9",
+     "cloud": 0.325,
+     "nodata": 0.191
+    }
+   ],
+   "combined_pair": [
+    "2026-09-11",
+    "2026-10-05"
+   ],
+   "combined_sensors": [
+    "landsat-9",
+    "landsat-8"
+   ],
+   "combined_gap": 24,
+   "gap_with_earliest_clear_post": 8,
+   "error": null
+  },
+  {
+   "event_id": "fire-501bdacadf",
+   "fire": [
+    "2026-09-12",
+    "2026-09-13"
+   ],
+   "s2_pair": [
+    "2026-09-10",
+    "2026-10-08"
+   ],
+   "s2_gap": 28,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-17",
+     "sensor": "landsat-8",
+     "cloud": 0.686,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-18",
+     "sensor": "landsat-9",
+     "cloud": 0.723,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-25",
+     "sensor": "landsat-9",
+     "cloud": 0.735,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-26",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-02",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-03",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-10",
+     "sensor": "landsat-9",
+     "cloud": 0.257,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-11",
+     "sensor": "landsat-8",
+     "cloud": 0.896,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-18",
+     "sensor": "landsat-8",
+     "cloud": 0.248,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-19",
+     "sensor": "landsat-9",
+     "cloud": 0.479,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-26",
+     "sensor": "landsat-9",
+     "cloud": 0.789,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-27",
+     "sensor": "landsat-8",
+     "cloud": 0.45,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-03",
+     "sensor": "landsat-8",
+     "cloud": 0.963,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-04",
+     "sensor": "landsat-9",
+     "cloud": 0.004,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-11",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-19",
+     "sensor": "landsat-8",
+     "cloud": 0.239,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-20",
+     "sensor": "landsat-9",
+     "cloud": 0.79,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-27",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-05",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-06",
+     "sensor": "landsat-9",
+     "cloud": 0.862,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-09-11",
+    "2026-10-05"
+   ],
+   "combined_sensors": [
+    "landsat-9",
+    "landsat-8"
+   ],
+   "combined_gap": 24,
+   "gap_with_earliest_clear_post": 8,
+   "error": null
+  },
+  {
+   "event_id": "fire-b9993beecc",
+   "fire": [
+    "2026-09-13",
+    "2026-09-13"
+   ],
+   "s2_pair": [
+    "2026-09-10",
+    "2026-10-08"
+   ],
+   "s2_gap": 28,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-17",
+     "sensor": "landsat-8",
+     "cloud": 0.673,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-18",
+     "sensor": "landsat-9",
+     "cloud": 0.019,
+     "nodata": 0.878
+    },
+    {
+     "date": "2026-07-25",
+     "sensor": "landsat-9",
+     "cloud": 0.936,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-26",
+     "sensor": "landsat-8",
+     "cloud": 0.013,
+     "nodata": 0.987
+    },
+    {
+     "date": "2026-08-02",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-03",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.776
+    },
+    {
+     "date": "2026-08-10",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-18",
+     "sensor": "landsat-8",
+     "cloud": 0.224,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-26",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-03",
+     "sensor": "landsat-8",
+     "cloud": 0.011,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-04",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.945
+    },
+    {
+     "date": "2026-09-11",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-19",
+     "sensor": "landsat-8",
+     "cloud": 0.012,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-20",
+     "sensor": "landsat-9",
+     "cloud": 0.042,
+     "nodata": 0.958
+    },
+    {
+     "date": "2026-09-27",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-05",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-06",
+     "sensor": "landsat-9",
+     "cloud": 0.246,
+     "nodata": 0.736
+    }
+   ],
+   "combined_pair": [
+    "2026-09-11",
+    "2026-09-19"
+   ],
+   "combined_sensors": [
+    "landsat-9",
+    "landsat-8"
+   ],
+   "combined_gap": 8,
+   "gap_with_earliest_clear_post": 8,
+   "error": null
+  },
+  {
+   "event_id": "fire-98c8dce3e8",
+   "fire": [
+    "2026-09-11",
+    "2026-09-13"
+   ],
+   "s2_pair": [
+    "2026-09-06",
+    "2026-10-03"
+   ],
+   "s2_gap": 27,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-15",
+     "sensor": "landsat-8",
+     "cloud": 0.822,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-16",
+     "sensor": "landsat-9",
+     "cloud": 0.436,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 0.363,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-24",
+     "sensor": "landsat-8",
+     "cloud": 0.266,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 0.884,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-09",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-25",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-02",
+     "sensor": "landsat-9",
+     "cloud": 0.109,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.452,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-18",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.236,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-26",
+     "sensor": "landsat-8",
+     "cloud": 0.733,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-04",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-09-10",
+    "2026-10-03"
+   ],
+   "combined_sensors": [
+    "landsat-8",
+    "S2"
+   ],
+   "combined_gap": 23,
+   "gap_with_earliest_clear_post": 15,
+   "error": null
+  },
+  {
+   "event_id": "fire-239ea0aace",
+   "fire": [
+    "2026-08-30",
+    "2026-08-30"
+   ],
+   "s2_pair": [
+    "2026-08-25",
+    "2026-09-19"
+   ],
+   "s2_gap": 25,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-06",
+     "sensor": "landsat-8",
+     "cloud": 0.03,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-07",
+     "sensor": "landsat-9",
+     "cloud": 0.716,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-14",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-15",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-22",
+     "sensor": "landsat-8",
+     "cloud": 0.144,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 0.813,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-30",
+     "sensor": "landsat-9",
+     "cloud": 0.076,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.004,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-07",
+     "sensor": "landsat-8",
+     "cloud": 0.003,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 0.31,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-15",
+     "sensor": "landsat-9",
+     "cloud": 0.011,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.001,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-23",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.003,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-31",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-08",
+     "sensor": "landsat-8",
+     "cloud": 0.36,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.528,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-16",
+     "sensor": "landsat-9",
+     "cloud": 0.728,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 0.072,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-24",
+     "sensor": "landsat-8",
+     "cloud": 0.78,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.146,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-02",
+     "sensor": "landsat-9",
+     "cloud": 0.001,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.003,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-08-25",
+    "2026-08-31"
+   ],
+   "combined_sensors": [
+    "S2",
+    "landsat-9"
+   ],
+   "combined_gap": 6,
+   "gap_with_earliest_clear_post": 6,
+   "error": null
+  },
+  {
+   "event_id": "fire-0acbbf5d26",
+   "fire": [
+    "2024-08-25",
+    "2024-09-01"
+   ],
+   "s2_pair": [
+    "2024-08-20",
+    "2024-09-11"
+   ],
+   "s2_gap": 22,
+   "landsat_scenes": [
+    {
+     "date": "2024-07-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-09",
+     "sensor": "landsat-8",
+     "cloud": 0.001,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.027,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.353,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.111,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.096,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-04",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 1.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-08-20",
+    "2024-09-11"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 22,
+   "gap_with_earliest_clear_post": 14,
+   "error": null
+  },
+  {
+   "event_id": "fire-91c44c5e53",
+   "fire": [
+    "2026-09-19",
+    "2026-09-19"
+   ],
+   "s2_pair": [
+    "2026-09-13",
+    "2026-10-03"
+   ],
+   "s2_gap": 20,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 0.567,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-24",
+     "sensor": "landsat-8",
+     "cloud": 0.367,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-09",
+     "sensor": "landsat-8",
+     "cloud": 0.828,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.007,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-25",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.937,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-10",
+     "sensor": "landsat-8",
+     "cloud": 0.006,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-18",
+     "sensor": "landsat-9",
+     "cloud": 0.238,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.639,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-04",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-09-13",
+    "2026-09-26"
+   ],
+   "combined_sensors": [
+    "S2",
+    "landsat-8"
+   ],
+   "combined_gap": 13,
+   "gap_with_earliest_clear_post": 13,
+   "error": null
+  },
+  {
+   "event_id": "fire-56395b2a51",
+   "fire": [
+    "2026-09-21",
+    "2026-09-21"
+   ],
+   "s2_pair": [
+    "2026-09-13",
+    "2026-10-03"
+   ],
+   "s2_gap": 20,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 0.505,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-24",
+     "sensor": "landsat-8",
+     "cloud": 0.357,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 0.916,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-09",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-25",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-02",
+     "sensor": "landsat-9",
+     "cloud": 0.312,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.781,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-18",
+     "sensor": "landsat-9",
+     "cloud": 0.999,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.19,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-26",
+     "sensor": "landsat-8",
+     "cloud": 0.025,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-04",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-09-13",
+    "2026-10-03"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 20,
+   "gap_with_earliest_clear_post": 12,
+   "error": null
+  },
+  {
+   "event_id": "fire-0ad70c7ddd",
+   "fire": [
+    "2025-08-09",
+    "2025-08-09"
+   ],
+   "s2_pair": [
+    "2025-07-30",
+    "2025-08-16"
+   ],
+   "s2_gap": 17,
+   "landsat_scenes": [
+    {
+     "date": "2025-06-11",
+     "sensor": "landsat-9",
+     "cloud": 0.037,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-06-12",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-06-19",
+     "sensor": "landsat-8",
+     "cloud": 0.102,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-06-20",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-06-27",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-06-28",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-05",
+     "sensor": "landsat-8",
+     "cloud": 0.045,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-06",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-13",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-14",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-21",
+     "sensor": "landsat-8",
+     "cloud": 0.131,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-22",
+     "sensor": "landsat-9",
+     "cloud": 0.705,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-29",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-30",
+     "sensor": "landsat-8",
+     "cloud": 0.014,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-06",
+     "sensor": "landsat-8",
+     "cloud": 0.683,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-07",
+     "sensor": "landsat-9",
+     "cloud": 0.92,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-14",
+     "sensor": "landsat-9",
+     "cloud": 0.837,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-15",
+     "sensor": "landsat-8",
+     "cloud": 0.334,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-22",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-23",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-30",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-31",
+     "sensor": "landsat-8",
+     "cloud": 0.594,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-07",
+     "sensor": "landsat-8",
+     "cloud": 0.75,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-08",
+     "sensor": "landsat-9",
+     "cloud": 0.188,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-15",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-16",
+     "sensor": "landsat-8",
+     "cloud": 0.082,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-23",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2025-07-30",
+    "2025-08-16"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 17,
+   "gap_with_earliest_clear_post": 17,
+   "error": null
+  },
+  {
+   "event_id": "fire-a6c578ddd8",
+   "fire": [
+    "2024-08-28",
+    "2024-08-30"
+   ],
+   "s2_pair": [
+    "2024-08-25",
+    "2024-09-11"
+   ],
+   "s2_gap": 17,
+   "landsat_scenes": [
+    {
+     "date": "2024-06-30",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.257
+    },
+    {
+     "date": "2024-07-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-08",
+     "sensor": "landsat-9",
+     "cloud": 0.426,
+     "nodata": 0.476
+    },
+    {
+     "date": "2024-07-09",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.405
+    },
+    {
+     "date": "2024-07-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-24",
+     "sensor": "landsat-9",
+     "cloud": 0.638,
+     "nodata": 0.33
+    },
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.102,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.359
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.001,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-09",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.259
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.043,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-17",
+     "sensor": "landsat-8",
+     "cloud": 0.1,
+     "nodata": 0.338
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-25",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.459
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.004,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-02",
+     "sensor": "landsat-8",
+     "cloud": 0.572,
+     "nodata": 0.428
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.37,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-10",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.297
+    },
+    {
+     "date": "2024-09-18",
+     "sensor": "landsat-8",
+     "cloud": 0.421,
+     "nodata": 0.414
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.001,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-26",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.19
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.113,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-04",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.169
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.008,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-12",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.306
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-08-26",
+    "2024-09-11"
+   ],
+   "combined_sensors": [
+    "landsat-8",
+    "S2"
+   ],
+   "combined_gap": 16,
+   "gap_with_earliest_clear_post": 16,
+   "error": null
+  },
+  {
+   "event_id": "fire-7555b41a98",
+   "fire": [
+    "2024-08-29",
+    "2024-08-31"
+   ],
+   "s2_pair": [
+    "2024-08-25",
+    "2024-09-11"
+   ],
+   "s2_gap": 17,
+   "landsat_scenes": [
+    {
+     "date": "2024-06-30",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.29
+    },
+    {
+     "date": "2024-07-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-08",
+     "sensor": "landsat-9",
+     "cloud": 0.376,
+     "nodata": 0.504
+    },
+    {
+     "date": "2024-07-09",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.434
+    },
+    {
+     "date": "2024-07-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-24",
+     "sensor": "landsat-9",
+     "cloud": 0.624,
+     "nodata": 0.361
+    },
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.096,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.39
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.001,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-09",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.291
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.034,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-17",
+     "sensor": "landsat-8",
+     "cloud": 0.092,
+     "nodata": 0.369
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-25",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.487
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.01,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-02",
+     "sensor": "landsat-8",
+     "cloud": 0.543,
+     "nodata": 0.457
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.368,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-10",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.329
+    },
+    {
+     "date": "2024-09-18",
+     "sensor": "landsat-8",
+     "cloud": 0.307,
+     "nodata": 0.443
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.004,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-26",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.224
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.117,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-04",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.204
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.017,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-12",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.338
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-08-26",
+    "2024-09-11"
+   ],
+   "combined_sensors": [
+    "landsat-8",
+    "S2"
+   ],
+   "combined_gap": 16,
+   "gap_with_earliest_clear_post": 16,
+   "error": null
+  },
+  {
+   "event_id": "fire-a1c4a18a42",
+   "fire": [
+    "2024-08-29",
+    "2024-09-01"
+   ],
+   "s2_pair": [
+    "2024-08-25",
+    "2024-09-11"
+   ],
+   "s2_gap": 17,
+   "landsat_scenes": [
+    {
+     "date": "2024-07-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-09",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.683,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.036,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.15,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.006,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.02,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.014,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.198,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.044,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-08-26",
+    "2024-09-03"
+   ],
+   "combined_sensors": [
+    "landsat-8",
+    "landsat-9"
+   ],
+   "combined_gap": 8,
+   "gap_with_earliest_clear_post": 8,
+   "error": null
+  },
+  {
+   "event_id": "fire-a02248ea55",
+   "fire": [
+    "2024-08-29",
+    "2024-08-29"
+   ],
+   "s2_pair": [
+    "2024-08-27",
+    "2024-09-11"
+   ],
+   "s2_gap": 15,
+   "landsat_scenes": [
+    {
+     "date": "2024-07-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-09",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.593,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.025,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.049,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-08-27",
+    "2024-09-03"
+   ],
+   "combined_sensors": [
+    "S2",
+    "landsat-9"
+   ],
+   "combined_gap": 7,
+   "gap_with_earliest_clear_post": 7,
+   "error": null
+  },
+  {
+   "event_id": "fire-c1f6abcec4",
+   "fire": [
+    "2024-09-19",
+    "2024-09-25"
+   ],
+   "s2_pair": [
+    "2024-09-14",
+    "2024-09-29"
+   ],
+   "s2_gap": 15,
+   "landsat_scenes": [
+    {
+     "date": "2024-07-24",
+     "sensor": "landsat-9",
+     "cloud": 0.287,
+     "nodata": 0.102
+    },
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.001,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-01",
+     "sensor": "landsat-8",
+     "cloud": 0.513,
+     "nodata": 0.126
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.033,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-09",
+     "sensor": "landsat-9",
+     "cloud": 0.096,
+     "nodata": 0.054
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-17",
+     "sensor": "landsat-8",
+     "cloud": 0.263,
+     "nodata": 0.108
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-25",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.212
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-02",
+     "sensor": "landsat-8",
+     "cloud": 0.816,
+     "nodata": 0.184
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-10",
+     "sensor": "landsat-9",
+     "cloud": 0.756,
+     "nodata": 0.078
+    },
+    {
+     "date": "2024-09-18",
+     "sensor": "landsat-8",
+     "cloud": 0.734,
+     "nodata": 0.172
+    },
+    {
+     "date": "2024-09-26",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.022
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-04",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.015
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-12",
+     "sensor": "landsat-9",
+     "cloud": 0.024,
+     "nodata": 0.085
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-20",
+     "sensor": "landsat-8",
+     "cloud": 0.748,
+     "nodata": 0.252
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-28",
+     "sensor": "landsat-9",
+     "cloud": 0.22,
+     "nodata": 0.287
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.454,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-05",
+     "sensor": "landsat-8",
+     "cloud": 0.903,
+     "nodata": 0.097
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-09-14",
+    "2024-09-26"
+   ],
+   "combined_sensors": [
+    "S2",
+    "landsat-9"
+   ],
+   "combined_gap": 12,
+   "gap_with_earliest_clear_post": 12,
+   "error": null
+  },
+  {
+   "event_id": "fire-db4de010c7",
+   "fire": [
+    "2026-09-19",
+    "2026-09-21"
+   ],
+   "s2_pair": [
+    "2026-09-13",
+    "2026-09-26"
+   ],
+   "s2_gap": 13,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-24",
+     "sensor": "landsat-8",
+     "cloud": 0.12,
+     "nodata": 0.365
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.087,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-01",
+     "sensor": "landsat-9",
+     "cloud": 0.07,
+     "nodata": 0.128
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-09",
+     "sensor": "landsat-8",
+     "cloud": 0.559,
+     "nodata": 0.429
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.353
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-25",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.364
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.289
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.514,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.559
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.339
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.722,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-26",
+     "sensor": "landsat-8",
+     "cloud": 0.051,
+     "nodata": 0.314
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-04",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.108
+    }
+   ],
+   "combined_pair": [
+    "2026-09-13",
+    "2026-09-26"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 13,
+   "gap_with_earliest_clear_post": 13,
+   "error": null
+  },
+  {
+   "event_id": "fire-2d15b18151",
+   "fire": [
+    "2026-09-19",
+    "2026-09-19"
+   ],
+   "s2_pair": [
+    "2026-09-13",
+    "2026-09-26"
+   ],
+   "s2_gap": 13,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 0.365,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-24",
+     "sensor": "landsat-8",
+     "cloud": 0.137,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-09",
+     "sensor": "landsat-8",
+     "cloud": 0.92,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-17",
+     "sensor": "landsat-9",
+     "cloud": 0.016,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-25",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-02",
+     "sensor": "landsat-9",
+     "cloud": 0.01,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.094,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-18",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.407,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-26",
+     "sensor": "landsat-8",
+     "cloud": 0.185,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-04",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-09-13",
+    "2026-09-26"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 13,
+   "gap_with_earliest_clear_post": 13,
+   "error": null
+  },
+  {
+   "event_id": "fire-cdf5ee4584",
+   "fire": [
+    "2025-08-05",
+    "2025-08-05"
+   ],
+   "s2_pair": [
+    "2025-07-30",
+    "2025-08-09"
+   ],
+   "s2_gap": 10,
+   "landsat_scenes": [
+    {
+     "date": "2025-06-11",
+     "sensor": "landsat-9",
+     "cloud": 0.025,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-06-12",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-06-19",
+     "sensor": "landsat-8",
+     "cloud": 0.079,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-06-20",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-06-27",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-06-28",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-05",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-06",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-13",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-14",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-21",
+     "sensor": "landsat-8",
+     "cloud": 0.115,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-22",
+     "sensor": "landsat-9",
+     "cloud": 0.708,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-29",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-30",
+     "sensor": "landsat-8",
+     "cloud": 0.046,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-06",
+     "sensor": "landsat-8",
+     "cloud": 0.832,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-07",
+     "sensor": "landsat-9",
+     "cloud": 0.923,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-14",
+     "sensor": "landsat-9",
+     "cloud": 0.85,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-15",
+     "sensor": "landsat-8",
+     "cloud": 0.246,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-22",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-23",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-30",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-31",
+     "sensor": "landsat-8",
+     "cloud": 0.62,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-07",
+     "sensor": "landsat-8",
+     "cloud": 0.859,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-08",
+     "sensor": "landsat-9",
+     "cloud": 0.583,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-15",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-16",
+     "sensor": "landsat-8",
+     "cloud": 0.41,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2025-07-30",
+    "2025-08-09"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 10,
+   "gap_with_earliest_clear_post": 10,
+   "error": null
+  },
+  {
+   "event_id": "fire-f01b8c4321",
+   "fire": [
+    "2025-08-06",
+    "2025-08-07"
+   ],
+   "s2_pair": [
+    "2025-07-30",
+    "2025-08-09"
+   ],
+   "s2_gap": 10,
+   "landsat_scenes": [
+    {
+     "date": "2025-06-11",
+     "sensor": "landsat-9",
+     "cloud": 0.001,
+     "nodata": 0.001
+    },
+    {
+     "date": "2025-06-12",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-06-19",
+     "sensor": "landsat-8",
+     "cloud": 0.117,
+     "nodata": 0.12
+    },
+    {
+     "date": "2025-06-20",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-06-27",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.044
+    },
+    {
+     "date": "2025-06-28",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-05",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.015
+    },
+    {
+     "date": "2025-07-06",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-13",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-14",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-21",
+     "sensor": "landsat-8",
+     "cloud": 0.193,
+     "nodata": 0.019
+    },
+    {
+     "date": "2025-07-22",
+     "sensor": "landsat-9",
+     "cloud": 0.91,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-29",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-30",
+     "sensor": "landsat-8",
+     "cloud": 0.028,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-14",
+     "sensor": "landsat-9",
+     "cloud": 0.713,
+     "nodata": 0.065
+    },
+    {
+     "date": "2025-08-15",
+     "sensor": "landsat-8",
+     "cloud": 0.264,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-22",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.009
+    },
+    {
+     "date": "2025-08-23",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-30",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.012
+    },
+    {
+     "date": "2025-08-31",
+     "sensor": "landsat-8",
+     "cloud": 0.308,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-07",
+     "sensor": "landsat-8",
+     "cloud": 0.719,
+     "nodata": 0.044
+    },
+    {
+     "date": "2025-09-08",
+     "sensor": "landsat-9",
+     "cloud": 0.747,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-15",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.047
+    },
+    {
+     "date": "2025-09-16",
+     "sensor": "landsat-8",
+     "cloud": 0.287,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2025-07-30",
+    "2025-08-09"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 10,
+   "gap_with_earliest_clear_post": 10,
+   "error": null
+  },
+  {
+   "event_id": "fire-ce94d41101",
+   "fire": [
+    "2024-09-19",
+    "2024-09-23"
+   ],
+   "s2_pair": [
+    "2024-09-14",
+    "2024-09-24"
+   ],
+   "s2_gap": 10,
+   "landsat_scenes": [
+    {
+     "date": "2024-07-24",
+     "sensor": "landsat-9",
+     "cloud": 0.268,
+     "nodata": 0.144
+    },
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-01",
+     "sensor": "landsat-8",
+     "cloud": 0.413,
+     "nodata": 0.177
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.012,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-09",
+     "sensor": "landsat-9",
+     "cloud": 0.045,
+     "nodata": 0.072
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-17",
+     "sensor": "landsat-8",
+     "cloud": 0.319,
+     "nodata": 0.152
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-25",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.29
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-02",
+     "sensor": "landsat-8",
+     "cloud": 0.747,
+     "nodata": 0.253
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-10",
+     "sensor": "landsat-9",
+     "cloud": 0.834,
+     "nodata": 0.107
+    },
+    {
+     "date": "2024-09-18",
+     "sensor": "landsat-8",
+     "cloud": 0.7,
+     "nodata": 0.238
+    },
+    {
+     "date": "2024-09-26",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.026
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-04",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.017
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-12",
+     "sensor": "landsat-9",
+     "cloud": 0.002,
+     "nodata": 0.118
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-20",
+     "sensor": "landsat-8",
+     "cloud": 0.657,
+     "nodata": 0.343
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-28",
+     "sensor": "landsat-9",
+     "cloud": 0.067,
+     "nodata": 0.389
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.169,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-05",
+     "sensor": "landsat-8",
+     "cloud": 0.864,
+     "nodata": 0.136
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-09-14",
+    "2024-09-24"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 10,
+   "gap_with_earliest_clear_post": 10,
+   "error": null
+  },
+  {
+   "event_id": "fire-bdeb7a612f",
+   "fire": [
+    "2024-07-09",
+    "2024-07-13"
+   ],
+   "s2_pair": [
+    "2024-07-06",
+    "2024-07-16"
+   ],
+   "s2_gap": 10,
+   "landsat_scenes": [
+    {
+     "date": "2024-05-13",
+     "sensor": "landsat-8",
+     "cloud": 0.348,
+     "nodata": 0.652
+    },
+    {
+     "date": "2024-05-14",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-05-21",
+     "sensor": "landsat-9",
+     "cloud": 0.013,
+     "nodata": 0.592
+    },
+    {
+     "date": "2024-05-22",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-05-29",
+     "sensor": "landsat-8",
+     "cloud": 0.27,
+     "nodata": 0.73
+    },
+    {
+     "date": "2024-05-30",
+     "sensor": "landsat-9",
+     "cloud": 0.766,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-06",
+     "sensor": "landsat-9",
+     "cloud": 0.003,
+     "nodata": 0.69
+    },
+    {
+     "date": "2024-06-07",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-14",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.287
+    },
+    {
+     "date": "2024-06-15",
+     "sensor": "landsat-9",
+     "cloud": 0.672,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-22",
+     "sensor": "landsat-9",
+     "cloud": 0.236,
+     "nodata": 0.443
+    },
+    {
+     "date": "2024-06-23",
+     "sensor": "landsat-8",
+     "cloud": 0.016,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-30",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.336
+    },
+    {
+     "date": "2024-07-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-08",
+     "sensor": "landsat-9",
+     "cloud": 0.334,
+     "nodata": 0.53
+    },
+    {
+     "date": "2024-07-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.467
+    },
+    {
+     "date": "2024-07-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-24",
+     "sensor": "landsat-9",
+     "cloud": 0.083,
+     "nodata": 0.401
+    },
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.128,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.427
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-09",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.337
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.015,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-17",
+     "sensor": "landsat-8",
+     "cloud": 0.275,
+     "nodata": 0.407
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-25",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.515
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.251,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-07-06",
+    "2024-07-16"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 10,
+   "gap_with_earliest_clear_post": 10,
+   "error": null
+  },
+  {
+   "event_id": "fire-d0c993cdf4",
+   "fire": [
+    "2024-07-11",
+    "2024-07-13"
+   ],
+   "s2_pair": [
+    "2024-07-06",
+    "2024-07-16"
+   ],
+   "s2_gap": 10,
+   "landsat_scenes": [
+    {
+     "date": "2024-05-13",
+     "sensor": "landsat-8",
+     "cloud": 0.924,
+     "nodata": 0.076
+    },
+    {
+     "date": "2024-05-14",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-05-21",
+     "sensor": "landsat-9",
+     "cloud": 0.066,
+     "nodata": 0.019
+    },
+    {
+     "date": "2024-05-22",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-05-29",
+     "sensor": "landsat-8",
+     "cloud": 0.8,
+     "nodata": 0.2
+    },
+    {
+     "date": "2024-05-30",
+     "sensor": "landsat-9",
+     "cloud": 0.623,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-06",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.131
+    },
+    {
+     "date": "2024-06-07",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-14",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-15",
+     "sensor": "landsat-9",
+     "cloud": 0.916,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-22",
+     "sensor": "landsat-9",
+     "cloud": 0.451,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-23",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-30",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-08",
+     "sensor": "landsat-9",
+     "cloud": 0.457,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-09",
+     "sensor": "landsat-8",
+     "cloud": 0.027,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.344,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-01",
+     "sensor": "landsat-8",
+     "cloud": 0.002,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-09",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-17",
+     "sensor": "landsat-8",
+     "cloud": 0.753,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-25",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.298,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-07-06",
+    "2024-07-16"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 10,
+   "gap_with_earliest_clear_post": 10,
+   "error": null
+  },
+  {
+   "event_id": "fire-7b6a1e2990",
+   "fire": [
+    "2024-07-11",
+    "2024-07-13"
+   ],
+   "s2_pair": [
+    "2024-07-06",
+    "2024-07-16"
+   ],
+   "s2_gap": 10,
+   "landsat_scenes": [
+    {
+     "date": "2024-05-13",
+     "sensor": "landsat-8",
+     "cloud": 0.932,
+     "nodata": 0.068
+    },
+    {
+     "date": "2024-05-14",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-05-21",
+     "sensor": "landsat-9",
+     "cloud": 0.06,
+     "nodata": 0.017
+    },
+    {
+     "date": "2024-05-22",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-05-29",
+     "sensor": "landsat-8",
+     "cloud": 0.82,
+     "nodata": 0.18
+    },
+    {
+     "date": "2024-05-30",
+     "sensor": "landsat-9",
+     "cloud": 0.616,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-06",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.118
+    },
+    {
+     "date": "2024-06-07",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-14",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-15",
+     "sensor": "landsat-9",
+     "cloud": 0.924,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-22",
+     "sensor": "landsat-9",
+     "cloud": 0.446,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-23",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-30",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-08",
+     "sensor": "landsat-9",
+     "cloud": 0.502,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-09",
+     "sensor": "landsat-8",
+     "cloud": 0.025,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.38,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-01",
+     "sensor": "landsat-8",
+     "cloud": 0.002,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-09",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-17",
+     "sensor": "landsat-8",
+     "cloud": 0.741,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-25",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.323,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-07-09",
+    "2024-07-16"
+   ],
+   "combined_sensors": [
+    "landsat-8",
+    "S2"
+   ],
+   "combined_gap": 7,
+   "gap_with_earliest_clear_post": 7,
+   "error": null
+  },
+  {
+   "event_id": "fire-d6ae3d95a6",
+   "fire": [
+    "2026-09-18",
+    "2026-09-19"
+   ],
+   "s2_pair": [
+    "2026-09-13",
+    "2026-09-21"
+   ],
+   "s2_gap": 8,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-24",
+     "sensor": "landsat-8",
+     "cloud": 0.415,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.074,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-09",
+     "sensor": "landsat-8",
+     "cloud": 0.974,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-25",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.395,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.039
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.558,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-26",
+     "sensor": "landsat-8",
+     "cloud": 0.019,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-04",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-09-13",
+    "2026-09-21"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 8,
+   "gap_with_earliest_clear_post": 8,
+   "error": null
+  },
+  {
+   "event_id": "fire-6d1022fccf",
+   "fire": [
+    "2026-09-19",
+    "2026-09-19"
+   ],
+   "s2_pair": [
+    "2026-09-13",
+    "2026-09-21"
+   ],
+   "s2_gap": 8,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-24",
+     "sensor": "landsat-8",
+     "cloud": 0.263,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.093,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-01",
+     "sensor": "landsat-9",
+     "cloud": 0.099,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-09",
+     "sensor": "landsat-8",
+     "cloud": 0.522,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-25",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.085,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.628,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-04",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-09-18",
+    "2026-09-21"
+   ],
+   "combined_sensors": [
+    "landsat-9",
+    "S2"
+   ],
+   "combined_gap": 3,
+   "gap_with_earliest_clear_post": 3,
+   "error": null
+  },
+  {
+   "event_id": "fire-9082427ec0",
+   "fire": [
+    "2026-09-19",
+    "2026-09-19"
+   ],
+   "s2_pair": [
+    "2026-09-13",
+    "2026-09-21"
+   ],
+   "s2_gap": 8,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 0.313,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-24",
+     "sensor": "landsat-8",
+     "cloud": 0.048,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 0.957,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-09",
+     "sensor": "landsat-8",
+     "cloud": 0.87,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-17",
+     "sensor": "landsat-9",
+     "cloud": 0.068,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-25",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-02",
+     "sensor": "landsat-9",
+     "cloud": 0.232,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.128,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-18",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.29,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-26",
+     "sensor": "landsat-8",
+     "cloud": 0.803,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-04",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-09-13",
+    "2026-09-21"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 8,
+   "gap_with_earliest_clear_post": 8,
+   "error": null
+  },
+  {
+   "event_id": "fire-4901427dcc",
+   "fire": [
+    "2024-09-28",
+    "2024-09-30"
+   ],
+   "s2_pair": [
+    "2024-09-26",
+    "2024-10-04"
+   ],
+   "s2_gap": 8,
+   "landsat_scenes": [
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.46,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.185,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.26,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.161,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.016,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.963,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-14",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-09-26",
+    "2024-10-04"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 8,
+   "gap_with_earliest_clear_post": 8,
+   "error": null
+  },
+  {
+   "event_id": "fire-97234abf33",
+   "fire": [
+    "2024-09-22",
+    "2024-09-23"
+   ],
+   "s2_pair": [
+    "2024-09-21",
+    "2024-09-29"
+   ],
+   "s2_gap": 8,
+   "landsat_scenes": [
+    {
+     "date": "2024-07-24",
+     "sensor": "landsat-9",
+     "cloud": 0.043,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.003,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-01",
+     "sensor": "landsat-8",
+     "cloud": 0.535,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-09",
+     "sensor": "landsat-9",
+     "cloud": 0.2,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-17",
+     "sensor": "landsat-8",
+     "cloud": 0.437,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-25",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-02",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-10",
+     "sensor": "landsat-9",
+     "cloud": 0.696,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-18",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-26",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-04",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-12",
+     "sensor": "landsat-9",
+     "cloud": 0.008,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-20",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-28",
+     "sensor": "landsat-9",
+     "cloud": 0.076,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.716,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-05",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-09-21",
+    "2024-09-26"
+   ],
+   "combined_sensors": [
+    "S2",
+    "landsat-9"
+   ],
+   "combined_gap": 5,
+   "gap_with_earliest_clear_post": 5,
+   "error": null
+  },
+  {
+   "event_id": "fire-8eecc4f882",
+   "fire": [
+    "2024-07-08",
+    "2024-07-09"
+   ],
+   "s2_pair": [
+    "2024-07-05",
+    "2024-07-13"
+   ],
+   "s2_gap": 8,
+   "landsat_scenes": [
+    {
+     "date": "2024-05-15",
+     "sensor": "landsat-8",
+     "cloud": 0.976,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-05-16",
+     "sensor": "landsat-9",
+     "cloud": 0.996,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-05-23",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-05-24",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-05-31",
+     "sensor": "landsat-8",
+     "cloud": 0.276,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-01",
+     "sensor": "landsat-9",
+     "cloud": 0.736,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-08",
+     "sensor": "landsat-9",
+     "cloud": 0.443,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-09",
+     "sensor": "landsat-8",
+     "cloud": 0.974,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-16",
+     "sensor": "landsat-8",
+     "cloud": 0.931,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-17",
+     "sensor": "landsat-9",
+     "cloud": 0.103,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-25",
+     "sensor": "landsat-8",
+     "cloud": 0.113,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-02",
+     "sensor": "landsat-8",
+     "cloud": 0.027,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-03",
+     "sensor": "landsat-9",
+     "cloud": 0.059,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-10",
+     "sensor": "landsat-9",
+     "cloud": 0.168,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-11",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-18",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-19",
+     "sensor": "landsat-9",
+     "cloud": 0.088,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-26",
+     "sensor": "landsat-9",
+     "cloud": 0.907,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-27",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-03",
+     "sensor": "landsat-8",
+     "cloud": 0.462,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-04",
+     "sensor": "landsat-9",
+     "cloud": 0.004,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-11",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-12",
+     "sensor": "landsat-8",
+     "cloud": 0.06,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-19",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-20",
+     "sensor": "landsat-9",
+     "cloud": 0.443,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-07-05",
+    "2024-07-13"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 8,
+   "gap_with_earliest_clear_post": 5,
+   "error": null
+  },
+  {
+   "event_id": "fire-fffb884943",
+   "fire": [
+    "2026-08-30",
+    "2026-08-30"
+   ],
+   "s2_pair": [
+    "2026-08-25",
+    "2026-09-01"
+   ],
+   "s2_gap": 7,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-07",
+     "sensor": "landsat-9",
+     "cloud": 0.261,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-15",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.012,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.632,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.755,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-08-25",
+    "2026-09-01"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 7,
+   "gap_with_earliest_clear_post": 7,
+   "error": null
+  },
+  {
+   "event_id": "fire-e939d4498f",
+   "fire": [
+    "2026-09-10",
+    "2026-09-10"
+   ],
+   "s2_pair": [
+    "2026-09-04",
+    "2026-09-11"
+   ],
+   "s2_gap": 7,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-15",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-16",
+     "sensor": "landsat-9",
+     "cloud": 0.933,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-24",
+     "sensor": "landsat-8",
+     "cloud": 0.004,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.01,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-09",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-25",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.251,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.757,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-04",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-09-04",
+    "2026-09-11"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 7,
+   "gap_with_earliest_clear_post": 7,
+   "error": null
+  },
+  {
+   "event_id": "fire-a3c355b9fb",
+   "fire": [
+    "2025-09-15",
+    "2025-09-17"
+   ],
+   "s2_pair": [
+    "2025-09-14",
+    "2025-09-21"
+   ],
+   "s2_gap": 7,
+   "landsat_scenes": [
+    {
+     "date": "2025-07-20",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-21",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-28",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-29",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-05",
+     "sensor": "landsat-9",
+     "cloud": 0.108,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-06",
+     "sensor": "landsat-8",
+     "cloud": 0.52,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-13",
+     "sensor": "landsat-8",
+     "cloud": 0.29,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-14",
+     "sensor": "landsat-9",
+     "cloud": 0.09,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-21",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-22",
+     "sensor": "landsat-8",
+     "cloud": 0.003,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-29",
+     "sensor": "landsat-8",
+     "cloud": 0.006,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-30",
+     "sensor": "landsat-9",
+     "cloud": 0.086,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-06",
+     "sensor": "landsat-9",
+     "cloud": 0.041,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-07",
+     "sensor": "landsat-8",
+     "cloud": 0.056,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-14",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-22",
+     "sensor": "landsat-9",
+     "cloud": 0.004,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-23",
+     "sensor": "landsat-8",
+     "cloud": 0.032,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-30",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-10-01",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-10-08",
+     "sensor": "landsat-9",
+     "cloud": 0.925,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-10-09",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-10-16",
+     "sensor": "landsat-8",
+     "cloud": 0.21,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-10-25",
+     "sensor": "landsat-8",
+     "cloud": 0.15,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-11-01",
+     "sensor": "landsat-8",
+     "cloud": 0.096,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2025-09-14",
+    "2025-09-21"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 7,
+   "gap_with_earliest_clear_post": 7,
+   "error": null
+  },
+  {
+   "event_id": "fire-f2ec6b37ca",
+   "fire": [
+    "2025-08-31",
+    "2025-09-01"
+   ],
+   "s2_pair": [
+    "2025-08-29",
+    "2025-09-05"
+   ],
+   "s2_gap": 7,
+   "landsat_scenes": [
+    {
+     "date": "2025-07-06",
+     "sensor": "landsat-9",
+     "cloud": 0.006,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-07",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-14",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-15",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-22",
+     "sensor": "landsat-9",
+     "cloud": 0.176,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-23",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-30",
+     "sensor": "landsat-8",
+     "cloud": 0.328,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-07-31",
+     "sensor": "landsat-9",
+     "cloud": 0.889,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-07",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-08",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-15",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-16",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-23",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-08-24",
+     "sensor": "landsat-8",
+     "cloud": 0.99,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-08",
+     "sensor": "landsat-9",
+     "cloud": 0.52,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-09",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-17",
+     "sensor": "landsat-9",
+     "cloud": 0.001,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-09-25",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-10-02",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-10-03",
+     "sensor": "landsat-9",
+     "cloud": 0.017,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-10-10",
+     "sensor": "landsat-9",
+     "cloud": 0.381,
+     "nodata": 0.0
+    },
+    {
+     "date": "2025-10-11",
+     "sensor": "landsat-8",
+     "cloud": 0.67,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2025-08-29",
+    "2025-09-05"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 7,
+   "gap_with_earliest_clear_post": 7,
+   "error": null
+  },
+  {
+   "event_id": "fire-eba5369aae",
+   "fire": [
+    "2024-10-03",
+    "2024-10-05"
+   ],
+   "s2_pair": [
+    "2024-09-29",
+    "2024-10-06"
+   ],
+   "s2_gap": 7,
+   "landsat_scenes": [
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.083,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.259,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.101,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.944,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-14",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-09-29",
+    "2024-10-06"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 7,
+   "gap_with_earliest_clear_post": 7,
+   "error": null
+  },
+  {
+   "event_id": "fire-9bfe27fcc0",
+   "fire": [
+    "2024-07-11",
+    "2024-07-12"
+   ],
+   "s2_pair": [
+    "2024-07-06",
+    "2024-07-13"
+   ],
+   "s2_gap": 7,
+   "landsat_scenes": [
+    {
+     "date": "2024-05-13",
+     "sensor": "landsat-8",
+     "cloud": 0.575,
+     "nodata": 0.425
+    },
+    {
+     "date": "2024-05-14",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-05-21",
+     "sensor": "landsat-9",
+     "cloud": 0.004,
+     "nodata": 0.315
+    },
+    {
+     "date": "2024-05-22",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-05-29",
+     "sensor": "landsat-8",
+     "cloud": 0.433,
+     "nodata": 0.567
+    },
+    {
+     "date": "2024-05-30",
+     "sensor": "landsat-9",
+     "cloud": 0.624,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-06",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.494
+    },
+    {
+     "date": "2024-06-07",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-14",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-15",
+     "sensor": "landsat-9",
+     "cloud": 0.863,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-22",
+     "sensor": "landsat-9",
+     "cloud": 0.441,
+     "nodata": 0.061
+    },
+    {
+     "date": "2024-06-23",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-06-30",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-08",
+     "sensor": "landsat-9",
+     "cloud": 0.203,
+     "nodata": 0.204
+    },
+    {
+     "date": "2024-07-09",
+     "sensor": "landsat-8",
+     "cloud": 0.039,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.095
+    },
+    {
+     "date": "2024-07-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-24",
+     "sensor": "landsat-9",
+     "cloud": 0.007,
+     "nodata": 0.022
+    },
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.208,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.044
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-09",
+     "sensor": "landsat-9",
+     "cloud": 0.027,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.038,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-17",
+     "sensor": "landsat-8",
+     "cloud": 0.44,
+     "nodata": 0.027
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-25",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.176
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.108,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-07-06",
+    "2024-07-13"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 7,
+   "gap_with_earliest_clear_post": 7,
+   "error": null
+  },
+  {
+   "event_id": "fire-e1451f76ae",
+   "fire": [
+    "2026-08-30",
+    "2026-08-31"
+   ],
+   "s2_pair": [
+    "2026-08-27",
+    "2026-09-01"
+   ],
+   "s2_gap": 5,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-07",
+     "sensor": "landsat-9",
+     "cloud": 0.008,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-15",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 0.509,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 0.132,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.017,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.724,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-08-27",
+    "2026-09-01"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 5,
+   "gap_with_earliest_clear_post": 5,
+   "error": null
+  },
+  {
+   "event_id": "fire-b3bef716f9",
+   "fire": [
+    "2026-09-22",
+    "2026-09-22"
+   ],
+   "s2_pair": [
+    "2026-09-21",
+    "2026-09-26"
+   ],
+   "s2_gap": 5,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-24",
+     "sensor": "landsat-8",
+     "cloud": 0.107,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-01",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 0.999,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-09",
+     "sensor": "landsat-8",
+     "cloud": 0.896,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-17",
+     "sensor": "landsat-9",
+     "cloud": 0.018,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-25",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-02",
+     "sensor": "landsat-9",
+     "cloud": 0.024,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.089,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-18",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.384,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-26",
+     "sensor": "landsat-8",
+     "cloud": 0.268,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-04",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-09-21",
+    "2026-09-26"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 5,
+   "gap_with_earliest_clear_post": 5,
+   "error": null
+  },
+  {
+   "event_id": "fire-56b6326bf3",
+   "fire": [
+    "2026-08-29",
+    "2026-08-31"
+   ],
+   "s2_pair": [
+    "2026-08-27",
+    "2026-09-01"
+   ],
+   "s2_gap": 5,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-06",
+     "sensor": "landsat-8",
+     "cloud": 0.244,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-07",
+     "sensor": "landsat-9",
+     "cloud": 0.093,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-14",
+     "sensor": "landsat-9",
+     "cloud": 0.486,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-15",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-22",
+     "sensor": "landsat-8",
+     "cloud": 0.144,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-30",
+     "sensor": "landsat-9",
+     "cloud": 0.043,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.191,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-07",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 0.165,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-15",
+     "sensor": "landsat-9",
+     "cloud": 0.005,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.004,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-23",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.002,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-08",
+     "sensor": "landsat-8",
+     "cloud": 0.16,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.315,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-16",
+     "sensor": "landsat-9",
+     "cloud": 0.653,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 0.002,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-24",
+     "sensor": "landsat-8",
+     "cloud": 0.431,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.288,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-02",
+     "sensor": "landsat-9",
+     "cloud": 0.006,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-08-27",
+    "2026-09-01"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 5,
+   "gap_with_earliest_clear_post": 5,
+   "error": null
+  },
+  {
+   "event_id": "fire-c86c29bd79",
+   "fire": [
+    "2026-08-30",
+    "2026-08-30"
+   ],
+   "s2_pair": [
+    "2026-08-27",
+    "2026-09-01"
+   ],
+   "s2_gap": 5,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-06",
+     "sensor": "landsat-8",
+     "cloud": 0.974,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-07",
+     "sensor": "landsat-9",
+     "cloud": 0.52,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-14",
+     "sensor": "landsat-9",
+     "cloud": 0.695,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-15",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-22",
+     "sensor": "landsat-8",
+     "cloud": 0.969,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-30",
+     "sensor": "landsat-9",
+     "cloud": 0.023,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.001,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-07",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-15",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-23",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-31",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-08",
+     "sensor": "landsat-8",
+     "cloud": 0.434,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.545,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-16",
+     "sensor": "landsat-9",
+     "cloud": 0.899,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 0.087,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-24",
+     "sensor": "landsat-8",
+     "cloud": 0.194,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.252,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-08-27",
+    "2026-08-31"
+   ],
+   "combined_sensors": [
+    "S2",
+    "landsat-9"
+   ],
+   "combined_gap": 4,
+   "gap_with_earliest_clear_post": 4,
+   "error": null
+  },
+  {
+   "event_id": "fire-11b3dcbcef",
+   "fire": [
+    "2024-09-24",
+    "2024-09-25"
+   ],
+   "s2_pair": [
+    "2024-09-21",
+    "2024-09-26"
+   ],
+   "s2_gap": 5,
+   "landsat_scenes": [
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.294,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.055,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.181,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.001,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.008,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.002,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.905,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-09-21",
+    "2024-09-26"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 5,
+   "gap_with_earliest_clear_post": 5,
+   "error": null
+  },
+  {
+   "event_id": "fire-b6e956dce1",
+   "fire": [
+    "2024-09-30",
+    "2024-10-01"
+   ],
+   "s2_pair": [
+    "2024-09-29",
+    "2024-10-04"
+   ],
+   "s2_gap": 5,
+   "landsat_scenes": [
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.435,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.129,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.381,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.956,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-14",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-09-29",
+    "2024-10-04"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 5,
+   "gap_with_earliest_clear_post": 5,
+   "error": null
+  },
+  {
+   "event_id": "fire-c5a04e093f",
+   "fire": [
+    "2024-10-04",
+    "2024-10-04"
+   ],
+   "s2_pair": [
+    "2024-10-01",
+    "2024-10-06"
+   ],
+   "s2_gap": 5,
+   "landsat_scenes": [
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.181,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.434,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.966,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-14",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-10-01",
+    "2024-10-05"
+   ],
+   "combined_sensors": [
+    "S2",
+    "landsat-9"
+   ],
+   "combined_gap": 4,
+   "gap_with_earliest_clear_post": 4,
+   "error": null
+  },
+  {
+   "event_id": "fire-5d2d08184f",
+   "fire": [
+    "2026-08-29",
+    "2026-08-31"
+   ],
+   "s2_pair": [
+    "2026-08-27",
+    "2026-09-01"
+   ],
+   "s2_gap": 5,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-06",
+     "sensor": "landsat-8",
+     "cloud": 0.257,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-07",
+     "sensor": "landsat-9",
+     "cloud": 0.098,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-14",
+     "sensor": "landsat-9",
+     "cloud": 0.483,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-15",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-22",
+     "sensor": "landsat-8",
+     "cloud": 0.148,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-30",
+     "sensor": "landsat-9",
+     "cloud": 0.043,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.181,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-07",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 0.165,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-15",
+     "sensor": "landsat-9",
+     "cloud": 0.002,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.002,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-23",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.001,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-08",
+     "sensor": "landsat-8",
+     "cloud": 0.167,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.332,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-16",
+     "sensor": "landsat-9",
+     "cloud": 0.659,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 0.002,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-24",
+     "sensor": "landsat-8",
+     "cloud": 0.443,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.282,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-02",
+     "sensor": "landsat-9",
+     "cloud": 0.006,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-08-27",
+    "2026-09-01"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 5,
+   "gap_with_earliest_clear_post": 5,
+   "error": null
+  },
+  {
+   "event_id": "fire-0fc682663a",
+   "fire": [
+    "2024-10-08",
+    "2024-10-08"
+   ],
+   "s2_pair": [
+    "2024-10-06",
+    "2024-10-11"
+   ],
+   "s2_gap": 5,
+   "landsat_scenes": [
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.141,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.158,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.046,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.952,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-14",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-22",
+     "sensor": "landsat-9",
+     "cloud": 0.002,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-10-06",
+    "2024-10-11"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 5,
+   "gap_with_earliest_clear_post": 5,
+   "error": null
+  },
+  {
+   "event_id": "fire-9ede675524",
+   "fire": [
+    "2024-09-20",
+    "2024-09-23"
+   ],
+   "s2_pair": [
+    "2024-09-19",
+    "2024-09-24"
+   ],
+   "s2_gap": 5,
+   "landsat_scenes": [
+    {
+     "date": "2024-07-24",
+     "sensor": "landsat-9",
+     "cloud": 0.228,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.001,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-01",
+     "sensor": "landsat-8",
+     "cloud": 0.406,
+     "nodata": 0.002
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.003,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-09",
+     "sensor": "landsat-9",
+     "cloud": 0.094,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-17",
+     "sensor": "landsat-8",
+     "cloud": 0.452,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-25",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.03
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-02",
+     "sensor": "landsat-8",
+     "cloud": 0.983,
+     "nodata": 0.017
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-10",
+     "sensor": "landsat-9",
+     "cloud": 0.779,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-18",
+     "sensor": "landsat-8",
+     "cloud": 0.943,
+     "nodata": 0.013
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-26",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-04",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-12",
+     "sensor": "landsat-9",
+     "cloud": 0.003,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-20",
+     "sensor": "landsat-8",
+     "cloud": 0.946,
+     "nodata": 0.054
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-28",
+     "sensor": "landsat-9",
+     "cloud": 0.083,
+     "nodata": 0.082
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.495,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-05",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-09-19",
+    "2024-09-24"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 5,
+   "gap_with_earliest_clear_post": 5,
+   "error": null
+  },
+  {
+   "event_id": "fire-01521f5ba5",
+   "fire": [
+    "2024-09-25",
+    "2024-09-25"
+   ],
+   "s2_pair": [
+    "2024-09-24",
+    "2024-09-29"
+   ],
+   "s2_gap": 5,
+   "landsat_scenes": [
+    {
+     "date": "2024-08-01",
+     "sensor": "landsat-8",
+     "cloud": 0.722,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-09",
+     "sensor": "landsat-9",
+     "cloud": 0.146,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-17",
+     "sensor": "landsat-8",
+     "cloud": 0.369,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-25",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-02",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-10",
+     "sensor": "landsat-9",
+     "cloud": 0.993,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-18",
+     "sensor": "landsat-8",
+     "cloud": 0.907,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-26",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-04",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-12",
+     "sensor": "landsat-9",
+     "cloud": 0.01,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-20",
+     "sensor": "landsat-8",
+     "cloud": 0.999,
+     "nodata": 0.002
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-28",
+     "sensor": "landsat-9",
+     "cloud": 0.167,
+     "nodata": 0.017
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.347,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-05",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-09-24",
+    "2024-09-26"
+   ],
+   "combined_sensors": [
+    "S2",
+    "landsat-9"
+   ],
+   "combined_gap": 2,
+   "gap_with_earliest_clear_post": 2,
+   "error": null
+  },
+  {
+   "event_id": "fire-ade91228e7",
+   "fire": [
+    "2024-09-23",
+    "2024-09-25"
+   ],
+   "s2_pair": [
+    "2024-09-21",
+    "2024-09-26"
+   ],
+   "s2_gap": 5,
+   "landsat_scenes": [
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.038,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.562,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.112,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.995,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-09-21",
+    "2024-09-26"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 5,
+   "gap_with_earliest_clear_post": 5,
+   "error": null
+  },
+  {
+   "event_id": "fire-3925412a69",
+   "fire": [
+    "2024-10-07",
+    "2024-10-09"
+   ],
+   "s2_pair": [
+    "2024-10-06",
+    "2024-10-11"
+   ],
+   "s2_gap": 5,
+   "landsat_scenes": [
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.033,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-27",
+     "sensor": "landsat-9",
+     "cloud": 0.025,
+     "nodata": 0.975
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.231,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-04",
+     "sensor": "landsat-8",
+     "cloud": 0.009,
+     "nodata": 0.991
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.24,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-20",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 1.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.268,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-14",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 1.0
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-22",
+     "sensor": "landsat-8",
+     "cloud": 0.001,
+     "nodata": 0.981
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.989,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-30",
+     "sensor": "landsat-9",
+     "cloud": 0.021,
+     "nodata": 0.963
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-14",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-22",
+     "sensor": "landsat-9",
+     "cloud": 0.008,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-23",
+     "sensor": "landsat-8",
+     "cloud": 0.065,
+     "nodata": 0.935
+    }
+   ],
+   "combined_pair": [
+    "2024-10-06",
+    "2024-10-11"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 5,
+   "gap_with_earliest_clear_post": 5,
+   "error": null
+  },
+  {
+   "event_id": "fire-57cec996f5",
+   "fire": [
+    "2024-09-15",
+    "2024-09-16"
+   ],
+   "s2_pair": [
+    "2024-09-14",
+    "2024-09-19"
+   ],
+   "s2_gap": 5,
+   "landsat_scenes": [
+    {
+     "date": "2024-07-17",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-07-24",
+     "sensor": "landsat-9",
+     "cloud": 0.208,
+     "nodata": 0.135
+    },
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.328,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.159
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-09",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.082
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.003,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-17",
+     "sensor": "landsat-8",
+     "cloud": 0.407,
+     "nodata": 0.141
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-25",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.243
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.271,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-02",
+     "sensor": "landsat-8",
+     "cloud": 0.784,
+     "nodata": 0.216
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.331,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-10",
+     "sensor": "landsat-9",
+     "cloud": 0.284,
+     "nodata": 0.108
+    },
+    {
+     "date": "2024-09-18",
+     "sensor": "landsat-8",
+     "cloud": 0.234,
+     "nodata": 0.205
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-26",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.043
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.077,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-04",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.034
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.015,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-12",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.115
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-20",
+     "sensor": "landsat-8",
+     "cloud": 0.716,
+     "nodata": 0.284
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-28",
+     "sensor": "landsat-9",
+     "cloud": 0.66,
+     "nodata": 0.317
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.929,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-09-14",
+    "2024-09-19"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 5,
+   "gap_with_earliest_clear_post": 5,
+   "error": null
+  },
+  {
+   "event_id": "fire-d5c3a72d3b",
+   "fire": [
+    "2024-09-21",
+    "2024-09-21"
+   ],
+   "s2_pair": [
+    "2024-09-19",
+    "2024-09-24"
+   ],
+   "s2_gap": 5,
+   "landsat_scenes": [
+    {
+     "date": "2024-07-24",
+     "sensor": "landsat-9",
+     "cloud": 0.029,
+     "nodata": 0.258
+    },
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.035,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.302
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-09",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.148
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.004,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-17",
+     "sensor": "landsat-8",
+     "cloud": 0.285,
+     "nodata": 0.269
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-25",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.455
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.136,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-02",
+     "sensor": "landsat-8",
+     "cloud": 0.594,
+     "nodata": 0.406
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.494,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-10",
+     "sensor": "landsat-9",
+     "cloud": 0.423,
+     "nodata": 0.206
+    },
+    {
+     "date": "2024-09-18",
+     "sensor": "landsat-8",
+     "cloud": 0.178,
+     "nodata": 0.384
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-26",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.058
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.079,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-04",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.04
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.049,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-12",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.22
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-20",
+     "sensor": "landsat-8",
+     "cloud": 0.47,
+     "nodata": 0.53
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-28",
+     "sensor": "landsat-9",
+     "cloud": 0.406,
+     "nodata": 0.589
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.981,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-05",
+     "sensor": "landsat-8",
+     "cloud": 0.752,
+     "nodata": 0.248
+    }
+   ],
+   "combined_pair": [
+    "2024-09-19",
+    "2024-09-24"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 5,
+   "gap_with_earliest_clear_post": 5,
+   "error": null
+  },
+  {
+   "event_id": "fire-9e4e4009cf",
+   "fire": [
+    "2026-08-31",
+    "2026-08-31"
+   ],
+   "s2_pair": [
+    "2026-08-30",
+    "2026-09-03"
+   ],
+   "s2_gap": 4,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-06",
+     "sensor": "landsat-8",
+     "cloud": 0.438,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-07",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-14",
+     "sensor": "landsat-9",
+     "cloud": 0.648,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-15",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-22",
+     "sensor": "landsat-8",
+     "cloud": 0.144,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-30",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.026,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-07",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 0.178,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-15",
+     "sensor": "landsat-9",
+     "cloud": 0.001,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.001,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-23",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-08",
+     "sensor": "landsat-8",
+     "cloud": 0.134,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.531,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-16",
+     "sensor": "landsat-9",
+     "cloud": 0.712,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 0.009,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-24",
+     "sensor": "landsat-8",
+     "cloud": 0.332,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.406,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-08-30",
+    "2026-09-01"
+   ],
+   "combined_sensors": [
+    "S2",
+    "landsat-8"
+   ],
+   "combined_gap": 2,
+   "gap_with_earliest_clear_post": 2,
+   "error": null
+  },
+  {
+   "event_id": "fire-4a94ebc53a",
+   "fire": [
+    "2026-08-25",
+    "2026-08-25"
+   ],
+   "s2_pair": [
+    "2026-08-24",
+    "2026-08-27"
+   ],
+   "s2_gap": 3,
+   "landsat_scenes": [
+    {
+     "date": "2026-06-29",
+     "sensor": "landsat-8",
+     "cloud": 0.113,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-07",
+     "sensor": "landsat-9",
+     "cloud": 0.395,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-15",
+     "sensor": "landsat-8",
+     "cloud": 0.997,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.081,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 0.734,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.003,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.003,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.122,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.881,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.006,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-08-24",
+    "2026-08-27"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 3,
+   "gap_with_earliest_clear_post": 3,
+   "error": null
+  },
+  {
+   "event_id": "fire-114c9ee9b0",
+   "fire": [
+    "2026-08-29",
+    "2026-08-29"
+   ],
+   "s2_pair": [
+    "2026-08-27",
+    "2026-08-30"
+   ],
+   "s2_gap": 3,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-06",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-07",
+     "sensor": "landsat-9",
+     "cloud": 0.354,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-14",
+     "sensor": "landsat-9",
+     "cloud": 0.376,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-15",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-22",
+     "sensor": "landsat-8",
+     "cloud": 0.799,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-30",
+     "sensor": "landsat-9",
+     "cloud": 0.026,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-07",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-15",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-23",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-31",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-08",
+     "sensor": "landsat-8",
+     "cloud": 0.39,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.549,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-16",
+     "sensor": "landsat-9",
+     "cloud": 0.995,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 0.302,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-24",
+     "sensor": "landsat-8",
+     "cloud": 0.035,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.536,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-08-27",
+    "2026-08-30"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 3,
+   "gap_with_earliest_clear_post": 3,
+   "error": null
+  },
+  {
+   "event_id": "fire-63de8bf95c",
+   "fire": [
+    "2026-09-12",
+    "2026-09-12"
+   ],
+   "s2_pair": [
+    "2026-09-10",
+    "2026-09-13"
+   ],
+   "s2_gap": 3,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-17",
+     "sensor": "landsat-8",
+     "cloud": 0.822,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-18",
+     "sensor": "landsat-9",
+     "cloud": 0.958,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-25",
+     "sensor": "landsat-9",
+     "cloud": 0.535,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-26",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-02",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-03",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-10",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-11",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-18",
+     "sensor": "landsat-8",
+     "cloud": 0.326,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-19",
+     "sensor": "landsat-9",
+     "cloud": 0.311,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-26",
+     "sensor": "landsat-9",
+     "cloud": 0.398,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-27",
+     "sensor": "landsat-8",
+     "cloud": 0.707,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-03",
+     "sensor": "landsat-8",
+     "cloud": 0.978,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-04",
+     "sensor": "landsat-9",
+     "cloud": 0.001,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-11",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-19",
+     "sensor": "landsat-8",
+     "cloud": 0.153,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-20",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-27",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-05",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-06",
+     "sensor": "landsat-9",
+     "cloud": 0.567,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-09-11",
+    "2026-09-13"
+   ],
+   "combined_sensors": [
+    "landsat-9",
+    "S2"
+   ],
+   "combined_gap": 2,
+   "gap_with_earliest_clear_post": 2,
+   "error": null
+  },
+  {
+   "event_id": "fire-f4d9c9c74f",
+   "fire": [
+    "2026-09-12",
+    "2026-09-12"
+   ],
+   "s2_pair": [
+    "2026-09-10",
+    "2026-09-13"
+   ],
+   "s2_gap": 3,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-17",
+     "sensor": "landsat-8",
+     "cloud": 0.895,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-18",
+     "sensor": "landsat-9",
+     "cloud": 0.942,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-25",
+     "sensor": "landsat-9",
+     "cloud": 0.741,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-26",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-02",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-03",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-10",
+     "sensor": "landsat-9",
+     "cloud": 0.004,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-11",
+     "sensor": "landsat-8",
+     "cloud": 0.997,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-18",
+     "sensor": "landsat-8",
+     "cloud": 0.298,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-19",
+     "sensor": "landsat-9",
+     "cloud": 0.288,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-26",
+     "sensor": "landsat-9",
+     "cloud": 0.467,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-27",
+     "sensor": "landsat-8",
+     "cloud": 0.498,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-03",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-04",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-11",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-19",
+     "sensor": "landsat-8",
+     "cloud": 0.182,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-20",
+     "sensor": "landsat-9",
+     "cloud": 0.997,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-27",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-05",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-06",
+     "sensor": "landsat-9",
+     "cloud": 0.577,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-09-11",
+    "2026-09-13"
+   ],
+   "combined_sensors": [
+    "landsat-9",
+    "S2"
+   ],
+   "combined_gap": 2,
+   "gap_with_earliest_clear_post": 2,
+   "error": null
+  },
+  {
+   "event_id": "fire-a85a736593",
+   "fire": [
+    "2024-09-23",
+    "2024-09-23"
+   ],
+   "s2_pair": [
+    "2024-09-21",
+    "2024-09-24"
+   ],
+   "s2_gap": 3,
+   "landsat_scenes": [
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.007,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-01",
+     "sensor": "landsat-8",
+     "cloud": 0.319,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-09",
+     "sensor": "landsat-9",
+     "cloud": 0.166,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-17",
+     "sensor": "landsat-8",
+     "cloud": 0.591,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-25",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-02",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-10",
+     "sensor": "landsat-9",
+     "cloud": 0.852,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-18",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-26",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-04",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-12",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-20",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-28",
+     "sensor": "landsat-9",
+     "cloud": 0.008,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.555,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-05",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-09-21",
+    "2024-09-24"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 3,
+   "gap_with_earliest_clear_post": 3,
+   "error": null
+  },
+  {
+   "event_id": "fire-65827ba40d",
+   "fire": [
+    "2024-09-23",
+    "2024-09-23"
+   ],
+   "s2_pair": [
+    "2024-09-21",
+    "2024-09-24"
+   ],
+   "s2_gap": 3,
+   "landsat_scenes": [
+    {
+     "date": "2024-07-25",
+     "sensor": "landsat-8",
+     "cloud": 0.037,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.499,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.004,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.019,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-09-21",
+    "2024-09-24"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 3,
+   "gap_with_earliest_clear_post": 3,
+   "error": null
+  },
+  {
+   "event_id": "fire-82c5aec73b",
+   "fire": [
+    "2026-08-31",
+    "2026-08-31"
+   ],
+   "s2_pair": [
+    "2026-08-30",
+    "2026-09-01"
+   ],
+   "s2_gap": 2,
+   "landsat_scenes": [
+    {
+     "date": "2026-07-07",
+     "sensor": "landsat-9",
+     "cloud": 0.481,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-15",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-23",
+     "sensor": "landsat-9",
+     "cloud": 0.999,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-07-31",
+     "sensor": "landsat-8",
+     "cloud": 0.029,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-08",
+     "sensor": "landsat-9",
+     "cloud": 0.502,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-16",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-08-24",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-01",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-09",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-17",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-09-25",
+     "sensor": "landsat-9",
+     "cloud": 0.683,
+     "nodata": 0.0
+    },
+    {
+     "date": "2026-10-03",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2026-08-30",
+    "2026-09-01"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 2,
+   "gap_with_earliest_clear_post": 2,
+   "error": null
+  },
+  {
+   "event_id": "fire-ee195bfbd1",
+   "fire": [
+    "2024-09-25",
+    "2024-09-25"
+   ],
+   "s2_pair": [
+    "2024-09-24",
+    "2024-09-26"
+   ],
+   "s2_gap": 2,
+   "landsat_scenes": [
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.117,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.069,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.22,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.006,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.002,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.886,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-09-24",
+    "2024-09-26"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 2,
+   "gap_with_earliest_clear_post": 2,
+   "error": null
+  },
+  {
+   "event_id": "fire-94b31ab5b9",
+   "fire": [
+    "2024-09-25",
+    "2024-09-25"
+   ],
+   "s2_pair": [
+    "2024-09-24",
+    "2024-09-26"
+   ],
+   "s2_gap": 2,
+   "landsat_scenes": [
+    {
+     "date": "2024-08-02",
+     "sensor": "landsat-9",
+     "cloud": 0.175,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-10",
+     "sensor": "landsat-8",
+     "cloud": 0.049,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-18",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-08-26",
+     "sensor": "landsat-8",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-03",
+     "sensor": "landsat-9",
+     "cloud": 0.185,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-19",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-09-27",
+     "sensor": "landsat-8",
+     "cloud": 0.009,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-05",
+     "sensor": "landsat-9",
+     "cloud": 0.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-13",
+     "sensor": "landsat-8",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-21",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-10-29",
+     "sensor": "landsat-8",
+     "cloud": 0.871,
+     "nodata": 0.0
+    },
+    {
+     "date": "2024-11-06",
+     "sensor": "landsat-9",
+     "cloud": 1.0,
+     "nodata": 0.0
+    }
+   ],
+   "combined_pair": [
+    "2024-09-24",
+    "2024-09-26"
+   ],
+   "combined_sensors": [
+    "S2",
+    "S2"
+   ],
+   "combined_gap": 2,
+   "gap_with_earliest_clear_post": 2,
+   "error": null
+  }
+ ],
+ "s2_skipped_suitable_post": {
+  "fire-0acbbf5d26": [
+   "2024-09-09"
+  ],
+  "fire-91c44c5e53": [
+   "2026-09-26"
+  ],
+  "fire-56395b2a51": [
+   "2026-09-26"
+  ],
+  "fire-0ad70c7ddd": [
+   "2025-08-12"
+  ],
+  "fire-a1c4a18a42": [
+   "2024-09-04",
+   "2024-09-09"
+  ],
+  "fire-a02248ea55": [
+   "2024-09-09"
+  ],
+  "fire-c1f6abcec4": [
+   "2024-09-26"
+  ]
+ },
+ "scenarios_long_gap": {
+  "columns": [
+   "event_id",
+   "now",
+   "s2_closer_rule",
+   "s2_landsat_current_rule",
+   "s2_landsat_closer_rule"
+  ],
+  "rows": [
+   [
+    "fire-5f9d81cf75",
+    28,
+    28,
+    24,
+    9
+   ],
+   [
+    "fire-501bdacadf",
+    28,
+    28,
+    24,
+    9
+   ],
+   [
+    "fire-b9993beecc",
+    28,
+    28,
+    8,
+    9
+   ],
+   [
+    "fire-98c8dce3e8",
+    27,
+    27,
+    23,
+    19
+   ],
+   [
+    "fire-239ea0aace",
+    25,
+    25,
+    6,
+    6
+   ],
+   [
+    "fire-0acbbf5d26",
+    22,
+    20,
+    22,
+    14
+   ],
+   [
+    "fire-91c44c5e53",
+    20,
+    13,
+    13,
+    13
+   ],
+   [
+    "fire-56395b2a51",
+    20,
+    13,
+    20,
+    12
+   ],
+   [
+    "fire-0ad70c7ddd",
+    17,
+    13,
+    17,
+    13
+   ],
+   [
+    "fire-a6c578ddd8",
+    17,
+    17,
+    16,
+    17
+   ],
+   [
+    "fire-7555b41a98",
+    17,
+    17,
+    16,
+    17
+   ],
+   [
+    "fire-a1c4a18a42",
+    17,
+    10,
+    8,
+    9
+   ]
+  ],
+  "note": "«ближе» — из годных (облака ≤30 %, нет данных ≤10 %) снимков «после» брать ближайший к огню; снимок «до» — прежний Sentinel-2."
+ }
+}

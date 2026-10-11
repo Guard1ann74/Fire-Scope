@@ -1,0 +1,159 @@
+{
+ "threshold": 0.02,
+ "applies_to": [
+  "водно-болотные угодья",
+  "пашня",
+  "травяные угодья"
+ ],
+ "cut_with_landcover_restriction": {
+  "гарь CLMS": {
+   "ha": 11076.0,
+   "share_cut": 0.0256
+  },
+  "вне CLMS": {
+   "ha": 7876.4,
+   "share_cut": 0.0682
+  }
+ },
+ "rule": "пиксель срезается, если B2, B3 и B4 посветлели больше порога",
+ "tiles": 35,
+ "fires": 18,
+ "by_group": {
+  "гарь CLMS": {
+   "водно-болотные угодья": {
+    "filter_applies": true,
+    "pixels": 212156,
+    "ha": 8486.2,
+    "share_cut": 0.0284,
+    "median_change": {
+     "b2": -0.0009,
+     "b3": -0.0261,
+     "b4": -0.0095
+    }
+   },
+   "пашня": {
+    "filter_applies": true,
+    "pixels": 46248,
+    "ha": 1849.9,
+    "share_cut": 0.0156,
+    "median_change": {
+     "b2": -0.0446,
+     "b3": -0.0753,
+     "b4": -0.1116
+    }
+   },
+   "травяные угодья": {
+    "filter_applies": true,
+    "pixels": 18496,
+    "ha": 739.8,
+    "share_cut": 0.0221,
+    "median_change": {
+     "b2": 0.0022,
+     "b3": -0.0133,
+     "b4": -0.015
+    }
+   },
+   "лес": {
+    "filter_applies": false,
+    "pixels": 1550,
+    "ha": 62.0,
+    "share_cut": 0.1619,
+    "median_change": {
+     "b2": 0.0094,
+     "b3": 0.0,
+     "b4": 0.0104
+    }
+   },
+   "вода": {
+    "filter_applies": false,
+    "pixels": 683,
+    "ha": 27.3,
+    "share_cut": 0.2972,
+    "median_change": {
+     "b2": 0.0066,
+     "b3": 0.0037,
+     "b4": 0.006
+    }
+   }
+  },
+  "вне CLMS": {
+   "водно-болотные угодья": {
+    "filter_applies": true,
+    "pixels": 141386,
+    "ha": 5655.4,
+    "share_cut": 0.0815,
+    "median_change": {
+     "b2": 0.0011,
+     "b3": -0.0209,
+     "b4": -0.0041
+    }
+   },
+   "пашня": {
+    "filter_applies": true,
+    "pixels": 47306,
+    "ha": 1892.2,
+    "share_cut": 0.0342,
+    "median_change": {
+     "b2": -0.0359,
+     "b3": -0.0607,
+     "b4": -0.0876
+    }
+   },
+   "травяные угодья": {
+    "filter_applies": true,
+    "pixels": 8218,
+    "ha": 328.7,
+    "share_cut": 0.0607,
+    "median_change": {
+     "b2": -0.0049,
+     "b3": -0.0237,
+     "b4": -0.0169
+    }
+   },
+   "лес": {
+    "filter_applies": false,
+    "pixels": 1576,
+    "ha": 63.0,
+    "share_cut": 0.1739,
+    "median_change": {
+     "b2": 0.0141,
+     "b3": 0.0024,
+     "b4": 0.0198
+    }
+   },
+   "вода": {
+    "filter_applies": false,
+    "pixels": 1515,
+    "ha": 60.6,
+    "share_cut": 0.3096,
+    "median_change": {
+     "b2": 0.0114,
+     "b3": 0.0115,
+     "b4": 0.0094
+    }
+   },
+   "застройка": {
+    "filter_applies": false,
+    "pixels": 11,
+    "ha": 0.4,
+    "share_cut": 0.0,
+    "median_change": {
+     "b2": 0.0135,
+     "b3": 0.0048,
+     "b4": 0.0156
+    }
+   },
+   "голая земля": {
+    "filter_applies": false,
+    "pixels": 4,
+    "ha": 0.2,
+    "share_cut": 0.0,
+    "median_change": {
+     "b2": 0.0089,
+     "b3": 0.0078,
+     "b4": 0.0028
+    }
+   }
+  }
+ }
+}

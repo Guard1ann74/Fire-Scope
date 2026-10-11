@@ -1,0 +1,14 @@
+# Fire Scope — зависимости сервиса (Python 3.12–3.13).
+fastapi==0.135.1
+uvicorn==0.34.3
+pydantic==2.13.5
+numpy==2.4.4
+scipy==1.17.1
+shapely==2.1.1
+pyproj==3.7.2
+rasterio==1.4.3
+tifffile==2026.9.15
+PyYAML==6.0.3
+matplotlib==3.11.2
+# Только для тестов (fastapi.testclient).
+httpx==0.28.1

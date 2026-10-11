@@ -1,0 +1,1241 @@
+{
+  "anapa-2026-08": {
+    "status": "ok",
+    "message": "Событий огня: 4; гарь на снимках подтверждена для 1, у 3 огонь есть, но гари в месте детекций не видно. Модель гари запускалась только вокруг подтверждённых очагов.",
+    "events": 4,
+    "events_by_status": {
+      "no_scar": 3,
+      "ok": 1
+    },
+    "reliable_ha": 932.0,
+    "unreliable_ha": 0,
+    "landcover_reliable_ha": {
+      "лес": {
+        "1": 10.16,
+        "2": 7.84,
+        "3": 4.76
+      },
+      "травяные угодья": {
+        "1": 10.12,
+        "2": 29.2,
+        "3": 30.56
+      },
+      "застройка": {
+        "1": 5.76,
+        "2": 3.88,
+        "3": 1.48
+      },
+      "голая земля": {
+        "1": 0.36,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "вода": {
+        "1": 10.88,
+        "2": 6.24,
+        "3": 4.44
+      },
+      "водно-болотные угодья": {
+        "1": 24.12,
+        "2": 79.88,
+        "3": 684.2
+      },
+      "пашня": {
+        "1": 0.0,
+        "2": 0.36,
+        "3": 17.76
+      }
+    },
+    "seconds": 0.9,
+    "cached": true,
+    "event_details": [
+      {
+        "event_id": "fire-56b6326bf3",
+        "status": "ok",
+        "reliability": "reliable",
+        "burn_area_ha": 932.0,
+        "gap_days": 5,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "reliability_reasons": [],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 0.8479,
+          "removed_ha": 0.76,
+          "removed_share": 0.0007,
+          "removed_by_landcover_ha": {
+            "травяные угодья": 0.36,
+            "пашня": 0.04,
+            "водно-болотные угодья": 0.36
+          }
+        },
+        "buffer_edge": {
+          "share": 0.0,
+          "touches": false
+        },
+        "area_per_point_ha": 12.94,
+        "n_points": 72,
+        "weather": {
+          "at": "2026-08-29T12:00",
+          "temperature_c": 29.0,
+          "humidity_pct": 31,
+          "wind_from": "В",
+          "wind_speed_ms": 8.89,
+          "danger_class": 4,
+          "nesterov": 4239,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-114c9ee9b0",
+        "status": "no_scar",
+        "reliability": "unreliable",
+        "burn_area_ha": 0.0,
+        "gap_days": 3,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": null,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": null,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "reliability_reasons": [
+          "слабый ночной огонь — вероятно тление"
+        ],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": null,
+          "removed_ha": 0.0,
+          "removed_share": 0.0,
+          "removed_by_landcover_ha": {}
+        },
+        "buffer_edge": {
+          "share": 0.0,
+          "touches": false
+        },
+        "area_per_point_ha": 0.0,
+        "n_points": 1,
+        "weather": {
+          "at": "2026-08-29T23:00",
+          "temperature_c": 23.4,
+          "humidity_pct": 44,
+          "wind_from": "СВ",
+          "wind_speed_ms": 5.46,
+          "danger_class": 4,
+          "nesterov": 5022,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-c86c29bd79",
+        "status": "no_scar",
+        "reliability": "reliable",
+        "burn_area_ha": 0.0,
+        "gap_days": 5,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "reliability_reasons": [],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "removed_share": 0.0,
+          "removed_by_landcover_ha": {}
+        },
+        "buffer_edge": {
+          "share": 0.0,
+          "touches": false
+        },
+        "area_per_point_ha": 0.0,
+        "n_points": 1,
+        "weather": {
+          "at": "2026-08-30T14:00",
+          "temperature_c": 29.8,
+          "humidity_pct": 23,
+          "wind_from": "СВ",
+          "wind_speed_ms": 8.02,
+          "danger_class": 4,
+          "nesterov": 5491,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-9e4e4009cf",
+        "status": "no_scar",
+        "reliability": "reliable",
+        "burn_area_ha": 0.0,
+        "gap_days": 7,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": null,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 3,
+          "checked_share": null,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "reliability_reasons": [],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": null,
+          "removed_ha": 0.0,
+          "removed_share": 0.0,
+          "removed_by_landcover_ha": {}
+        },
+        "buffer_edge": {
+          "share": 0.0,
+          "touches": false
+        },
+        "area_per_point_ha": 0.0,
+        "n_points": 1,
+        "weather": {
+          "at": "2026-08-31T14:00",
+          "temperature_c": 28.6,
+          "humidity_pct": 35,
+          "wind_from": "СВ",
+          "wind_speed_ms": 5.91,
+          "danger_class": 4,
+          "nesterov": 5978,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      }
+    ]
+  },
+  "krasnodar-harvest-2026-09": {
+    "status": "no_fire_evidence",
+    "message": "За выбранный период NASA FIRMS не зафиксировал в области подтверждённых очагов огня. Гарь не оценивалась: падение растительного индекса без огня (уборка, вспашка, засуха) гарью не считается.",
+    "events": 0,
+    "events_by_status": {},
+    "reliable_ha": null,
+    "unreliable_ha": null,
+    "landcover_reliable_ha": null,
+    "seconds": 0.0,
+    "cached": true,
+    "event_details": []
+  },
+  "novotitarovskaya-2026-09": {
+    "status": "ok",
+    "message": "Событий огня: 2; гарь на снимках подтверждена для 1, у 1 огонь есть, но гари в месте детекций не видно. Модель гари запускалась только вокруг подтверждённых очагов.",
+    "events": 2,
+    "events_by_status": {
+      "no_scar": 1,
+      "ok": 1
+    },
+    "reliable_ha": 0,
+    "unreliable_ha": 195.44,
+    "landcover_reliable_ha": {},
+    "seconds": 0.0,
+    "cached": true,
+    "event_details": [
+      {
+        "event_id": "fire-98c8dce3e8",
+        "status": "ok",
+        "reliability": "unreliable",
+        "burn_area_ha": 195.44,
+        "gap_days": 27,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [
+            "2026-09-21"
+          ],
+          "candidate_scenes": 3,
+          "checked_share": 0.1477,
+          "removed_ha": 85.72,
+          "error": null
+        },
+        "reliability_reasons": [
+          "между снимками 27 дн.",
+          "слабый ночной огонь — вероятно тление"
+        ],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 0.9886,
+          "removed_ha": 13.8,
+          "removed_share": 0.0124,
+          "removed_by_landcover_ha": {
+            "пашня": 13.8
+          }
+        },
+        "buffer_edge": {
+          "share": 0.0,
+          "touches": false
+        },
+        "area_per_point_ha": 21.72,
+        "n_points": 9,
+        "weather": {
+          "at": "2026-09-11T23:00",
+          "temperature_c": 15.8,
+          "humidity_pct": 72,
+          "wind_from": "С",
+          "wind_speed_ms": 1.82,
+          "danger_class": 4,
+          "nesterov": 7647,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-56395b2a51",
+        "status": "no_scar",
+        "reliability": "unreliable",
+        "burn_area_ha": 0.0,
+        "gap_days": 20,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 3,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 3,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "reliability_reasons": [
+          "между снимками 20 дн."
+        ],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 0.9946,
+          "removed_ha": 0.04,
+          "removed_share": 0.0001,
+          "removed_by_landcover_ha": {
+            "пашня": 0.04
+          }
+        },
+        "buffer_edge": {
+          "share": 0.0,
+          "touches": false
+        },
+        "area_per_point_ha": 0.0,
+        "n_points": 1,
+        "weather": {
+          "at": "2026-09-21T13:00",
+          "temperature_c": 27.5,
+          "humidity_pct": 44,
+          "wind_from": "В",
+          "wind_speed_ms": 2.83,
+          "danger_class": 3,
+          "nesterov": 2105,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      }
+    ]
+  },
+  "east-2026-09": {
+    "status": "ok",
+    "message": "Событий огня: 5; гарь на снимках подтверждена для 5. Модель гари запускалась только вокруг подтверждённых очагов.",
+    "events": 5,
+    "events_by_status": {
+      "ok": 5
+    },
+    "reliable_ha": 0,
+    "unreliable_ha": 10609.36,
+    "landcover_reliable_ha": {},
+    "seconds": 655.5,
+    "cached": false,
+    "event_details": [
+      {
+        "event_id": "fire-5f9d81cf75",
+        "status": "ok",
+        "reliability": "unreliable",
+        "burn_area_ha": 6224.64,
+        "gap_days": 28,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [
+            "2026-09-23"
+          ],
+          "candidate_scenes": 3,
+          "checked_share": 0.0439,
+          "removed_ha": 145.36,
+          "error": null
+        },
+        "reliability_reasons": [
+          "между снимками 28 дн."
+        ],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 0.9873,
+          "removed_ha": 39.12,
+          "removed_share": 0.0046,
+          "removed_by_landcover_ha": {
+            "травяные угодья": 6.6,
+            "пашня": 32.52
+          }
+        },
+        "buffer_edge": {
+          "share": 0.0702,
+          "touches": false
+        },
+        "area_per_point_ha": 23.85,
+        "n_points": 261,
+        "weather": {
+          "at": "2026-09-12T23:00",
+          "temperature_c": 15.7,
+          "humidity_pct": 52,
+          "wind_from": "В",
+          "wind_speed_ms": 2.01,
+          "danger_class": 3,
+          "nesterov": 2174,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-501bdacadf",
+        "status": "ok",
+        "reliability": "unreliable",
+        "burn_area_ha": 4143.4,
+        "gap_days": 28,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [
+            "2026-09-23"
+          ],
+          "candidate_scenes": 3,
+          "checked_share": 0.5031,
+          "removed_ha": 525.28,
+          "error": null
+        },
+        "reliability_reasons": [
+          "между снимками 28 дн.",
+          "контур упирается в границу зоны поиска на 44% периметра — гарь не замыкается вокруг очага"
+        ],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 0.9878,
+          "removed_ha": 21.84,
+          "removed_share": 0.0041,
+          "removed_by_landcover_ha": {
+            "травяные угодья": 14.0,
+            "пашня": 7.84
+          }
+        },
+        "buffer_edge": {
+          "share": 0.4364,
+          "touches": true
+        },
+        "area_per_point_ha": 127.53,
+        "n_points": 37,
+        "weather": {
+          "at": "2026-09-12T11:00",
+          "temperature_c": 25.7,
+          "humidity_pct": 27,
+          "wind_from": "В",
+          "wind_speed_ms": 2.22,
+          "danger_class": 3,
+          "nesterov": 1494,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-63de8bf95c",
+        "status": "ok",
+        "reliability": "unreliable",
+        "burn_area_ha": 26.76,
+        "gap_days": 3,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "reliability_reasons": [
+          "слабый ночной огонь — вероятно тление",
+          "контур упирается в границу зоны поиска на 20% периметра — гарь не замыкается вокруг очага"
+        ],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 0.9951,
+          "removed_ha": 20.6,
+          "removed_share": 0.0279,
+          "removed_by_landcover_ha": {
+            "травяные угодья": 6.84,
+            "пашня": 13.76
+          }
+        },
+        "buffer_edge": {
+          "share": 0.1981,
+          "touches": true
+        },
+        "area_per_point_ha": 119.63,
+        "n_points": 3,
+        "weather": {
+          "at": "2026-09-12T23:00",
+          "temperature_c": 18.1,
+          "humidity_pct": 40,
+          "wind_from": "ЮВ",
+          "wind_speed_ms": 1.92,
+          "danger_class": 3,
+          "nesterov": 2139,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-f4d9c9c74f",
+        "status": "ok",
+        "reliability": "unreliable",
+        "burn_area_ha": 0.04,
+        "gap_days": 3,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "reliability_reasons": [
+          "контур упирается в границу зоны поиска на 20% периметра — гарь не замыкается вокруг очага"
+        ],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 0.9949,
+          "removed_ha": 20.64,
+          "removed_share": 0.0292,
+          "removed_by_landcover_ha": {
+            "травяные угодья": 6.84,
+            "пашня": 13.8
+          }
+        },
+        "buffer_edge": {
+          "share": 0.198,
+          "touches": true
+        },
+        "area_per_point_ha": 119.64,
+        "n_points": 3,
+        "weather": {
+          "at": "2026-09-12T13:00",
+          "temperature_c": 28.1,
+          "humidity_pct": 25,
+          "wind_from": "В",
+          "wind_speed_ms": 2.5,
+          "danger_class": 3,
+          "nesterov": 2139,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-b9993beecc",
+        "status": "ok",
+        "reliability": "unreliable",
+        "burn_area_ha": 214.52,
+        "gap_days": 28,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [
+            "2026-09-23"
+          ],
+          "candidate_scenes": 3,
+          "checked_share": 0.0472,
+          "removed_ha": 29.2,
+          "error": null
+        },
+        "reliability_reasons": [
+          "между снимками 28 дн.",
+          "контур упирается в границу зоны поиска на 43% периметра — гарь не замыкается вокруг очага"
+        ],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 0.9862,
+          "removed_ha": 1.4,
+          "removed_share": 0.0013,
+          "removed_by_landcover_ha": {
+            "пашня": 1.4
+          }
+        },
+        "buffer_edge": {
+          "share": 0.4344,
+          "touches": true
+        },
+        "area_per_point_ha": 1012.48,
+        "n_points": 1,
+        "weather": {
+          "at": "2026-09-13T12:00",
+          "temperature_c": 28.6,
+          "humidity_pct": 31,
+          "wind_from": "ЮВ",
+          "wind_speed_ms": 2.0,
+          "danger_class": 3,
+          "nesterov": 2365,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      }
+    ]
+  },
+  "rice-nw-krasnodar-2026-09": {
+    "status": "ok",
+    "message": "Событий огня: 28; гарь на снимках подтверждена для 7, у 3 огонь есть, но гари в месте детекций не видно. Модель гари запускалась только вокруг подтверждённых очагов.",
+    "events": 28,
+    "events_by_status": {
+      "no_scar": 3,
+      "not_processed": 18,
+      "ok": 7
+    },
+    "reliable_ha": 2935.8,
+    "unreliable_ha": 0,
+    "landcover_reliable_ha": {
+      "лес": {
+        "1": 2.64,
+        "2": 0.88,
+        "3": 0.0
+      },
+      "травяные угодья": {
+        "1": 66.69,
+        "2": 4.44,
+        "3": 0.0
+      },
+      "пашня": {
+        "1": 691.47,
+        "2": 1118.78,
+        "3": 734.04
+      },
+      "водно-болотные угодья": {
+        "1": 246.44,
+        "2": 66.22,
+        "3": 1.92
+      },
+      "вода": {
+        "1": 1.28,
+        "2": 0.28,
+        "3": 0.0
+      },
+      "застройка": {
+        "1": 0.72,
+        "2": 0.0,
+        "3": 0.0
+      }
+    },
+    "seconds": 14.5,
+    "cached": true,
+    "event_details": [
+      {
+        "event_id": "fire-da855e72a4",
+        "status": "ok",
+        "reliability": "reliable",
+        "burn_area_ha": 691.72,
+        "gap_days": 8,
+        "pre_fire_check": {
+          "scenes": [
+            "2026-09-13"
+          ],
+          "candidate_scenes": 3,
+          "checked_share": 0.3546,
+          "removed_ha": 128.72,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "reliability_reasons": [],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 0.9982,
+          "removed_ha": 801.8,
+          "removed_share": 0.3366,
+          "removed_by_landcover_ha": {
+            "травяные угодья": 22.88,
+            "пашня": 433.6,
+            "водно-болотные угодья": 345.32
+          }
+        },
+        "buffer_edge": {
+          "share": 0.0213,
+          "touches": false
+        },
+        "area_per_point_ha": 38.43,
+        "n_points": 18,
+        "weather": {
+          "at": "2026-09-17T13:00",
+          "temperature_c": 22.6,
+          "humidity_pct": 50,
+          "wind_from": "СВ",
+          "wind_speed_ms": 3.28,
+          "danger_class": 4,
+          "nesterov": 4303,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-9011635436",
+        "status": "ok",
+        "reliability": "reliable",
+        "burn_area_ha": 593.88,
+        "gap_days": 8,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 2,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "reliability_reasons": [],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 0.997,
+          "removed_ha": 592.8,
+          "removed_share": 0.3592,
+          "removed_by_landcover_ha": {
+            "травяные угодья": 27.2,
+            "пашня": 327.36,
+            "водно-болотные угодья": 238.24
+          }
+        },
+        "buffer_edge": {
+          "share": 0.0729,
+          "touches": false
+        },
+        "area_per_point_ha": 42.42,
+        "n_points": 14,
+        "weather": {
+          "at": "2026-09-13T12:00",
+          "temperature_c": 29.9,
+          "humidity_pct": 31,
+          "wind_from": "ЮЗ",
+          "wind_speed_ms": 1.92,
+          "danger_class": 3,
+          "nesterov": 2797,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-db4de010c7",
+        "status": "ok",
+        "reliability": "reliable",
+        "burn_area_ha": 190.4,
+        "gap_days": 13,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 2,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [
+            "2026-09-24"
+          ],
+          "candidate_scenes": 2,
+          "checked_share": 0.0859,
+          "removed_ha": 79.04,
+          "error": null
+        },
+        "reliability_reasons": [],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 0.9385,
+          "removed_ha": 434.52,
+          "removed_share": 0.2691,
+          "removed_by_landcover_ha": {
+            "травяные угодья": 34.56,
+            "пашня": 336.48,
+            "водно-болотные угодья": 63.48
+          }
+        },
+        "buffer_edge": {
+          "share": 0.0,
+          "touches": false
+        },
+        "area_per_point_ha": 13.6,
+        "n_points": 14,
+        "weather": {
+          "at": "2026-09-19T13:00",
+          "temperature_c": 28.1,
+          "humidity_pct": 43,
+          "wind_from": "СВ",
+          "wind_speed_ms": 4.65,
+          "danger_class": 3,
+          "nesterov": 1322,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-9e7e782ae0",
+        "status": "ok",
+        "reliability": "reliable",
+        "burn_area_ha": 284.96,
+        "gap_days": 13,
+        "pre_fire_check": {
+          "scenes": [
+            "2026-09-19"
+          ],
+          "candidate_scenes": 3,
+          "checked_share": 0.0656,
+          "removed_ha": 25.32,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [
+            "2026-09-24"
+          ],
+          "candidate_scenes": 2,
+          "checked_share": 0.1729,
+          "removed_ha": 53.04,
+          "error": null
+        },
+        "reliability_reasons": [],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 0.9979,
+          "removed_ha": 266.88,
+          "removed_share": 0.3324,
+          "removed_by_landcover_ha": {
+            "травяные угодья": 4.24,
+            "пашня": 261.36,
+            "водно-болотные угодья": 1.28
+          }
+        },
+        "buffer_edge": {
+          "share": 0.0,
+          "touches": false
+        },
+        "area_per_point_ha": 20.35,
+        "n_points": 14,
+        "weather": {
+          "at": "2026-09-21T14:00",
+          "temperature_c": 28.7,
+          "humidity_pct": 37,
+          "wind_from": "В",
+          "wind_speed_ms": 2.69,
+          "danger_class": 4,
+          "nesterov": 5980,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-d3eb52b87b",
+        "status": "no_scar",
+        "reliability": "reliable",
+        "burn_area_ha": 0.0,
+        "gap_days": 5,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [
+            "2026-09-24"
+          ],
+          "candidate_scenes": 2,
+          "checked_share": 0.3268,
+          "removed_ha": 42.88,
+          "error": null
+        },
+        "reliability_reasons": [],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 1.0,
+          "removed_ha": 56.24,
+          "removed_share": 0.2494,
+          "removed_by_landcover_ha": {
+            "пашня": 56.24
+          }
+        },
+        "buffer_edge": {
+          "share": 0.0,
+          "touches": false
+        },
+        "area_per_point_ha": 0.0,
+        "n_points": 9,
+        "weather": {
+          "at": "2026-09-22T13:00",
+          "temperature_c": 26.6,
+          "humidity_pct": 44,
+          "wind_from": "З",
+          "wind_speed_ms": 1.39,
+          "danger_class": 3,
+          "nesterov": 2711,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-6a0f114c5a",
+        "status": "ok",
+        "reliability": "reliable",
+        "burn_area_ha": 894.68,
+        "gap_days": 13,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 2,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [
+            "2026-09-21",
+            "2026-09-24"
+          ],
+          "candidate_scenes": 3,
+          "checked_share": 0.6555,
+          "removed_ha": 474.68,
+          "error": null
+        },
+        "reliability_reasons": [],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 0.9991,
+          "removed_ha": 409.8,
+          "removed_share": 0.1829,
+          "removed_by_landcover_ha": {
+            "травяные угодья": 4.24,
+            "пашня": 339.96,
+            "водно-болотные угодья": 65.6
+          }
+        },
+        "buffer_edge": {
+          "share": 0.0603,
+          "touches": false
+        },
+        "area_per_point_ha": 127.81,
+        "n_points": 7,
+        "weather": {
+          "at": "2026-09-18T13:00",
+          "temperature_c": 22.7,
+          "humidity_pct": 57,
+          "wind_from": "СВ",
+          "wind_speed_ms": 3.76,
+          "danger_class": 2,
+          "nesterov": 932,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-ce7c09d359",
+        "status": "no_scar",
+        "reliability": "reliable",
+        "burn_area_ha": 0.0,
+        "gap_days": 5,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [
+            "2026-09-24"
+          ],
+          "candidate_scenes": 2,
+          "checked_share": 0.0662,
+          "removed_ha": 3.92,
+          "error": null
+        },
+        "reliability_reasons": [],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 1.0,
+          "removed_ha": 23.12,
+          "removed_share": 0.2787,
+          "removed_by_landcover_ha": {
+            "пашня": 0.36,
+            "водно-болотные угодья": 22.76
+          }
+        },
+        "buffer_edge": {
+          "share": 0.0,
+          "touches": false
+        },
+        "area_per_point_ha": 0.0,
+        "n_points": 7,
+        "weather": {
+          "at": "2026-09-22T12:00",
+          "temperature_c": 26.1,
+          "humidity_pct": 47,
+          "wind_from": "З",
+          "wind_speed_ms": 2.22,
+          "danger_class": 4,
+          "nesterov": 5941,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-3a69fe8eeb",
+        "status": "ok",
+        "reliability": "reliable",
+        "burn_area_ha": 118.32,
+        "gap_days": 10,
+        "pre_fire_check": {
+          "scenes": [
+            "2026-09-13"
+          ],
+          "candidate_scenes": 3,
+          "checked_share": 0.7441,
+          "removed_ha": 194.84,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 0,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "reliability_reasons": [],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 0.9996,
+          "removed_ha": 221.56,
+          "removed_share": 0.156,
+          "removed_by_landcover_ha": {
+            "травяные угодья": 0.72,
+            "пашня": 166.68,
+            "водно-болотные угодья": 54.16
+          }
+        },
+        "buffer_edge": {
+          "share": 0.0,
+          "touches": false
+        },
+        "area_per_point_ha": 19.72,
+        "n_points": 6,
+        "weather": {
+          "at": "2026-09-19T13:00",
+          "temperature_c": 27.5,
+          "humidity_pct": 44,
+          "wind_from": "СВ",
+          "wind_speed_ms": 4.6,
+          "danger_class": 3,
+          "nesterov": 1256,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-4122303d3c",
+        "status": "ok",
+        "reliability": "reliable",
+        "burn_area_ha": 161.84,
+        "gap_days": 15,
+        "pre_fire_check": {
+          "scenes": [
+            "2026-09-13"
+          ],
+          "candidate_scenes": 3,
+          "checked_share": 0.4316,
+          "removed_ha": 181.4,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [
+            "2026-09-24"
+          ],
+          "candidate_scenes": 2,
+          "checked_share": 0.195,
+          "removed_ha": 148.92,
+          "error": null
+        },
+        "reliability_reasons": [],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 0.9999,
+          "removed_ha": 229.28,
+          "removed_share": 0.1317,
+          "removed_by_landcover_ha": {
+            "травяные угодья": 2.6,
+            "пашня": 131.92,
+            "водно-болотные угодья": 94.76
+          }
+        },
+        "buffer_edge": {
+          "share": 0.0,
+          "touches": false
+        },
+        "area_per_point_ha": 44.72,
+        "n_points": 4,
+        "weather": {
+          "at": "2026-09-18T14:00",
+          "temperature_c": 23.9,
+          "humidity_pct": 52,
+          "wind_from": "СВ",
+          "wind_speed_ms": 4.05,
+          "danger_class": 4,
+          "nesterov": 4551,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      },
+      {
+        "event_id": "fire-a936977fbb",
+        "status": "no_scar",
+        "reliability": "reliable",
+        "burn_area_ha": 0.0,
+        "gap_days": 8,
+        "pre_fire_check": {
+          "scenes": [],
+          "candidate_scenes": 2,
+          "checked_share": 0.0,
+          "removed_ha": 0.0,
+          "error": null
+        },
+        "post_fire_check": {
+          "scenes": [
+            "2026-09-19"
+          ],
+          "candidate_scenes": 1,
+          "checked_share": 0.9533,
+          "removed_ha": 76.0,
+          "error": null
+        },
+        "reliability_reasons": [],
+        "harvest_check": {
+          "performed": true,
+          "passed": true,
+          "checked_share": 1.0,
+          "removed_ha": 1.08,
+          "removed_share": 0.0034,
+          "removed_by_landcover_ha": {
+            "пашня": 0.64,
+            "водно-болотные угодья": 0.44
+          }
+        },
+        "buffer_edge": {
+          "share": 0.0,
+          "touches": false
+        },
+        "area_per_point_ha": 0.0,
+        "n_points": 4,
+        "weather": {
+          "at": "2026-09-18T13:00",
+          "temperature_c": 23.4,
+          "humidity_pct": 52,
+          "wind_from": "СВ",
+          "wind_speed_ms": 4.41,
+          "danger_class": 2,
+          "nesterov": 891,
+          "source": "Open-Meteo, оперативные модели погоды",
+          "error": null
+        }
+      }
+    ]
+  }
+}

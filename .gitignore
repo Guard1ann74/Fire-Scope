@@ -1,0 +1,23 @@
+# Локальные данные, кеши и результаты расчётов (снимки, FIRMS, OSM, погода, мониторинг).
+/data/
+/Мониторинг DATA/
+artifacts/*
+!artifacts/.gitkeep
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.tmp/
+reports/
+
+# Ключи API и локальные инструкции агентов.
+.secrets/
+[Ss]ecrets/
+AGENTS.md
+agents.md
+
+# Настройки IDE и агента.
+.idea/
+.claude/settings.local.json
+.mcp.json

@@ -1,0 +1,1636 @@
+{
+ "Окраина Краснодара, уборка": {
+  "bbox": [
+   38.889,
+   44.965,
+   39.114,
+   45.141
+  ],
+  "period": [
+   "2026-09-10",
+   "2026-09-24"
+  ],
+  "seconds": 2.2,
+  "status": "no_fire_evidence",
+  "message": "За выбранный период NASA FIRMS не зафиксировал в области подтверждённых очагов огня. Гарь не оценивалась: падение растительного индекса без огня (уборка, вспашка, засуха) гарью не считается.",
+  "evidence": {
+   "sources": [
+    "VIIRS_NOAA20_NRT",
+    "VIIRS_NOAA21_NRT",
+    "VIIRS_SNPP_NRT"
+   ],
+   "points_total": 0,
+   "points_kept": 0,
+   "excluded": {
+    "low_confidence": 0,
+    "static_type": 0,
+    "persistent": 0
+   },
+   "failures": [],
+   "persistent_mask": {
+    "files": [
+     "artifacts/persistent-sources/krasnodar_krai.geojson"
+    ],
+    "covers_area": false
+   }
+  },
+  "burn_count": 0,
+  "burn_area_ha": 0.0,
+  "events": [],
+  "without_fire_check": {
+   "checked_at": "2026-10-11",
+   "request": "POST /api/query, fire_first: false",
+   "burn_contours": 1248,
+   "burn_area_ha": 1212.65,
+   "pair": [
+    "2026-09-06",
+    "2026-10-03"
+   ],
+   "observed_fraction": 0.9996,
+   "note": "Модель по всему участку без проверки огня: 1 213 га «гари» при нуле точек FIRMS — убранные и вспаханные поля."
+  }
+ },
+ "Восток края, 12-13 сентября": {
+  "bbox": [
+   41.3,
+   44.85,
+   41.55,
+   44.98
+  ],
+  "period": [
+   "2026-09-10",
+   "2026-09-16"
+  ],
+  "seconds": 242.2,
+  "status": "ok",
+  "message": "Событий огня: 5; гарь на снимках подтверждена для 5. Модель гари запускалась только вокруг подтверждённых очагов.",
+  "evidence": {
+   "sources": [
+    "VIIRS_NOAA20_NRT",
+    "VIIRS_NOAA21_NRT",
+    "VIIRS_SNPP_NRT"
+   ],
+   "points_total": 318,
+   "points_kept": 305,
+   "excluded": {
+    "low_confidence": 13,
+    "static_type": 0,
+    "persistent": 0
+   },
+   "failures": [],
+   "persistent_mask": {
+    "files": [
+     "artifacts/persistent-sources/krasnodar_krai.geojson"
+    ],
+    "covers_area": true
+   }
+  },
+  "burn_count": 7686,
+  "burn_area_ha": 11696.54,
+  "events": [
+   {
+    "event_id": "fire-5f9d81cf75",
+    "status": "ok",
+    "reason": null,
+    "fire_evidence": {
+     "n_points": 261,
+     "first_detected": "2026-09-12",
+     "last_detected": "2026-09-14",
+     "max_frp_mw": 77.22
+    },
+    "pair": {
+     "pre": "2026-09-10",
+     "post": "2026-10-08",
+     "cloud_pre": 0.0,
+     "cloud_post": 0.0,
+     "pre_scene_id": "S2A_MSIL2A_20260910T081641_N0512_R078_T37TFK_20260910T142115",
+     "post_scene_id": "S2C_MSIL2A_20261008T080821_N0513_R078_T37TFK_20261008T110015",
+     "gap_days": 28,
+     "reliable": false
+    },
+    "burn_area_ha": 6732.16,
+    "observed_fraction": 1.0,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников.",
+     "1763 га изменений в буфере не пересекают места детекций огня с подтверждённой гарью и гарью не считаются (вероятно, уборка или вспашка).",
+     "Низкая надёжность: между снимками 28 дн. (ясных снимков ближе к пожару нет). За это время соседние поля могли убрать и вспахать — площадь гари, вероятно, завышена.",
+     "Пороги dNBR по типу покрова взяты из методики и в Краснодарском крае не откалиброваны."
+    ],
+    "rejected_scenes": [
+     {
+      "side": "pre",
+      "date": "2026-09-08",
+      "scene_id": "S2C_MSIL2A_20260908T080601_N0512_R078_T37TFK_20260908T115314",
+      "cloud": 0.7996,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-09-03",
+      "scene_id": "S2B_MSIL2A_20260903T080559_N0512_R078_T37TFK_20260903T120641",
+      "cloud": 0.3869,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-29",
+      "scene_id": "S2C_MSIL2A_20260829T080601_N0512_R078_T37TFK_20260829T115102",
+      "cloud": 0.9884,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-11",
+      "scene_id": "S2A_MSIL2A_20260811T081021_N0512_R078_T37TFK_20260811T125520",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-04",
+      "scene_id": "S2B_MSIL2A_20260804T080609_N0512_R078_T37TFK_20260804T103624",
+      "cloud": 0.998,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-18",
+      "scene_id": "S2C_MSIL2A_20260918T080611_N0512_R078_T37TFK_20260918T114710",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-20",
+      "scene_id": "S2A_MSIL2A_20260920T081021_N0512_R078_T37TFK_20260920T115055",
+      "cloud": 0.6955,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-23",
+      "scene_id": "S2B_MSIL2A_20260923T080609_N0513_R078_T37TFK_20260923T121031",
+      "cloud": 0.8023,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-28",
+      "scene_id": "S2C_MSIL2A_20260928T080711_N0513_R078_T37TFK_20260928T114817",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-30",
+      "scene_id": "S2A_MSIL2A_20260930T081631_N0513_R078_T37TFK_20260930T112321",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-10-03",
+      "scene_id": "S2B_MSIL2A_20261003T080749_N0513_R078_T37TFK_20261003T120735",
+      "cloud": 0.956,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     }
+    ],
+    "discarded_far_from_fire_ha": 1762.76,
+    "detections_with_scar": 259
+   },
+   {
+    "event_id": "fire-501bdacadf",
+    "status": "ok",
+    "reason": null,
+    "fire_evidence": {
+     "n_points": 37,
+     "first_detected": "2026-09-12",
+     "last_detected": "2026-09-13",
+     "max_frp_mw": 8.26
+    },
+    "pair": {
+     "pre": "2026-09-10",
+     "post": "2026-10-08",
+     "cloud_pre": 0.0,
+     "cloud_post": 0.0,
+     "pre_scene_id": "S2A_MSIL2A_20260910T081641_N0512_R078_T37TGK_20260910T142115",
+     "post_scene_id": "S2C_MSIL2A_20261008T080821_N0513_R078_T37TGK_20261008T110015",
+     "gap_days": 28,
+     "reliable": false
+    },
+    "burn_area_ha": 4724.24,
+    "observed_fraction": 1.0,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников.",
+     "0 га изменений в буфере не пересекают места детекций огня с подтверждённой гарью и гарью не считаются (вероятно, уборка или вспашка).",
+     "Низкая надёжность: между снимками 28 дн. (ясных снимков ближе к пожару нет). За это время соседние поля могли убрать и вспахать — площадь гари, вероятно, завышена.",
+     "Пороги dNBR по типу покрова взяты из методики и в Краснодарском крае не откалиброваны."
+    ],
+    "rejected_scenes": [
+     {
+      "side": "pre",
+      "date": "2026-09-08",
+      "scene_id": "S2C_MSIL2A_20260908T080601_N0512_R078_T37TGK_20260908T115314",
+      "cloud": 0.9137,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-09-03",
+      "scene_id": "S2B_MSIL2A_20260903T080559_N0512_R078_T37TGK_20260903T120641",
+      "cloud": 0.9409,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-29",
+      "scene_id": "S2C_MSIL2A_20260829T080601_N0512_R078_T37TGK_20260829T115102",
+      "cloud": 0.9752,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-19",
+      "scene_id": "S2C_MSIL2A_20260819T080601_N0512_R078_T37TGK_20260819T115013",
+      "cloud": 0.6543,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-11",
+      "scene_id": "S2A_MSIL2A_20260811T081021_N0512_R078_T37TGK_20260811T125520",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-04",
+      "scene_id": "S2B_MSIL2A_20260804T080609_N0512_R078_T37TGK_20260804T103624",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-18",
+      "scene_id": "S2C_MSIL2A_20260918T080611_N0512_R078_T37TGK_20260918T114710",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-20",
+      "scene_id": "S2A_MSIL2A_20260920T081021_N0512_R078_T37TGK_20260920T115055",
+      "cloud": 0.7576,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-23",
+      "scene_id": "S2B_MSIL2A_20260923T080609_N0513_R078_T37TGK_20260923T121031",
+      "cloud": 0.4149,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-28",
+      "scene_id": "S2C_MSIL2A_20260928T080711_N0513_R078_T37TGK_20260928T114817",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-30",
+      "scene_id": "S2A_MSIL2A_20260930T081631_N0513_R078_T37TGK_20260930T112321",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-10-03",
+      "scene_id": "S2B_MSIL2A_20261003T080749_N0513_R078_T37TGK_20261003T120735",
+      "cloud": 0.9999,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     }
+    ],
+    "discarded_far_from_fire_ha": 0.24,
+    "detections_with_scar": 37
+   },
+   {
+    "event_id": "fire-63de8bf95c",
+    "status": "ok",
+    "reason": null,
+    "fire_evidence": {
+     "n_points": 3,
+     "first_detected": "2026-09-12",
+     "last_detected": "2026-09-12",
+     "max_frp_mw": 0.91
+    },
+    "pair": {
+     "pre": "2026-09-10",
+     "post": "2026-09-13",
+     "cloud_pre": 0.0,
+     "cloud_post": 0.0,
+     "pre_scene_id": "S2A_MSIL2A_20260910T081641_N0512_R078_T37TFK_20260910T142115",
+     "post_scene_id": "S2B_MSIL2A_20260913T080609_N0512_R078_T37TFK_20260913T120602",
+     "gap_days": 3,
+     "reliable": true
+    },
+    "burn_area_ha": 26.24,
+    "observed_fraction": 1.0,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников.",
+     "369 га изменений в буфере не пересекают места детекций огня с подтверждённой гарью и гарью не считаются (вероятно, уборка или вспашка).",
+     "Все детекции ночные и слабые (FRP до 0.9 МВт): вероятно тление (солома, отходы), а не пожар с заметной гарью.",
+     "Между снимками 3 дн.: за это время возможны уборка, вспашка и восстановление растительности.",
+     "Пороги dNBR по типу покрова взяты из методики и в Краснодарском крае не откалиброваны."
+    ],
+    "rejected_scenes": [
+     {
+      "side": "pre",
+      "date": "2026-09-08",
+      "scene_id": "S2C_MSIL2A_20260908T080601_N0512_R078_T37TFK_20260908T115314",
+      "cloud": 0.8603,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-09-03",
+      "scene_id": "S2B_MSIL2A_20260903T080559_N0512_R078_T37TFK_20260903T120641",
+      "cloud": 0.9781,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-29",
+      "scene_id": "S2C_MSIL2A_20260829T080601_N0512_R078_T37TFK_20260829T115102",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-19",
+      "scene_id": "S2C_MSIL2A_20260819T080601_N0512_R078_T37TFK_20260819T115013",
+      "cloud": 0.4588,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-11",
+      "scene_id": "S2A_MSIL2A_20260811T081021_N0512_R078_T37TFK_20260811T125520",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-04",
+      "scene_id": "S2B_MSIL2A_20260804T080609_N0512_R078_T37TFK_20260804T103624",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-18",
+      "scene_id": "S2C_MSIL2A_20260918T080611_N0512_R078_T37TFK_20260918T114710",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-20",
+      "scene_id": "S2A_MSIL2A_20260920T081021_N0512_R078_T37TFK_20260920T115055",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-23",
+      "scene_id": "S2B_MSIL2A_20260923T080609_N0513_R078_T37TFK_20260923T121031",
+      "cloud": 0.6177,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-28",
+      "scene_id": "S2C_MSIL2A_20260928T080711_N0513_R078_T37TFK_20260928T114817",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-30",
+      "scene_id": "S2A_MSIL2A_20260930T081631_N0513_R078_T37TFK_20260930T112321",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-10-03",
+      "scene_id": "S2B_MSIL2A_20261003T080749_N0513_R078_T37TFK_20261003T120735",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     }
+    ],
+    "discarded_far_from_fire_ha": 368.68,
+    "detections_with_scar": 3
+   },
+   {
+    "event_id": "fire-f4d9c9c74f",
+    "status": "ok",
+    "reason": null,
+    "fire_evidence": {
+     "n_points": 3,
+     "first_detected": "2026-09-12",
+     "last_detected": "2026-09-12",
+     "max_frp_mw": 16.62
+    },
+    "pair": {
+     "pre": "2026-09-10",
+     "post": "2026-09-13",
+     "cloud_pre": 0.0,
+     "cloud_post": 0.0,
+     "pre_scene_id": "S2A_MSIL2A_20260910T081641_N0512_R078_T37TFK_20260910T142115",
+     "post_scene_id": "S2B_MSIL2A_20260913T080609_N0512_R078_T37TFK_20260913T120602",
+     "gap_days": 3,
+     "reliable": true
+    },
+    "burn_area_ha": 0.04,
+    "observed_fraction": 1.0,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников.",
+     "338 га изменений в буфере не пересекают места детекций огня с подтверждённой гарью и гарью не считаются (вероятно, уборка или вспашка).",
+     "Между снимками 3 дн.: за это время возможны уборка, вспашка и восстановление растительности.",
+     "Пороги dNBR по типу покрова взяты из методики и в Краснодарском крае не откалиброваны."
+    ],
+    "rejected_scenes": [
+     {
+      "side": "pre",
+      "date": "2026-09-08",
+      "scene_id": "S2C_MSIL2A_20260908T080601_N0512_R078_T37TFK_20260908T115314",
+      "cloud": 0.847,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-09-03",
+      "scene_id": "S2B_MSIL2A_20260903T080559_N0512_R078_T37TFK_20260903T120641",
+      "cloud": 0.9705,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-29",
+      "scene_id": "S2C_MSIL2A_20260829T080601_N0512_R078_T37TFK_20260829T115102",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-19",
+      "scene_id": "S2C_MSIL2A_20260819T080601_N0512_R078_T37TFK_20260819T115013",
+      "cloud": 0.4817,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-11",
+      "scene_id": "S2A_MSIL2A_20260811T081021_N0512_R078_T37TFK_20260811T125520",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-04",
+      "scene_id": "S2B_MSIL2A_20260804T080609_N0512_R078_T37TFK_20260804T103624",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-18",
+      "scene_id": "S2C_MSIL2A_20260918T080611_N0512_R078_T37TFK_20260918T114710",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-20",
+      "scene_id": "S2A_MSIL2A_20260920T081021_N0512_R078_T37TFK_20260920T115055",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-23",
+      "scene_id": "S2B_MSIL2A_20260923T080609_N0513_R078_T37TFK_20260923T121031",
+      "cloud": 0.4419,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-28",
+      "scene_id": "S2C_MSIL2A_20260928T080711_N0513_R078_T37TFK_20260928T114817",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-30",
+      "scene_id": "S2A_MSIL2A_20260930T081631_N0513_R078_T37TFK_20260930T112321",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-10-03",
+      "scene_id": "S2B_MSIL2A_20261003T080749_N0513_R078_T37TFK_20261003T120735",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     }
+    ],
+    "discarded_far_from_fire_ha": 337.6,
+    "detections_with_scar": 3
+   },
+   {
+    "event_id": "fire-b9993beecc",
+    "status": "ok",
+    "reason": null,
+    "fire_evidence": {
+     "n_points": 1,
+     "first_detected": "2026-09-13",
+     "last_detected": "2026-09-13",
+     "max_frp_mw": 2.45
+    },
+    "pair": {
+     "pre": "2026-09-10",
+     "post": "2026-10-08",
+     "cloud_pre": 0.0,
+     "cloud_post": 0.0,
+     "pre_scene_id": "S2A_MSIL2A_20260910T081641_N0512_R078_T37TFK_20260910T142115",
+     "post_scene_id": "S2C_MSIL2A_20261008T080821_N0513_R078_T37TFK_20261008T110015",
+     "gap_days": 28,
+     "reliable": false
+    },
+    "burn_area_ha": 217.28,
+    "observed_fraction": 1.0,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников.",
+     "14 га изменений в буфере не пересекают места детекций огня с подтверждённой гарью и гарью не считаются (вероятно, уборка или вспашка).",
+     "Низкая надёжность: между снимками 28 дн. (ясных снимков ближе к пожару нет). За это время соседние поля могли убрать и вспахать — площадь гари, вероятно, завышена.",
+     "Пороги dNBR по типу покрова взяты из методики и в Краснодарском крае не откалиброваны."
+    ],
+    "rejected_scenes": [
+     {
+      "side": "pre",
+      "date": "2026-09-08",
+      "scene_id": "S2C_MSIL2A_20260908T080601_N0512_R078_T37TFK_20260908T115314",
+      "cloud": 0.8709,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-29",
+      "scene_id": "S2C_MSIL2A_20260829T080601_N0512_R078_T37TFK_20260829T115102",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-11",
+      "scene_id": "S2A_MSIL2A_20260811T081021_N0512_R078_T37TFK_20260811T125520",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-04",
+      "scene_id": "S2B_MSIL2A_20260804T080609_N0512_R078_T37TFK_20260804T103624",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-18",
+      "scene_id": "S2C_MSIL2A_20260918T080611_N0512_R078_T37TFK_20260918T114710",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-20",
+      "scene_id": "S2A_MSIL2A_20260920T081021_N0512_R078_T37TFK_20260920T115055",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-23",
+      "scene_id": "S2B_MSIL2A_20260923T080609_N0513_R078_T37TFK_20260923T121031",
+      "cloud": 0.5677,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-28",
+      "scene_id": "S2C_MSIL2A_20260928T080711_N0513_R078_T37TFK_20260928T114817",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-30",
+      "scene_id": "S2A_MSIL2A_20260930T081631_N0513_R078_T37TFK_20260930T112321",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-10-03",
+      "scene_id": "S2B_MSIL2A_20261003T080749_N0513_R078_T37TFK_20261003T120735",
+      "cloud": 0.9999,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     }
+    ],
+    "discarded_far_from_fire_ha": 13.76,
+    "detections_with_scar": 1
+   }
+  ]
+ },
+ "Анапская равнина, август": {
+  "bbox": [
+   37.1,
+   44.85,
+   37.6,
+   45.2
+  ],
+  "period": [
+   "2026-08-01",
+   "2026-08-31"
+  ],
+  "seconds": 185.8,
+  "status": "ok",
+  "message": "Событий огня: 10; гарь на снимках подтверждена для 1, у 4 огонь есть, но гари в месте детекций не видно. Модель гари запускалась только вокруг подтверждённых очагов.",
+  "evidence": {
+   "sources": [
+    "VIIRS_NOAA20_NRT",
+    "VIIRS_NOAA21_NRT",
+    "VIIRS_SNPP_NRT"
+   ],
+   "points_total": 100,
+   "points_kept": 89,
+   "excluded": {
+    "low_confidence": 11,
+    "static_type": 0,
+    "persistent": 0
+   },
+   "failures": [],
+   "persistent_mask": {
+    "files": [
+     "artifacts/persistent-sources/krasnodar_krai.geojson"
+    ],
+    "covers_area": true
+   }
+  },
+  "burn_count": 1148,
+  "burn_area_ha": 933.08,
+  "events": [
+   {
+    "event_id": "fire-56b6326bf3",
+    "status": "ok",
+    "reason": null,
+    "fire_evidence": {
+     "n_points": 72,
+     "first_detected": "2026-08-29",
+     "last_detected": "2026-08-31",
+     "max_frp_mw": 296.88
+    },
+    "pair": {
+     "pre": "2026-08-27",
+     "post": "2026-09-01",
+     "cloud_pre": 0.0,
+     "cloud_post": 0.0,
+     "pre_scene_id": "S2A_MSIL2A_20260827T083531_N0512_R021_T37TCK_20260827T145509",
+     "post_scene_id": "S2C_MSIL2A_20260901T081601_N0512_R121_T37TCK_20260901T134516",
+     "gap_days": 5,
+     "reliable": true
+    },
+    "burn_area_ha": 933.08,
+    "observed_fraction": 1.0,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников.",
+     "114 га изменений в буфере не пересекают места детекций огня с подтверждённой гарью и гарью не считаются (вероятно, уборка или вспашка).",
+     "Между снимками 5 дн.: за это время возможны уборка, вспашка и восстановление растительности.",
+     "Пороги dNBR по типу покрова взяты из методики и в Краснодарском крае не откалиброваны."
+    ],
+    "rejected_scenes": [
+     {
+      "side": "pre",
+      "date": "2026-08-05",
+      "scene_id": "S2C_MSIL2A_20260805T082601_N0512_R021_T37TCK_20260805T135217",
+      "cloud": 0.4833,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-14",
+      "scene_id": "S2C_MSIL2A_20260914T082601_N0512_R021_T37TCK_20260914T135510",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-21",
+      "scene_id": "S2C_MSIL2A_20260921T081631_N0513_R121_T37TCK_20260921T121354",
+      "cloud": 0.4831,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-23",
+      "scene_id": "S2A_MSIL2A_20260923T082601_N0513_R121_T37TCK_20260923T112100",
+      "cloud": 0.3392,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     }
+    ],
+    "discarded_far_from_fire_ha": 113.6,
+    "detections_with_scar": 65
+   },
+   {
+    "event_id": "fire-1e23cf2191",
+    "status": "no_scar",
+    "reason": "no_scar_at_detections",
+    "fire_evidence": {
+     "n_points": 7,
+     "first_detected": "2026-08-19",
+     "last_detected": "2026-08-20",
+     "max_frp_mw": 3.33
+    },
+    "pair": {
+     "pre": "2026-08-15",
+     "post": "2026-08-25",
+     "cloud_pre": 0.0,
+     "cloud_post": 0.0,
+     "pre_scene_id": "S2C_MSIL2A_20260815T082601_N0512_R021_T37TCL_20260815T135718",
+     "post_scene_id": "S2C_MSIL2A_20260825T082601_N0512_R021_T37TCL_20260825T135112",
+     "gap_days": 10,
+     "reliable": true
+    },
+    "burn_area_ha": 0.0,
+    "observed_fraction": 1.0,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников.",
+     "207 га изменений в буфере не пересекают места детекций огня с подтверждённой гарью и гарью не считаются (вероятно, уборка или вспашка).",
+     "Все детекции ночные и слабые (FRP до 3.3 МВт): вероятно тление (солома, отходы), а не пожар с заметной гарью.",
+     "Между снимками 10 дн.: за это время возможны уборка, вспашка и восстановление растительности.",
+     "Пороги dNBR по типу покрова взяты из методики и в Краснодарском крае не откалиброваны."
+    ],
+    "rejected_scenes": [
+     {
+      "side": "pre",
+      "date": "2026-08-17",
+      "scene_id": "S2A_MSIL2A_20260817T082751_N0512_R021_T37TCL_20260817T121113",
+      "cloud": 0.6067,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-07-26",
+      "scene_id": "S2C_MSIL2A_20260726T082601_N0512_R021_T37TCL_20260726T135212",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-07-16",
+      "scene_id": "S2C_MSIL2A_20260716T082601_N0512_R021_T37TCL_20260716T135311",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-04",
+      "scene_id": "S2C_MSIL2A_20260904T082601_N0512_R021_T37TCL_20260904T135015",
+      "cloud": 0.7713,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-09",
+      "scene_id": "S2B_MSIL2A_20260909T082559_N0512_R021_T37TCL_20260909T122932",
+      "cloud": 0.8204,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-14",
+      "scene_id": "S2C_MSIL2A_20260914T082601_N0512_R021_T37TCL_20260914T135510",
+      "cloud": 0.9992,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-24",
+      "scene_id": "S2C_MSIL2A_20260924T082651_N0513_R021_T37TCL_20260924T135216",
+      "cloud": 0.8118,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-26",
+      "scene_id": "S2A_MSIL2A_20260926T082751_N0513_R021_T37TCL_20260926T120909",
+      "cloud": 0.8395,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-29",
+      "scene_id": "S2B_MSIL2A_20260929T082639_N0513_R021_T37TCL_20260929T125135",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     }
+    ],
+    "discarded_far_from_fire_ha": 206.64,
+    "detections_with_scar": 0
+   },
+   {
+    "event_id": "fire-58767d3fc5",
+    "status": "no_scar",
+    "reason": "no_scar_at_detections",
+    "fire_evidence": {
+     "n_points": 2,
+     "first_detected": "2026-08-03",
+     "last_detected": "2026-08-03",
+     "max_frp_mw": 6.14
+    },
+    "pair": {
+     "pre": "2026-08-02",
+     "post": "2026-08-07",
+     "cloud_pre": 0.0,
+     "cloud_post": 0.0,
+     "pre_scene_id": "S2C_MSIL2A_20260802T081611_N0512_R121_T37TCK_20260802T135020",
+     "post_scene_id": "S2A_MSIL2A_20260807T083531_N0512_R021_T37TCK_20260807T131912",
+     "gap_days": 5,
+     "reliable": true
+    },
+    "burn_area_ha": 0.0,
+    "observed_fraction": 1.0,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников.",
+     "Между снимками 5 дн.: за это время возможны уборка, вспашка и восстановление растительности.",
+     "Пороги dNBR по типу покрова взяты из методики и в Краснодарском крае не откалиброваны."
+    ],
+    "rejected_scenes": [
+     {
+      "side": "pre",
+      "date": "2026-07-26",
+      "scene_id": "S2C_MSIL2A_20260726T082601_N0512_R021_T37TCK_20260726T135212",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-07-25",
+      "scene_id": "S2A_MSIL2A_20260725T082601_N0512_R121_T37TCK_20260725T132609",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-07-23",
+      "scene_id": "S2C_MSIL2A_20260723T081611_N0512_R121_T37TCK_20260723T120609",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-07-18",
+      "scene_id": "S2A_MSIL2A_20260718T083531_N0512_R021_T37TCK_20260718T132553",
+      "cloud": 0.7123,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-07-16",
+      "scene_id": "S2C_MSIL2A_20260716T082601_N0512_R021_T37TCK_20260716T135311",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-07-15",
+      "scene_id": "S2A_MSIL2A_20260715T082021_N0512_R121_T37TCK_20260715T115753",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-08-04",
+      "scene_id": "S2A_MSIL2A_20260804T082021_N0512_R121_T37TCK_20260804T134216",
+      "cloud": 0.4694,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-08-05",
+      "scene_id": "S2C_MSIL2A_20260805T082601_N0512_R021_T37TCK_20260805T135217",
+      "cloud": 0.4916,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     }
+    ],
+    "discarded_far_from_fire_ha": 0.0,
+    "detections_with_scar": 0
+   },
+   {
+    "event_id": "fire-b3338dff9f",
+    "status": "no_scar",
+    "reason": "no_scar_at_detections",
+    "fire_evidence": {
+     "n_points": 2,
+     "first_detected": "2026-08-22",
+     "last_detected": "2026-08-22",
+     "max_frp_mw": 17.48
+    },
+    "pair": {
+     "pre": "2026-08-20",
+     "post": "2026-08-25",
+     "cloud_pre": 0.0,
+     "cloud_post": 0.0,
+     "pre_scene_id": "S2B_MSIL2A_20260820T082559_N0512_R021_T37TCK_20260820T123007",
+     "post_scene_id": "S2C_MSIL2A_20260825T082601_N0512_R021_T37TCK_20260825T135112",
+     "gap_days": 5,
+     "reliable": true
+    },
+    "burn_area_ha": 0.0,
+    "observed_fraction": 1.0,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников.",
+     "4 га изменений в буфере не пересекают места детекций огня с подтверждённой гарью и гарью не считаются (вероятно, уборка или вспашка).",
+     "Между снимками 5 дн.: за это время возможны уборка, вспашка и восстановление растительности.",
+     "Пороги dNBR по типу покрова взяты из методики и в Краснодарском крае не откалиброваны."
+    ],
+    "rejected_scenes": [
+     {
+      "side": "pre",
+      "date": "2026-08-14",
+      "scene_id": "S2A_MSIL2A_20260814T082601_N0512_R121_T37TCK_20260814T114309",
+      "cloud": 0.0001,
+      "nodata": 0.9111,
+      "reason": "nodata"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-12",
+      "scene_id": "S2C_MSIL2A_20260812T081601_N0512_R121_T37TCK_20260812T121315",
+      "cloud": 0.0,
+      "nodata": 0.9212,
+      "reason": "nodata"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-05",
+      "scene_id": "S2C_MSIL2A_20260805T082601_N0512_R021_T37TCK_20260805T135217",
+      "cloud": 0.8847,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-04",
+      "scene_id": "S2A_MSIL2A_20260804T082021_N0512_R121_T37TCK_20260804T134216",
+      "cloud": 0.1196,
+      "nodata": 0.8623,
+      "reason": "nodata"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-02",
+      "scene_id": "S2C_MSIL2A_20260802T081611_N0512_R121_T37TCK_20260802T135020",
+      "cloud": 0.0,
+      "nodata": 0.8455,
+      "reason": "nodata"
+     },
+     {
+      "side": "post",
+      "date": "2026-08-24",
+      "scene_id": "S2A_MSIL2A_20260824T082021_N0512_R121_T37TCK_20260824T134110",
+      "cloud": 0.0,
+      "nodata": 0.9015,
+      "reason": "nodata"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-01",
+      "scene_id": "S2C_MSIL2A_20260901T081601_N0512_R121_T37TCK_20260901T134516",
+      "cloud": 0.0,
+      "nodata": 0.8637,
+      "reason": "nodata"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-03",
+      "scene_id": "S2A_MSIL2A_20260903T082601_N0512_R121_T37TCK_20260903T131912",
+      "cloud": 0.0001,
+      "nodata": 0.8066,
+      "reason": "nodata"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-11",
+      "scene_id": "S2C_MSIL2A_20260911T081601_N0512_R121_T37TCK_20260911T120815",
+      "cloud": 0.0,
+      "nodata": 0.9226,
+      "reason": "nodata"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-13",
+      "scene_id": "S2A_MSIL2A_20260913T082021_N0512_R121_T37TCK_20260913T115558",
+      "cloud": 0.0022,
+      "nodata": 0.7729,
+      "reason": "nodata"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-14",
+      "scene_id": "S2C_MSIL2A_20260914T082601_N0512_R021_T37TCK_20260914T135510",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     }
+    ],
+    "discarded_far_from_fire_ha": 3.76,
+    "detections_with_scar": 0
+   },
+   {
+    "event_id": "fire-28b7954899",
+    "status": "no_scar",
+    "reason": "no_scar_at_detections",
+    "fire_evidence": {
+     "n_points": 1,
+     "first_detected": "2026-08-02",
+     "last_detected": "2026-08-02",
+     "max_frp_mw": 14.38
+    },
+    "pair": {
+     "pre": "2026-07-31",
+     "post": "2026-08-07",
+     "cloud_pre": 0.0,
+     "cloud_post": 0.0,
+     "pre_scene_id": "S2B_MSIL2A_20260731T082559_N0512_R021_T37TCL_20260731T123008",
+     "post_scene_id": "S2A_MSIL2A_20260807T083531_N0512_R021_T37TCL_20260807T131912",
+     "gap_days": 7,
+     "reliable": true
+    },
+    "burn_area_ha": 0.0,
+    "observed_fraction": 1.0,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников.",
+     "73 га изменений в буфере не пересекают места детекций огня с подтверждённой гарью и гарью не считаются (вероятно, уборка или вспашка).",
+     "Между снимками 7 дн.: за это время возможны уборка, вспашка и восстановление растительности.",
+     "Пороги dNBR по типу покрова взяты из методики и в Краснодарском крае не откалиброваны."
+    ],
+    "rejected_scenes": [
+     {
+      "side": "pre",
+      "date": "2026-07-26",
+      "scene_id": "S2C_MSIL2A_20260726T082601_N0512_R021_T37TCL_20260726T135212",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-07-16",
+      "scene_id": "S2C_MSIL2A_20260716T082601_N0512_R021_T37TCL_20260716T135311",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-07-11",
+      "scene_id": "S2B_MSIL2A_20260711T082559_N0512_R021_T37TCL_20260711T123125",
+      "cloud": 0.5874,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-06-28",
+      "scene_id": "S2A_MSIL2A_20260628T082751_N0512_R021_T37TCL_20260628T121109",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-08-17",
+      "scene_id": "S2A_MSIL2A_20260817T082751_N0512_R021_T37TCL_20260817T121113",
+      "cloud": 0.9374,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     }
+    ],
+    "discarded_far_from_fire_ha": 72.72,
+    "detections_with_scar": 0
+   },
+   {
+    "event_id": "fire-50f3365da4",
+    "status": "not_processed",
+    "reason": "event_limit",
+    "fire_evidence": {
+     "n_points": 1,
+     "first_detected": "2026-08-11",
+     "last_detected": "2026-08-11",
+     "max_frp_mw": 2.22
+    },
+    "pair": null,
+    "burn_area_ha": null,
+    "observed_fraction": null,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников."
+    ],
+    "rejected_scenes": [],
+    "discarded_far_from_fire_ha": null,
+    "detections_with_scar": null
+   },
+   {
+    "event_id": "fire-57b1bede3f",
+    "status": "not_processed",
+    "reason": "event_limit",
+    "fire_evidence": {
+     "n_points": 1,
+     "first_detected": "2026-08-15",
+     "last_detected": "2026-08-15",
+     "max_frp_mw": 6.12
+    },
+    "pair": null,
+    "burn_area_ha": null,
+    "observed_fraction": null,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников."
+    ],
+    "rejected_scenes": [],
+    "discarded_far_from_fire_ha": null,
+    "detections_with_scar": null
+   },
+   {
+    "event_id": "fire-114c9ee9b0",
+    "status": "not_processed",
+    "reason": "event_limit",
+    "fire_evidence": {
+     "n_points": 1,
+     "first_detected": "2026-08-29",
+     "last_detected": "2026-08-29",
+     "max_frp_mw": 0.55
+    },
+    "pair": null,
+    "burn_area_ha": null,
+    "observed_fraction": null,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников."
+    ],
+    "rejected_scenes": [],
+    "discarded_far_from_fire_ha": null,
+    "detections_with_scar": null
+   },
+   {
+    "event_id": "fire-c86c29bd79",
+    "status": "not_processed",
+    "reason": "event_limit",
+    "fire_evidence": {
+     "n_points": 1,
+     "first_detected": "2026-08-30",
+     "last_detected": "2026-08-30",
+     "max_frp_mw": 46.61
+    },
+    "pair": null,
+    "burn_area_ha": null,
+    "observed_fraction": null,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников."
+    ],
+    "rejected_scenes": [],
+    "discarded_far_from_fire_ha": null,
+    "detections_with_scar": null
+   },
+   {
+    "event_id": "fire-9e4e4009cf",
+    "status": "not_processed",
+    "reason": "event_limit",
+    "fire_evidence": {
+     "n_points": 1,
+     "first_detected": "2026-08-31",
+     "last_detected": "2026-08-31",
+     "max_frp_mw": 3.96
+    },
+    "pair": null,
+    "burn_area_ha": null,
+    "observed_fraction": null,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников."
+    ],
+    "rejected_scenes": [],
+    "discarded_far_from_fire_ha": null,
+    "detections_with_scar": null
+   }
+  ]
+ },
+ "Новотитаровская (участок со скриншота)": {
+  "bbox": [
+   38.74,
+   45.13,
+   39.06,
+   45.33
+  ],
+  "period": [
+   "2026-09-10",
+   "2026-09-24"
+  ],
+  "seconds": 64.8,
+  "status": "ok",
+  "message": "Событий огня: 2; гарь на снимках подтверждена для 1, у 1 огонь есть, но гари в месте детекций не видно. Модель гари запускалась только вокруг подтверждённых очагов.",
+  "evidence": {
+   "sources": [
+    "VIIRS_NOAA20_NRT",
+    "VIIRS_NOAA21_NRT",
+    "VIIRS_SNPP_NRT"
+   ],
+   "points_total": 10,
+   "points_kept": 10,
+   "excluded": {
+    "low_confidence": 0,
+    "static_type": 0,
+    "persistent": 0
+   },
+   "failures": [],
+   "persistent_mask": {
+    "files": [
+     "artifacts/persistent-sources/krasnodar_krai.geojson"
+    ],
+    "covers_area": true
+   }
+  },
+  "burn_count": 213,
+  "burn_area_ha": 215.24,
+  "events": [
+   {
+    "event_id": "fire-98c8dce3e8",
+    "status": "ok",
+    "reason": null,
+    "fire_evidence": {
+     "n_points": 9,
+     "first_detected": "2026-09-11",
+     "last_detected": "2026-09-13",
+     "max_frp_mw": 2.72
+    },
+    "pair": {
+     "pre": "2026-09-06",
+     "post": "2026-10-03",
+     "cloud_pre": 0.0,
+     "cloud_post": 0.0,
+     "pre_scene_id": "S2B_MSIL2A_20260906T081559_N0512_R121_T37TDL_20260906T121933",
+     "post_scene_id": "S2A_MSIL2A_20261003T082021_N0513_R121_T37TDL_20261003T115916",
+     "gap_days": 27,
+     "reliable": false
+    },
+    "burn_area_ha": 215.24,
+    "observed_fraction": 1.0,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников.",
+     "900 га изменений в буфере не пересекают места детекций огня с подтверждённой гарью и гарью не считаются (вероятно, уборка или вспашка).",
+     "Все детекции ночные и слабые (FRP до 2.7 МВт): вероятно тление (солома, отходы), а не пожар с заметной гарью.",
+     "Низкая надёжность: между снимками 27 дн. (ясных снимков ближе к пожару нет). За это время соседние поля могли убрать и вспахать — площадь гари, вероятно, завышена.",
+     "Пороги dNBR по типу покрова взяты из методики и в Краснодарском крае не откалиброваны."
+    ],
+    "rejected_scenes": [
+     {
+      "side": "pre",
+      "date": "2026-08-17",
+      "scene_id": "S2B_MSIL2A_20260817T081559_N0512_R121_T37TDL_20260817T122121",
+      "cloud": 0.6651,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-04",
+      "scene_id": "S2A_MSIL2A_20260804T082021_N0512_R121_T37TDL_20260804T134216",
+      "cloud": 0.9169,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-16",
+      "scene_id": "S2B_MSIL2A_20260916T081559_N0512_R121_T37TDL_20260916T121702",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-21",
+      "scene_id": "S2C_MSIL2A_20260921T081631_N0513_R121_T37TDL_20260921T121354",
+      "cloud": 0.5509,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-23",
+      "scene_id": "S2A_MSIL2A_20260923T082601_N0513_R121_T37TDL_20260923T112100",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-26",
+      "scene_id": "S2B_MSIL2A_20260926T081609_N0513_R121_T37TDL_20260926T121741",
+      "cloud": 0.5078,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-10-01",
+      "scene_id": "S2C_MSIL2A_20261001T081741_N0513_R121_T37TDL_20261001T121004",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-10-06",
+      "scene_id": "S2B_MSIL2A_20261006T081819_N0513_R121_T37TDL_20261006T123952",
+      "cloud": 0.7926,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     }
+    ],
+    "discarded_far_from_fire_ha": 900.4,
+    "detections_with_scar": 3
+   },
+   {
+    "event_id": "fire-56395b2a51",
+    "status": "no_scar",
+    "reason": "no_scar_at_detections",
+    "fire_evidence": {
+     "n_points": 1,
+     "first_detected": "2026-09-21",
+     "last_detected": "2026-09-21",
+     "max_frp_mw": 3.3
+    },
+    "pair": {
+     "pre": "2026-09-13",
+     "post": "2026-10-03",
+     "cloud_pre": 0.0218,
+     "cloud_post": 0.0,
+     "pre_scene_id": "S2A_MSIL2A_20260913T082021_N0512_R121_T37TDL_20260913T115558",
+     "post_scene_id": "S2A_MSIL2A_20261003T082021_N0513_R121_T37TDL_20261003T115916",
+     "gap_days": 20,
+     "reliable": false
+    },
+    "burn_area_ha": 0.0,
+    "observed_fraction": 0.9782,
+    "limitations": [
+     "Разрешение VIIRS 375 м: термоточки подтверждают факт огня, но не задают границу гари.",
+     "Оперативные данные FIRMS (NRT) не содержат пометки статических источников.",
+     "723 га изменений в буфере не пересекают места детекций огня с подтверждённой гарью и гарью не считаются (вероятно, уборка или вспашка).",
+     "Низкая надёжность: между снимками 20 дн. (ясных снимков ближе к пожару нет). За это время соседние поля могли убрать и вспахать — площадь гари, вероятно, завышена.",
+     "Пороги dNBR по типу покрова взяты из методики и в Краснодарском крае не откалиброваны.",
+     "2% буфера закрыто облаками или тенями: там гарь не оценивалась."
+    ],
+    "rejected_scenes": [
+     {
+      "side": "pre",
+      "date": "2026-09-19",
+      "scene_id": "S2B_MSIL2A_20260919T082559_N0512_R021_T37TDL_20260919T122802",
+      "cloud": 0.0,
+      "nodata": 0.9913,
+      "reason": "nodata"
+     },
+     {
+      "side": "pre",
+      "date": "2026-09-16",
+      "scene_id": "S2A_MSIL2A_20260916T083521_N0512_R021_T37TDL_20260916T132413",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "pre",
+      "date": "2026-09-14",
+      "scene_id": "S2C_MSIL2A_20260914T082601_N0512_R021_T37TDL_20260914T135510",
+      "cloud": 0.0043,
+      "nodata": 0.9957,
+      "reason": "nodata"
+     },
+     {
+      "side": "pre",
+      "date": "2026-09-09",
+      "scene_id": "S2B_MSIL2A_20260909T082559_N0512_R021_T37TDL_20260909T122932",
+      "cloud": 0.0,
+      "nodata": 0.9966,
+      "reason": "nodata"
+     },
+     {
+      "side": "pre",
+      "date": "2026-09-04",
+      "scene_id": "S2C_MSIL2A_20260904T082601_N0512_R021_T37TDL_20260904T135015",
+      "cloud": 0.0,
+      "nodata": 1.0,
+      "reason": "nodata"
+     },
+     {
+      "side": "pre",
+      "date": "2026-08-30",
+      "scene_id": "S2B_MSIL2A_20260830T082559_N0512_R021_T37TDL_20260830T122957",
+      "cloud": 0.0,
+      "nodata": 0.9732,
+      "reason": "nodata"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-23",
+      "scene_id": "S2A_MSIL2A_20260923T082601_N0513_R121_T37TDL_20260923T112100",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-24",
+      "scene_id": "S2C_MSIL2A_20260924T082651_N0513_R021_T37TDL_20260924T135216",
+      "cloud": 0.0,
+      "nodata": 1.0,
+      "reason": "nodata"
+     },
+     {
+      "side": "post",
+      "date": "2026-09-29",
+      "scene_id": "S2B_MSIL2A_20260929T082639_N0513_R021_T37TDL_20260929T125135",
+      "cloud": 0.0047,
+      "nodata": 0.9953,
+      "reason": "nodata"
+     },
+     {
+      "side": "post",
+      "date": "2026-10-01",
+      "scene_id": "S2C_MSIL2A_20261001T081741_N0513_R121_T37TDL_20261001T121004",
+      "cloud": 1.0,
+      "nodata": 0.0,
+      "reason": "too_cloudy"
+     },
+     {
+      "side": "post",
+      "date": "2026-10-04",
+      "scene_id": "S2C_MSIL2A_20261004T082811_N0513_R021_T37TDL_20261004T121502",
+      "cloud": 0.0,
+      "nodata": 1.0,
+      "reason": "nodata"
+     },
+     {
+      "side": "post",
+      "date": "2026-10-09",
+      "scene_id": "S2B_MSIL2A_20261009T082839_N0513_R021_T37TDL_20261009T124925",
+      "cloud": 0.0,
+      "nodata": 0.992,
+      "reason": "nodata"
+     }
+    ],
+    "discarded_far_from_fire_ha": 723.28,
+    "detections_with_scar": 0
+   }
+  ]
+ },
+ "Рисовые чеки к северо-западу от Краснодара (запрос пользователя)": {
+  "period": [
+   "2026-09-10",
+   "2026-09-24"
+  ],
+  "checked_at": "2026-10-11",
+  "result": "12 событий: 6 с гарью (4 надёжных, 601 га; 2 ненадёжных, 864 га), 4 без гари, 2 не обработаны (лимит 10 событий)",
+  "visual_check": [
+   "fire-db4de010c7 (14 точек, 19–21.09, 276 га, надёжно): рисовые чеки, до — зелёный рис, после — тёмные выжженные чеки под точками; горение рисовой соломы после уборки, контур на месте.",
+   "fire-2d15b18151 (4 точки, 247 га, надёжно): чеки под точками стали тёмными — гарь есть; контур захватывает и соседние участки на севере и юго-западе, площадь, вероятно, завышена.",
+   "fire-d6ae3d95a6 (3 точки, 76 га, надёжно): спелый рис до, тёмные чеки после — горение стерни.",
+   "fire-91c44c5e53 (2 точки, 648 га, ненадёжно, разрыв 20 дн.): большая часть контура — убранные за это время чеки; ненадёжная пометка оправдана.",
+   "fire-e939d4498f (1 точка у края станицы, гари нет): на снимках изменений нет — статус «огонь есть, гари нет» верен.",
+   "На снимке 26.09 облако, пропущенное маской SCL (классы 5/7): добавлена проверка яркости в синем канале."
+  ],
+  "images": "GET /api/events/{event_id}/preview.png"
+ },
+ "Проверка времени изменения поля (до и после огня)": {
+  "checked_at": "2026-10-11",
+  "rule": "Промежуточные снимки Sentinel-2 между снимками пары (до 3 с каждой стороны, маска облаков расширена на 200 м): пиксель не гарь, если потемнел до огня или на первом ясном снимке после огня ещё не был тёмным. Порог — порог контура для типа земли; параметры не подбирались на этих случаях.",
+  "result": {
+   "Анапа 29–31.08": "без изменений, 933 га надёжно (промежуточных снимков нет, разрыв 5 дн.)",
+   "Новотитаровская": "215 → 195 га ненадёжно; по снимку 21.09 убрано 86 га (проверено 15 % пикселей гари)",
+   "Восток края 12–14.09": "11 700 → 9 316 га ненадёжно; по снимкам 20 и 23.09 убрано ~2 060 га",
+   "Окраина Краснодара": "огня нет — без изменений"
+  },
+  "visual_check": [
+   "fire-98c8dce3e8 (Новотитаровская, пара 06.09 → 03.10): точки огня у аэродрома, большой контур — поле, которое 06.09 светлое, 21.09 частично потемнело, 03.10 вспахано; убранная часть — вспашка, не гарь.",
+   "fire-b9993beecc (восток): старый контур на полях далеко от единственной точки огня; 10.09 поля светлые, 08.10 вспаханы — проверка убирает их там, где 23.09 было ясно.",
+   "fire-501bdacadf (восток, степной пожар): тёмная гарь вокруг точек видна уже 23.09 и остаётся; убраны поля, вспаханные позже.",
+   "Без расширения маски облаков проверка убирала больше (Новотитаровская — до статуса «гари нет»); на краях облаков дымка завышает NBR, поэтому выбран осторожный вариант.",
+   "Проверка «до огня» на этих случаях не сработала: снимок «до» и так ближайший к огню; длинные разрывы — со стороны «после»."
+  ],
+  "summary": "experiments/validation/demo-cases.json (event_details)"
+ }
+}

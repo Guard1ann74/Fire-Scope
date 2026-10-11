@@ -1,0 +1,20 @@
+# Модель гари сервиса: физическое правило по изменению индекса NBR (dNBR) с порогами по
+# типу покрова ESA WorldCover (шкала USGS для леса, свои пороги для трав, пашни, болот).
+# Весов не требует. Путь меняется переменной FIRES_MODEL_CONFIG.
+burn_severity:
+  preprocessing: optical_case
+  model: landcover_contour_dnbr
+  preprocessing_models:
+    optical_case: {}
+  model_description:
+    landcover_contour_dnbr:
+      scale: 1.0
+    dnbr_threshold:
+      dnbr_min: 0.10
+      severity_2: 0.27
+      severity_3: 0.48
+      min_component_px: 4
+service:
+  # true — реальные снимки, модель и живой FIRMS; false — только подготовленные
+  # файлы прогнозов (нужен FIRES_DATA_DIR или --data-dir). Демо-данных нет.
+  use_external_apis: true

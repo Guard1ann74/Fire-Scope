@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Мониторинг природных пожаров</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%94%A5%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/static/styles.css?v=fire-first-13" />
+  </head>
+  <body>
+    <!-- Штриховка зоны, где поверхность закрыта облаками: на неё ссылается .unobserved-area. -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <pattern id="unobservedHatch" patternUnits="userSpaceOnUse" width="9" height="9" patternTransform="rotate(45)">
+          <rect width="9" height="9" fill="#a7b0bb" fill-opacity="0.16" />
+          <line x1="0" y1="0" x2="0" y2="9" stroke="#d3dae2" stroke-width="2.6" stroke-opacity="0.8" />
+        </pattern>
+      </defs>
+    </svg>
+    <main class="workspace" id="workspace">
+      <div class="account" id="account" aria-label="Личный профиль"></div>
+      <!-- ЛЕВАЯ ПАНЕЛЬ: запрос ------------------------------------------ -->
+      <aside class="panel query-panel" aria-label="Параметры запроса">
+        <p id="sourceNotice" class="source-notice" role="alert" hidden></p>
+        <p class="eyebrow">Область</p>
+        <div class="tool-row" role="group" aria-label="Способ выделения области">
+          <button type="button" data-tool="rectangle" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="1.5" /></svg>
+            Прямоугольник
+          </button>
+          <button type="button" data-tool="polygon" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8.5 6.2-3.2 10H6.7l-3.2-10Z" /></svg>
+            Полигон
+          </button>
+        </div>
+        <div class="tool-row secondary">
+          <button type="button" id="useViewButton" class="quiet">Взять экран карты</button>
+          <button type="button" id="clearAreaButton" class="quiet" disabled>Сбросить</button>
+        </div>
+        <p id="areaHint" class="hint">Область не выбрана. Нарисуйте её на карте или возьмите текущий экран.</p>
+        <p id="areaEditHint" class="hint area-edit-hint" hidden>Перетащите фигуру за её середину; углы меняют размер, ↻ поворачивает. Delete удаляет фигуру.</p>
+
+        <p class="eyebrow">Период</p>
+        <div class="date-row">
+          <label>С <input id="dateFrom" type="date" /></label>
+          <label>По <input id="dateTo" type="date" /></label>
+        </div>
+        <div class="preset-row" role="group" aria-label="Быстрый выбор периода">
+          <button type="button" data-preset="all" class="quiet">Рекомендуемый</button>
+          <button type="button" data-preset="month" class="quiet">Месяц назад</button>
+          <button type="button" data-preset="year" class="quiet">Год назад</button>
+        </div>
+        <button id="runButton" class="primary" type="button" disabled>
+          <span class="run-label">Показать пожары</span>
+          <span class="spinner" aria-hidden="true"></span>
+        </button>
+        <p id="requestStatus" class="status" role="status" aria-live="polite"></p>
+
+        <div id="demoCases" class="demo-cases" hidden>
+          <p class="eyebrow">Реальные случаи</p>
+          <div id="demoCaseList" class="demo-case-list"></div>
+          <p class="hint">Область и период реального события; результат считает сервис тем же кодом, что и любой запрос.</p>
+        </div>
+        <p id="satelliteHint" class="hint" hidden>Сервис ищет подтверждённые очаги огня NASA FIRMS в области за период (до 31 дня) и оценивает гарь только вокруг них по снимкам Sentinel-2 до и после. Область — до 60 км по стороне.</p>
+
+
+        <p class="eyebrow">Наблюдаемые области</p>
+        <div id="watchPanel">
+          <button type="button" id="saveAreaButton" class="wide" disabled>Сохранить текущую область</button>
+          <p id="watchStorageHint" class="hint">Области сохраняются только в этой вкладке до её закрытия.</p>
+        </div>
+
+        <p class="eyebrow">Слои</p>
+        <div class="layer-toggles">
+          <label class="switch" id="liveSwitchRow" title="Термоточки NASA FIRMS за последние сутки">
+            <input id="layerLive" type="checkbox" />
+            <span class="swatch dot live" style="--swatch: #ffe14d"></span>
+            <span>Живые точки FIRMS<em id="countLive">—</em></span>
+          </label>
+          <label class="switch">
+            <input id="layerHotspots" type="checkbox" checked />
+            <span class="swatch dot" style="--swatch: #ff6a2b"></span>
+            <span>Термоточки<em id="countHotspots">0</em></span>
+          </label>
+          <label class="switch">
+            <input id="layerBurns" type="checkbox" checked />
+            <span class="swatch poly"></span>
+            <span>Контуры гарей<em id="countBurns">0</em></span>
+          </label>
+          <label class="switch" title="Гарь при длинном разрыве между снимками или слабом ночном огне: вероятно завышена">
+            <input id="layerUnreliable" type="checkbox" />
+            <span class="swatch unreliable"></span>
+            <span>Ненадёжные оценки гари<em id="countUnreliable">0</em></span>
+          </label>
+          <label class="switch" title="Облака и тени на снимках: гарь здесь не оценивалась">
+            <input id="layerUnobserved" type="checkbox" checked />
+            <span class="swatch hatch"></span>
+            <span>Не наблюдалось (облака)<em id="shareUnobserved">—</em></span>
+          </label>
+          <label class="switch">
+            <input id="layerArea" type="checkbox" checked />
+            <span class="swatch outline"></span>
+            <span>Область запроса</span>
+          </label>
+        </div>
+
+        <p class="eyebrow">Легенда · степень поражения</p>
+        <ul class="legend" id="legend"></ul>
+
+        <p class="eyebrow">Подложка</p>
+        <div class="basemap-row" role="group" aria-label="Подложка карты">
+          <button type="button" data-basemap="dark" aria-pressed="true">Тёмная</button>
+          <button type="button" data-basemap="standard" aria-pressed="false">Схема</button>
+          <button type="button" data-basemap="satellite" aria-pressed="false">Спутник</button>
+        </div>
+        <p id="basemapStatus" class="hint"></p>
+      </aside>
+
+      <!-- КАРТА ---------------------------------------------------------- -->
+      <div class="map-stage">
+        <div id="map" aria-label="Карта термоточек и контуров гарей">
+          <div class="map-fallback">Загрузка карты…</div>
+        </div>
+        <section id="mapTimeline" class="map-timeline" aria-label="Фильтр карты по месяцу" hidden>
+          <div class="timeline-heading">
+            <strong>Шкала месяцев</strong>
+            <button type="button" id="toggleTimeline" aria-expanded="true" aria-controls="timelineDetails">Свернуть ▾</button>
+          </div>
+          <div id="timelineDetails">
+            <p id="timelineStatus" role="status" aria-live="polite"></p>
+            <div class="timeline-navigation">
+              <button type="button" id="timelineBack" aria-label="Предыдущие месяцы">‹</button>
+              <div id="timelineMonths" class="timeline-months" role="group" aria-label="Месяцы наблюдений"></div>
+              <button type="button" id="timelineForward" aria-label="Следующие месяцы">›</button>
+            </div>
+            <p class="timeline-note">Месяц фильтрует карту. Аналитика и выгрузки — за весь период запроса. Повторный клик сбросит фильтр.</p>
+          </div>
+        </section>
+        <div class="region-search map-search" id="regionSearch" role="search">
+          <label class="sr-only" for="regionSearchInput">Поиск города, страны или области</label>
+          <div class="region-search-field">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5" /><path d="m16 16 5 5" /></svg>
+            <input id="regionSearchInput" type="search" autocomplete="off" placeholder="Поиск города, страны или области" role="combobox" aria-autocomplete="list" aria-controls="regionSearchResults" aria-expanded="false" />
+            <button type="button" id="regionSearchButton" aria-label="Искать место" title="Искать место">Найти</button>
+          </div>
+          <div id="regionSearchResults" class="region-search-results" role="listbox" aria-label="Результаты поиска" hidden></div>
+          <p class="region-search-credit" id="regionSearchCredit" hidden>Поиск мест: <a href="https://photon.komoot.io/" target="_blank" rel="noopener">Photon</a> · © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a></p>
+        </div>
+      </div>
+      <button type="button" id="reportToggle" class="side-toggle" aria-controls="reportPanel" aria-expanded="false" aria-label="Открыть аналитическую панель" title="Открыть аналитическую панель">
+        <span></span><span></span><span></span>
+      </button>
+      <button type="button" id="archiveToggle" class="side-toggle archive-toggle" aria-controls="archivePanel" aria-expanded="false" aria-label="Открыть архив областей" title="Открыть архив областей">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v13H3zM2 4h20v3H2zM10 11h4" /></svg>
+      </button>
+      <button type="button" id="monitorToggle" class="side-toggle monitor-toggle" aria-controls="monitorPanel" aria-expanded="false" aria-label="Открыть мониторинг огня" title="Мониторинг огня: оповещения о новых очагах">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 17V11a6 6 0 0 1 12 0v6l1.5 2h-15ZM10 21h4" /></svg>
+        <b id="monitorBadge" class="monitor-badge" hidden>0</b>
+      </button>
+
+      <div id="drawHint" class="draw-hint" hidden>
+        <span id="drawHintText"></span>
+        <button type="button" id="drawFinish" hidden>Замкнуть</button>
+        <button type="button" id="drawCancel" class="quiet">Отмена</button>
+      </div>
+
+      <!-- ПРАВАЯ ПАНЕЛЬ: аналитическая справка ---------------------------- -->
+      <aside class="panel report-panel" id="reportPanel" aria-label="Аналитическая справка" hidden>
+        <p class="eyebrow">Аналитическая справка</p>
+
+        <div id="reportIdle" class="placeholder">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M7 16V9m5 7V5m5 11v-5" /></svg>
+          <p>Выберите область и период — здесь появятся суммарная площадь гари и распределение по степеням поражения.</p>
+        </div>
+
+        <div id="reportLoading" class="placeholder" hidden>
+          <div class="spinner big" aria-hidden="true"></div>
+          <p>Считаем площади в метрической проекции…</p>
+        </div>
+
+        <div id="reportError" class="placeholder error" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v5m0 3.5v.01M10.3 4.2 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.2a2 2 0 0 0-3.4 0Z" /></svg>
+          <p id="reportErrorText"></p>
+          <button type="button" id="retryButton" class="quiet">Повторить</button>
+        </div>
+
+        <div id="reportEmpty" class="placeholder" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m16.5 16.5 4 4" /></svg>
+          <p><strong>Ничего не найдено</strong></p>
+          <p id="reportEmptyHint" class="muted"></p>
+          <button id="compareWithoutFire" type="button" class="quiet" hidden>
+            Сравнить: что нашла бы модель без проверки огня</button>
+        </div>
+
+        <section id="fireEvents" class="fire-events" hidden aria-label="События огня">
+          <p class="eyebrow">События огня · NASA FIRMS</p>
+          <ul id="fireEventList"></ul>
+          <p id="fireEvidenceNote" class="hint"></p>
+        </section>
+
+        <div id="reportBody" hidden>
+          <p id="compareNotice" class="observed-note compare-notice" hidden>
+            <strong>Режим сравнения, это не гарь.</strong> Модель посчитана по всему участку без проверки огня.
+            NASA FIRMS огня здесь не видел: контуры — это убранные и вспаханные поля, которые без
+            проверки огня приняли бы за гарь. Обычный запрос («Показать пожары») вернёт честный результат.</p>
+          <p id="reportObserved" class="observed-note" hidden></p>
+          <p id="reportMapScope" class="hint report-map-scope" hidden></p>
+          <div id="changesBanner" class="changes" hidden>
+            <strong id="changesTitle"></strong>
+            <span id="changesDetail"></span>
+          </div>
+          <div class="total-card">
+            <span id="totalLabel">Суммарная площадь гари</span>
+            <strong id="totalArea">—</strong>
+            <span class="muted" id="totalMeta">—</span>
+          </div>
+
+          <div class="mini-stats">
+            <div><strong id="factHotspots">—</strong><span>Термоточек</span></div>
+            <div><strong id="factBurns">—</strong><span>Контуров</span></div>
+            <div><strong id="factObserved">—</strong><span>Наблюдения</span></div>
+          </div>
+
+          <div class="severity-chart" id="severityChart" role="img" aria-label="Распределение площади по степеням поражения"></div>
+
+          <button type="button" id="openDashboardButton" class="primary wide dash-open">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 19h16M7.5 16V9.5M12 16V5m4.5 11v-7" />
+            </svg>
+            Подробная аналитика
+          </button>
+          <p class="hint">Графики динамики, сезонности, мощности очагов и разбивка по регионам.</p>
+
+          <p class="eyebrow">Выгрузка</p>
+          <div class="export-grid">
+            <button type="button" data-export="burns">Контуры · GeoJSON</button>
+            <button type="button" data-export="hotspots">Точки · GeoJSON</button>
+            <button type="button" data-export="report.json">Справка · JSON</button>
+            <button type="button" data-export="report.csv">Справка · CSV</button>
+          </div>
+          <p class="hint">Те же данные доступны без интерфейса: <a href="/docs" target="_blank" rel="noopener">описание REST API</a>.</p>
+        </div>
+      </aside>
+      <aside class="panel archive-panel" id="archivePanel" aria-label="Архив областей" hidden>
+        <p class="eyebrow">Архив областей</p>
+        <div>
+          <ul class="watch-list" id="watchList"></ul>
+          <p id="watchEmpty" class="hint">Пока ничего не сохранено.</p>
+        </div>
+      </aside>
+      <aside class="panel archive-panel monitor-panel" id="monitorPanel" aria-label="Мониторинг огня" hidden>
+        <p class="eyebrow">Мониторинг огня · NASA FIRMS</p>
+        <p id="monitorStatus" class="hint"></p>
+        <div class="monitor-actions">
+          <button type="button" id="monitorAddZone" class="primary" disabled>Следить за выбранной областью</button>
+          <button type="button" id="monitorCheck" class="quiet">Проверить сейчас</button>
+        </div>
+        <p class="eyebrow">Районы наблюдения</p>
+        <ul id="monitorZones" class="monitor-list"></ul>
+        <p id="monitorZonesEmpty" class="hint">Выделите область на карте и нажмите «Следить за выбранной областью».</p>
+        <div class="monitor-alerts-head">
+          <p class="eyebrow">Оповещения</p>
+          <button type="button" id="monitorReadAll" class="quiet" hidden>Все прочитаны</button>
+        </div>
+        <ul id="monitorAlerts" class="monitor-list"></ul>
+        <p id="monitorAlertsEmpty" class="hint">Новых очагов нет.</p>
+      </aside>
+    </main>
+
+
+
+    <!-- РАСШИРЕННАЯ АНАЛИТИКА -------------------------------------------- -->
+    <dialog id="dashboard" class="dash" aria-labelledby="dashTitle">
+      <header class="dash-head">
+        <div class="dash-head-text">
+          <h2 id="dashTitle">Аналитика пожарной обстановки</h2>
+          <p id="dashSubtitle" class="dash-sub">—</p>
+        </div>
+        <div class="dash-head-actions">
+          <div class="dash-download">
+            <button type="button" id="dashDownloadToggle" aria-expanded="false" aria-controls="dashDownloads">Скачать ▾</button>
+            <div id="dashDownloads" class="download-popover" hidden>
+              <p class="hint">Весь период запроса</p>
+              <button type="button" data-dash-export="burns">Контуры · GeoJSON</button>
+              <button type="button" data-dash-export="hotspots">Термоточки · GeoJSON</button>
+              <button type="button" data-dash-export="report.json">Справка · JSON</button>
+              <button type="button" data-dash-export="report.csv">Справка · CSV</button>
+              <a href="/docs" target="_blank" rel="noopener">Документация API ↗</a>
+            </div>
+          </div>
+          <div class="seg" role="group" aria-label="Шаг оси времени">
+            <button type="button" data-scale="month" aria-pressed="true">По месяцам</button>
+            <button type="button" data-scale="year" aria-pressed="false">По годам</button>
+          </div>
+          <div class="dash-size-controls" role="group" aria-label="Размер окна аналитики">
+            <button type="button" id="dashSmaller" title="Уменьшить окно" aria-label="Уменьшить окно аналитики">−</button>
+            <button type="button" id="dashLarger" title="Увеличить окно" aria-label="Увеличить окно аналитики">+</button>
+          </div>
+          <button type="button" id="dashClose" class="dash-close quiet" aria-label="Закрыть аналитику">×</button>
+        </div>
+      </header>
+
+      <div class="dash-body">
+        <section class="dash-card span-12 llm-card" id="llmCard" aria-labelledby="llmTitle" hidden>
+          <div class="llm-head">
+            <h3 id="llmTitle">ИИ-разбор результатов</h3>
+            <button type="button" class="quiet" id="llmRetry" hidden>Повторить</button>
+          </div>
+          <p id="llmAnalysis" class="llm-text" role="status" aria-live="polite">Откройте аналитику, чтобы получить краткое пояснение.</p>
+          <p class="card-note">Пояснение основано на агрегированных показателях и может содержать неточности.</p>
+        </section>
+
+        <div class="kpi-row" id="dashKpi"></div>
+
+        <section class="dash-card span-12">
+          <h3>Динамика: площадь гари и активность очагов</h3>
+          <p class="card-note">Столбцы — площадь гари по степеням поражения, линия — число термоточек.</p>
+          <div id="chartTimeline" class="chart"></div>
+        </section>
+
+        <section class="dash-card span-6">
+          <h3>Сезонность</h3>
+          <p class="card-note">Термоточки по месяцам года за весь период выборки.</p>
+          <div id="chartSeason" class="chart"></div>
+        </section>
+
+        <section class="dash-card span-6">
+          <h3>Степени поражения</h3>
+          <p class="card-note">Доли площади гари по классам модели BS.</p>
+          <div id="chartDonut" class="chart chart-split"></div>
+        </section>
+
+        <section class="dash-card span-6">
+          <h3>Спутники и достоверность</h3>
+          <p class="card-note">Кто снял очаги и с каким уровнем достоверности.</p>
+          <div id="chartSatellites" class="chart"></div>
+        </section>
+
+        <section class="dash-card span-6">
+          <h3>Мощность излучения (FRP)</h3>
+          <p class="card-note">Распределение термоточек по мощности в мегаваттах.</p>
+          <div id="chartFrp" class="chart"></div>
+        </section>
+
+        <section class="dash-card span-6">
+          <h3>Регионы</h3>
+          <p class="card-note">Площадь гари и число термоточек по субъектам.</p>
+          <div id="chartRegions" class="chart"></div>
+        </section>
+
+        <section class="dash-card span-6">
+          <h3>Параметры выборки</h3>
+          <p class="card-note">Что именно попало в расчёт.</p>
+          <dl class="facts" id="dashFacts"></dl>
+        </section>
+
+        <section class="dash-card span-12">
+          <h3>Крупнейшие контуры гари</h3>
+          <p class="card-note">Самые крупные участки выборки, до десяти строк. Откройте контур на карте или сразу перейдите к его проверке.</p>
+          <div id="dashTop" class="chart"></div>
+        </section>
+      </div>
+    </dialog>
+
+    <dialog id="authDialog" class="modal" aria-labelledby="authTitle">
+      <form method="dialog" class="modal-head">
+        <h2 id="authTitle">Вход</h2>
+        <button value="cancel" class="quiet" aria-label="Закрыть">×</button>
+      </form>
+      <div class="tabs" role="tablist">
+        <button type="button" id="tabLogin" role="tab" aria-selected="true">Вход</button>
+        <button type="button" id="tabRegister" role="tab" aria-selected="false">Регистрация</button>
+      </div>
+      <form id="authForm" class="modal-body">
+        <label>Логин
+          <input id="authLogin" name="login" autocomplete="username" required
+                 minlength="3" maxlength="32" pattern="[A-Za-z0-9_.\-]{3,32}"
+                 placeholder="латиница, цифры, точка, дефис" />
+        </label>
+        <label>Пароль
+          <input id="authPassword" name="password" type="password" required
+                 minlength="8" maxlength="256" autocomplete="current-password"
+                 placeholder="не короче 8 символов" />
+        </label>
+        <p id="authError" class="form-error" role="alert"></p>
+        <button type="submit" id="authSubmit" class="primary wide">Войти</button>
+        <p class="hint">
+          Учебный прототип на локальном сервере. Не используйте пароль от других сервисов.
+          Карта и выгрузки работают и без входа.
+        </p>
+      </form>
+    </dialog>
+
+    <dialog id="saveDialog" class="modal" aria-labelledby="saveTitle">
+      <form method="dialog" class="modal-head">
+        <h2 id="saveTitle">Сохранить область</h2>
+        <button value="cancel" class="quiet" aria-label="Закрыть">×</button>
+      </form>
+      <form id="saveForm" class="modal-body">
+        <label>Название
+          <input id="saveName" required maxlength="80" placeholder="Например: Сальские степи" />
+        </label>
+        <p id="savePeriod" class="hint"></p>
+        <p id="saveError" class="form-error" role="alert"></p>
+        <button type="submit" class="primary wide">Сохранить</button>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="alert" aria-live="assertive">
+      <span id="toastMessage"></span>
+      <button type="button" id="toastClose" aria-label="Закрыть сообщение">×</button>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- dashboard.js объявляет функции, которые app.js навешивает при старте,
+         поэтому грузится раньше. -->
+    <script src="/static/dashboard.js?v=fire-first-13"></script>
+    <script src="/static/app.js?v=fire-first-13"></script>
+    <script src="/static/monitor.js?v=monitor-3"></script>
+  </body>
+</html>

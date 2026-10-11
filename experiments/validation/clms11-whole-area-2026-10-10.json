@@ -1,0 +1,539 @@
+{
+  "model_config": "configs/bs-light.yaml",
+  "reference": "Copernicus CLMS Burnt Area 300 m monthly v4 (CP>=0.8, BF>=0.6)",
+  "events_evaluated": 11,
+  "events_skipped_or_failed": 9,
+  "detected": 11,
+  "reference_ha": 7853.9,
+  "predicted_ha": 13988.3,
+  "intersection_ha": 7120.9,
+  "pooled_iou": 0.4837,
+  "pooled_reference_covered": 0.9067,
+  "predicted_outside_reference_ha": 3647.8,
+  "caveat": "CLMS is 300 m and misses small fires; area outside it is not proven false. IoU is limited by the 300 m reference edges.",
+  "events": {
+    "clms-c1e34a6f111371ef": {
+      "skipped": "событие больше участка, который сервис обрабатывает за раз",
+      "reference_ha": 12241.8
+    },
+    "clms-a27ed692dc740cdb": {
+      "reference_ha": 2282.4,
+      "predicted_ha": 3534.5,
+      "intersection_ha": 2218.3,
+      "iou": 0.6164,
+      "reference_covered": 0.9719,
+      "detected": true,
+      "predicted_outside_reference_ha": 487.8,
+      "area_ratio": 1.549,
+      "observed_fraction": 0.9985,
+      "query_area_ha": 8638.3,
+      "event": {
+        "start": "2024-07-10",
+        "end": "2024-07-13",
+        "centre": [
+          37.8672,
+          45.7102
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_ext_32637_39_493",
+          "pre": "S2B_MSIL2A_20240708T081609_N0510_R121_T37TCL_20240708T102129",
+          "post": "S2A_MSIL2A_20240716T082601_N0510_R021_T37TCL_20240716T112850",
+          "pre_date": "2024-07-08",
+          "post_date": "2024-07-16",
+          "area_pixels": 6486,
+          "observed_fraction": 0.9679
+        },
+        {
+          "tile": "BS_ext_32637_39_494",
+          "pre": "S2A_MSIL2A_20240706T082601_N0510_R021_T37TCL_20240706T113246",
+          "post": "S2A_MSIL2A_20240716T082601_N0510_R021_T37TCL_20240716T112850",
+          "pre_date": "2024-07-06",
+          "post_date": "2024-07-16",
+          "area_pixels": 58098,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_ext_32637_40_493",
+          "pre": "S2A_MSIL2A_20240706T082601_N0510_R021_T37TDL_20240706T113246",
+          "post": "S2A_MSIL2A_20240716T082601_N0510_R021_T37TDL_20240716T112850",
+          "pre_date": "2024-07-06",
+          "post_date": "2024-07-16",
+          "area_pixels": 15181,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_ext_32637_40_494",
+          "pre": "S2A_MSIL2A_20240706T082601_N0510_R021_T37TDL_20240706T113246",
+          "post": "S2A_MSIL2A_20240716T082601_N0510_R021_T37TDL_20240716T112850",
+          "pre_date": "2024-07-06",
+          "post_date": "2024-07-16",
+          "area_pixels": 135983,
+          "observed_fraction": 0.9991
+        }
+      ],
+      "seconds": 64.4
+    },
+    "clms-e608ecc92102459c": {
+      "reference_ha": 1274.5,
+      "predicted_ha": 1914.3,
+      "intersection_ha": 1213.9,
+      "iou": 0.614,
+      "reference_covered": 0.9525,
+      "detected": true,
+      "predicted_outside_reference_ha": 323.9,
+      "area_ratio": 1.502,
+      "observed_fraction": 1.0,
+      "query_area_ha": 5476.6,
+      "event": {
+        "start": "2024-09-16",
+        "end": "2024-09-19",
+        "centre": [
+          37.8234,
+          45.72
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_ext_32637_39_494",
+          "pre": "S2A_MSIL2A_20240914T082601_N0511_R021_T37TCL_20240914T124653",
+          "post": "S2A_MSIL2A_20240921T081631_N0511_R121_T37TCL_20240921T113900",
+          "pre_date": "2024-09-14",
+          "post_date": "2024-09-21",
+          "area_pixels": 82500,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_ext_32637_40_494",
+          "pre": "S2A_MSIL2A_20240914T082601_N0511_R021_T37TDL_20240914T124653",
+          "post": "S2A_MSIL2A_20240921T081631_N0511_R121_T37TDL_20240921T113900",
+          "pre_date": "2024-09-14",
+          "post_date": "2024-09-21",
+          "area_pixels": 54300,
+          "observed_fraction": 1.0
+        }
+      ],
+      "seconds": 336.9
+    },
+    "clms-b7e26b1fe331f0ab": {
+      "reference_ha": 725.4,
+      "predicted_ha": 1619.1,
+      "intersection_ha": 654.2,
+      "iou": 0.3871,
+      "reference_covered": 0.9019,
+      "detected": true,
+      "predicted_outside_reference_ha": 609.9,
+      "area_ratio": 2.232,
+      "observed_fraction": 0.9861,
+      "query_area_ha": 3812.4,
+      "event": {
+        "start": "2024-09-21",
+        "end": "2024-09-22",
+        "centre": [
+          37.6898,
+          45.3494
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_ext_32637_38_490",
+          "pre": "S2B_MSIL2A_20240919T082559_N0511_R021_T37TCL_20240919T111913",
+          "post": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TCL_20240929T114417",
+          "pre_date": "2024-09-19",
+          "post_date": "2024-09-29",
+          "area_pixels": 72704,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_ext_32637_39_490",
+          "pre": "S2B_MSIL2A_20240919T082559_N0511_R021_T37TCL_20240919T111913",
+          "post": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TCL_20240924T120548",
+          "pre_date": "2024-09-19",
+          "post_date": "2024-09-24",
+          "area_pixels": 22528,
+          "observed_fraction": 0.9411
+        }
+      ],
+      "seconds": 33.5
+    },
+    "clms-d8113fcdf137b53b": {
+      "reference_ha": 711.5,
+      "predicted_ha": 1401.6,
+      "intersection_ha": 682.3,
+      "iou": 0.4768,
+      "reference_covered": 0.9589,
+      "detected": true,
+      "predicted_outside_reference_ha": 411.0,
+      "area_ratio": 1.97,
+      "observed_fraction": 0.9069,
+      "query_area_ha": 3844.9,
+      "event": {
+        "start": "2024-09-23",
+        "end": "2024-09-24",
+        "centre": [
+          37.6691,
+          45.3868
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_ext_32637_38_490",
+          "pre": "S2A_MSIL2A_20240921T081631_N0511_R121_T37TCL_20240921T113900",
+          "post": "S2B_MSIL2A_20240926T081619_N0511_R121_T37TCL_20240926T112013",
+          "pre_date": "2024-09-21",
+          "post_date": "2024-09-26",
+          "area_pixels": 67122,
+          "observed_fraction": 0.8669
+        },
+        {
+          "tile": "BS_ext_32637_38_491",
+          "pre": "S2A_MSIL2A_20240921T081631_N0511_R121_T37TCL_20240921T113900",
+          "post": "S2B_MSIL2A_20240926T081619_N0511_R121_T37TCL_20240926T112013",
+          "pre_date": "2024-09-21",
+          "post_date": "2024-09-26",
+          "area_pixels": 28815,
+          "observed_fraction": 1.0
+        }
+      ],
+      "seconds": 23.4
+    },
+    "clms-ebd5a63ee6c7b1fc": {
+      "reference_ha": 461.6,
+      "predicted_ha": 731.3,
+      "intersection_ha": 268.1,
+      "iou": 0.29,
+      "reference_covered": 0.5808,
+      "detected": true,
+      "predicted_outside_reference_ha": 190.0,
+      "area_ratio": 1.584,
+      "observed_fraction": 1.0,
+      "query_area_ha": 2743.4,
+      "event": {
+        "start": "2024-10-01",
+        "end": "2024-10-06",
+        "centre": [
+          38.2404,
+          45.5616
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_ext_32637_42_492",
+          "pre": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TDL_20240929T114417",
+          "post": "S2A_MSIL2A_20241011T081851_N0511_R121_T37TDL_20241011T114107",
+          "pre_date": "2024-09-29",
+          "post_date": "2024-10-11",
+          "area_pixels": 32480,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_ext_32637_43_492",
+          "pre": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TDL_20240929T114417",
+          "post": "S2A_MSIL2A_20241011T081851_N0511_R121_T37TDL_20241011T114107",
+          "pre_date": "2024-09-29",
+          "post_date": "2024-10-11",
+          "area_pixels": 36288,
+          "observed_fraction": 1.0
+        }
+      ],
+      "seconds": 30.4
+    },
+    "clms-08e64a483c8d1077": {
+      "reference_ha": 420.5,
+      "predicted_ha": 782.5,
+      "intersection_ha": 391.0,
+      "iou": 0.4815,
+      "reference_covered": 0.9297,
+      "detected": true,
+      "predicted_outside_reference_ha": 249.8,
+      "area_ratio": 1.861,
+      "observed_fraction": 0.9999,
+      "query_area_ha": 2204.0,
+      "event": {
+        "start": "2024-07-12",
+        "end": "2024-07-12",
+        "centre": [
+          37.8006,
+          45.6993
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_ext_32637_39_494",
+          "pre": "S2A_MSIL2A_20240706T082601_N0510_R021_T37TCL_20240706T113246",
+          "post": "S2A_MSIL2A_20240713T081611_N0510_R121_T37TCL_20240713T112750",
+          "pre_date": "2024-07-06",
+          "post_date": "2024-07-13",
+          "area_pixels": 54970,
+          "observed_fraction": 0.9999
+        }
+      ],
+      "seconds": 18.4
+    },
+    "clms-dc87a31bb9eccecf": {
+      "reference_ha": 415.6,
+      "predicted_ha": 362.2,
+      "intersection_ha": 246.2,
+      "iou": 0.4632,
+      "reference_covered": 0.5924,
+      "detected": true,
+      "predicted_outside_reference_ha": 11.3,
+      "area_ratio": 0.871,
+      "observed_fraction": 0.9892,
+      "query_area_ha": 2529.2,
+      "event": {
+        "start": "2024-10-10",
+        "end": "2024-10-10",
+        "centre": [
+          38.326,
+          45.4564
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_ext_32637_43_491",
+          "pre": "S2B_MSIL2A_20241006T081729_N0511_R121_T37TDL_20241006T102739",
+          "post": "S2A_MSIL2A_20241011T081851_N0511_R121_T37TDL_20241011T114107",
+          "pre_date": "2024-10-06",
+          "post_date": "2024-10-11",
+          "area_pixels": 63360,
+          "observed_fraction": 0.9892
+        }
+      ],
+      "seconds": 15.6
+    },
+    "clms-beb31c6f35894561": {
+      "reference_ha": 410.1,
+      "predicted_ha": 978.1,
+      "intersection_ha": 375.8,
+      "iou": 0.3712,
+      "reference_covered": 0.9164,
+      "detected": true,
+      "predicted_outside_reference_ha": 308.0,
+      "area_ratio": 2.385,
+      "observed_fraction": 0.9678,
+      "query_area_ha": 3207.5,
+      "event": {
+        "start": "2025-08-16",
+        "end": "2025-08-19",
+        "centre": [
+          38.7137,
+          45.287
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_ext_32637_46_489",
+          "pre": "S2A_MSIL2A_20250809T082601_N0511_R121_T37TDL_20250809T102116",
+          "post": "S2B_MSIL2A_20250822T081609_N0511_R121_T37TDL_20250822T101230",
+          "pre_date": "2025-08-09",
+          "post_date": "2025-08-22",
+          "area_pixels": 69069,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_ext_32637_46_490",
+          "pre": "S2A_MSIL2A_20250812T083521_N0511_R021_T37TDL_20250812T105117",
+          "post": "S2C_MSIL2A_20250820T082711_N0511_R021_T37TDL_20250820T140316",
+          "pre_date": "2025-08-12",
+          "post_date": "2025-08-20",
+          "area_pixels": 11088,
+          "observed_fraction": 0.7672
+        }
+      ],
+      "seconds": 37.4
+    },
+    "clms-ad1e6caae2e3e1ab": {
+      "reference_ha": 402.1,
+      "predicted_ha": 573.7,
+      "intersection_ha": 352.1,
+      "iou": 0.5645,
+      "reference_covered": 0.8756,
+      "detected": true,
+      "predicted_outside_reference_ha": 87.6,
+      "area_ratio": 1.427,
+      "observed_fraction": 1.0,
+      "query_area_ha": 2302.4,
+      "event": {
+        "start": "2025-09-01",
+        "end": "2025-09-02",
+        "centre": [
+          41.4808,
+          44.5394
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_ext_32637_67_481",
+          "pre": "S2B_MSIL2A_20250829T080609_N0511_R078_T37TFK_20250829T090947",
+          "post": "S2A_MSIL2A_20250905T081021_N0511_R078_T37TFK_20250905T114919",
+          "pre_date": "2025-08-29",
+          "post_date": "2025-09-05",
+          "area_pixels": 12180,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_ext_32637_67_482",
+          "pre": "S2B_MSIL2A_20250829T080609_N0511_R078_T37TFK_20250829T090947",
+          "post": "S2A_MSIL2A_20250905T081021_N0511_R078_T37TFK_20250905T114919",
+          "pre_date": "2025-08-29",
+          "post_date": "2025-09-05",
+          "area_pixels": 6580,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_ext_32637_68_481",
+          "pre": "S2B_MSIL2A_20250829T080609_N0511_R078_T37TFK_20250829T090947",
+          "post": "S2A_MSIL2A_20250905T081021_N0511_R078_T37TFK_20250905T114919",
+          "pre_date": "2025-08-29",
+          "post_date": "2025-09-05",
+          "area_pixels": 25230,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_ext_32637_68_482",
+          "pre": "S2B_MSIL2A_20250829T080609_N0511_R078_T37TFK_20250829T090947",
+          "post": "S2A_MSIL2A_20250905T081021_N0511_R078_T37TFK_20250905T114919",
+          "pre_date": "2025-08-29",
+          "post_date": "2025-09-05",
+          "area_pixels": 13630,
+          "observed_fraction": 1.0
+        }
+      ],
+      "seconds": 55.8
+    },
+    "clms-ac4388e151fd8677": {
+      "reference_ha": 397.3,
+      "predicted_ha": 791.2,
+      "intersection_ha": 376.0,
+      "iou": 0.4628,
+      "reference_covered": 0.9464,
+      "detected": true,
+      "predicted_outside_reference_ha": 220.7,
+      "area_ratio": 1.991,
+      "observed_fraction": 0.9911,
+      "query_area_ha": 2096.4,
+      "event": {
+        "start": "2025-09-17",
+        "end": "2025-09-17",
+        "centre": [
+          38.7867,
+          46.1344
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_ext_32637_46_498",
+          "pre": "S2C_MSIL2A_20250916T081621_N0511_R121_T37TDM_20250916T140922",
+          "post": "S2B_MSIL2A_20250921T081559_N0511_R121_T37TDM_20250921T110654",
+          "pre_date": "2025-09-16",
+          "post_date": "2025-09-21",
+          "area_pixels": 3250,
+          "observed_fraction": 0.992
+        },
+        {
+          "tile": "BS_ext_32637_46_499",
+          "pre": "S2B_MSIL2A_20250914T082559_N0511_R021_T37TDM_20250914T104754",
+          "post": "S2B_MSIL2A_20250921T081559_N0511_R121_T37TDM_20250921T110654",
+          "pre_date": "2025-09-14",
+          "post_date": "2025-09-21",
+          "area_pixels": 1768,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_ext_32637_47_498",
+          "pre": "S2B_MSIL2A_20250914T082559_N0511_R021_T37TDM_20250914T104754",
+          "post": "S2B_MSIL2A_20250921T081559_N0511_R121_T37TDM_20250921T110654",
+          "pre_date": "2025-09-14",
+          "post_date": "2025-09-21",
+          "area_pixels": 30750,
+          "observed_fraction": 0.9966
+        },
+        {
+          "tile": "BS_ext_32637_47_499",
+          "pre": "S2B_MSIL2A_20250914T082559_N0511_R021_T37TDM_20250914T104754",
+          "post": "S2B_MSIL2A_20250921T081559_N0511_R121_T37TDM_20250921T110654",
+          "pre_date": "2025-09-14",
+          "post_date": "2025-09-21",
+          "area_pixels": 16728,
+          "observed_fraction": 0.98
+        }
+      ],
+      "seconds": 72.4
+    },
+    "clms-9beea21509574880": {
+      "reference_ha": 352.9,
+      "predicted_ha": 1299.8,
+      "intersection_ha": 343.0,
+      "iou": 0.2619,
+      "reference_covered": 0.972,
+      "detected": true,
+      "predicted_outside_reference_ha": 747.8,
+      "area_ratio": 3.684,
+      "observed_fraction": 1.0,
+      "query_area_ha": 2345.4,
+      "event": {
+        "start": "2024-09-01",
+        "end": "2024-09-01",
+        "centre": [
+          37.9323,
+          45.8452
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_ext_32637_40_495",
+          "pre": "S2A_MSIL2A_20240825T082601_N0511_R021_T37TDL_20240825T122149",
+          "post": "S2A_MSIL2A_20240911T081601_N0511_R121_T37TDL_20240911T125146",
+          "pre_date": "2024-08-25",
+          "post_date": "2024-09-11",
+          "area_pixels": 49220,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_ext_32637_40_496",
+          "pre": "S2A_MSIL2A_20240825T082601_N0511_R021_T37TDL_20240825T122149",
+          "post": "S2A_MSIL2A_20240911T081601_N0511_R121_T37TDL_20240911T125146",
+          "pre_date": "2024-08-25",
+          "post_date": "2024-09-11",
+          "area_pixels": 9660,
+          "observed_fraction": 1.0
+        }
+      ],
+      "seconds": 56.6
+    },
+    "clms-9dedbb07b836f31d": {
+      "error": "Не удалось получить снимки или выполнить модель: The read operation timed out",
+      "reference_ha": 351.8
+    },
+    "clms-40e42bb12cfd9206": {
+      "error": "Не удалось получить снимки или выполнить модель: Copernicus catalogue request failed: <urlopen error [WinError 10054] Удаленный хост принудительно разорвал существующее подключение>",
+      "reference_ha": 313.7
+    },
+    "clms-7c28b0ee37791b9e": {
+      "error": "Не удалось получить снимки или выполнить модель: Remote end closed connection without response",
+      "reference_ha": 272.6
+    },
+    "clms-cfde668c36d97081": {
+      "error": "Не удалось получить снимки или выполнить модель: <urlopen error _ssl.c:1011: The handshake operation timed out>",
+      "reference_ha": 253.5
+    },
+    "clms-6177d1a93abf91b9": {
+      "error": "Не удалось получить снимки или выполнить модель: <urlopen error [WinError 10054] Удаленный хост принудительно разорвал существующее подключение>",
+      "reference_ha": 235.0
+    },
+    "clms-9970ac7770a2ed48": {
+      "error": "Не удалось получить снимки или выполнить модель: Copernicus catalogue request failed: The read operation timed out",
+      "reference_ha": 233.8
+    },
+    "clms-0c17817dfcf6a391": {
+      "error": "Не удалось получить снимки или выполнить модель: Copernicus catalogue request failed: The read operation timed out",
+      "reference_ha": 220.5
+    },
+    "clms-6cf6eee1df89a89a": {
+      "error": "Не удалось получить снимки или выполнить модель: The read operation timed out",
+      "reference_ha": 213.1
+    }
+  }
+}

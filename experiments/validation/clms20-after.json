@@ -1,0 +1,2528 @@
+{
+  "model_config": "configs/bs-light.yaml",
+  "mode": "fire-first",
+  "compared": "reliable burns only",
+  "reference": "Copernicus CLMS Burnt Area 300 m monthly v4 (CP>=0.8, BF>=0.6)",
+  "events_evaluated": 20,
+  "events_skipped_or_failed": 1,
+  "detected": 14,
+  "reference_ha": 10148.7,
+  "predicted_ha": 12974.2,
+  "intersection_ha": 7150.8,
+  "pooled_iou": 0.4477,
+  "pooled_reference_covered": 0.7046,
+  "predicted_outside_reference_ha": 2528.6,
+  "median_area_ratio": 1.444,
+  "median_iou": 0.3964,
+  "all_burns": {
+    "predicted_ha": 20325.1,
+    "intersection_ha": 9008.7,
+    "pooled_iou": 0.4197,
+    "pooled_reference_covered": 0.8877,
+    "median_area_ratio": 1.939,
+    "median_iou": 0.4092
+  },
+  "caveat": "CLMS is 300 m and misses small fires; area outside it is not proven false. IoU is limited by the 300 m reference edges.",
+  "events": {
+    "clms-c1e34a6f111371ef": {
+      "skipped": "событие больше участка, который сервис обрабатывает за раз",
+      "reference_ha": 12241.8
+    },
+    "clms-a27ed692dc740cdb": {
+      "reference_ha": 2282.4,
+      "predicted_ha": 3424.0,
+      "intersection_ha": 2214.7,
+      "iou": 0.6343,
+      "reference_covered": 0.9703,
+      "detected": true,
+      "predicted_outside_reference_ha": 384.8,
+      "area_ratio": 1.5,
+      "all_predicted_ha": 3556.8,
+      "all_intersection_ha": 2217.2,
+      "all_iou": 0.6121,
+      "all_reference_covered": 0.9714,
+      "all_area_ratio": 1.558,
+      "observed_fraction": 0.9987,
+      "status": "ok",
+      "unreliable_ha": 132.5,
+      "events": [
+        {
+          "event_id": "fire-bdeb7a612f",
+          "status": "ok",
+          "reason": null,
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 3425.16,
+          "fire_evidence": {
+            "n_points": 127,
+            "first_detected": "2024-07-09",
+            "last_detected": "2024-07-13",
+            "max_frp_mw": 80.13
+          },
+          "pair": {
+            "pre": "2024-07-06",
+            "post": "2024-07-16",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0006,
+            "pre_scene_id": "S2A_MSIL2A_20240706T082601_N0510_R021_T37TDL_20240706T113246",
+            "post_scene_id": "S2A_MSIL2A_20240716T082601_N0510_R021_T37TDL_20240716T112850",
+            "gap_days": 10,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9967,
+            "removed_ha": 19.56,
+            "removed_share": 0.0057,
+            "removed_by_landcover_ha": {
+              "водно-болотные угодья": 19.56
+            }
+          },
+          "buffer_edge": {
+            "share": 0.0576,
+            "touches": false
+          },
+          "area_per_point_ha": 26.97
+        },
+        {
+          "event_id": "fire-d0c993cdf4",
+          "status": "ok",
+          "reason": null,
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "контур упирается в границу зоны поиска на 42% периметра — гарь не замыкается вокруг очага"
+          ],
+          "burn_area_ha": 118.96,
+          "fire_evidence": {
+            "n_points": 10,
+            "first_detected": "2024-07-11",
+            "last_detected": "2024-07-13",
+            "max_frp_mw": 17.61
+          },
+          "pair": {
+            "pre": "2024-07-06",
+            "post": "2024-07-16",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20240706T082601_N0510_R021_T37TDL_20240706T113246",
+            "post_scene_id": "S2A_MSIL2A_20240716T082601_N0510_R021_T37TDL_20240716T112850",
+            "gap_days": 10,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9889,
+            "removed_ha": 9.44,
+            "removed_share": 0.0091,
+            "removed_by_landcover_ha": {
+              "водно-болотные угодья": 9.44
+            }
+          },
+          "buffer_edge": {
+            "share": 0.4208,
+            "touches": true
+          },
+          "area_per_point_ha": 102.37
+        },
+        {
+          "event_id": "fire-9bfe27fcc0",
+          "status": "ok",
+          "reason": null,
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "контур упирается в границу зоны поиска на 26% периметра — гарь не замыкается вокруг очага"
+          ],
+          "burn_area_ha": 13.56,
+          "fire_evidence": {
+            "n_points": 7,
+            "first_detected": "2024-07-11",
+            "last_detected": "2024-07-12",
+            "max_frp_mw": 12.06
+          },
+          "pair": {
+            "pre": "2024-07-06",
+            "post": "2024-07-13",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20240706T082601_N0510_R021_T37TDL_20240706T113246",
+            "post_scene_id": "S2A_MSIL2A_20240713T081611_N0510_R121_T37TDL_20240713T112750",
+            "gap_days": 7,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9799,
+            "removed_ha": 8.84,
+            "removed_share": 0.0099,
+            "removed_by_landcover_ha": {
+              "водно-болотные угодья": 8.84
+            }
+          },
+          "buffer_edge": {
+            "share": 0.2596,
+            "touches": true
+          },
+          "area_per_point_ha": 111.91
+        }
+      ],
+      "query_area_ha": 8638.3,
+      "event": {
+        "start": "2024-07-07",
+        "end": "2024-07-16",
+        "centre": [
+          37.8672,
+          45.7102
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_407040_5057040",
+          "event_id": "fire-bdeb7a612f",
+          "pre": "S2A_MSIL2A_20240706T082601_N0510_R021_T37TDL_20240706T113246",
+          "post": "S2A_MSIL2A_20240716T082601_N0510_R021_T37TDL_20240716T112850",
+          "pre_date": "2024-07-06",
+          "post_date": "2024-07-16",
+          "area_pixels": 206856,
+          "observed_fraction": 0.9985
+        },
+        {
+          "tile": "BS_area_32637_403760_5055860",
+          "event_id": "fire-d0c993cdf4",
+          "pre": "S2A_MSIL2A_20240706T082601_N0510_R021_T37TDL_20240706T113246",
+          "post": "S2A_MSIL2A_20240716T082601_N0510_R021_T37TDL_20240716T112850",
+          "pre_date": "2024-07-06",
+          "post_date": "2024-07-16",
+          "area_pixels": 48412,
+          "observed_fraction": 0.9996
+        },
+        {
+          "tile": "BS_area_32637_406100_5054660",
+          "event_id": "fire-9bfe27fcc0",
+          "pre": "S2A_MSIL2A_20240706T082601_N0510_R021_T37TDL_20240706T113246",
+          "post": "S2A_MSIL2A_20240713T081611_N0510_R121_T37TDL_20240713T112750",
+          "pre_date": "2024-07-06",
+          "post_date": "2024-07-13",
+          "area_pixels": 53544,
+          "observed_fraction": 0.9986
+        }
+      ],
+      "seconds": 413.3
+    },
+    "clms-b7e26b1fe331f0ab": {
+      "reference_ha": 725.4,
+      "predicted_ha": 1052.0,
+      "intersection_ha": 540.4,
+      "iou": 0.4369,
+      "reference_covered": 0.745,
+      "detected": true,
+      "predicted_outside_reference_ha": 277.6,
+      "area_ratio": 1.45,
+      "all_predicted_ha": 1083.6,
+      "all_intersection_ha": 540.4,
+      "all_iou": 0.426,
+      "all_reference_covered": 0.745,
+      "all_area_ratio": 1.494,
+      "observed_fraction": 0.982,
+      "status": "ok",
+      "unreliable_ha": 31.6,
+      "events": [
+        {
+          "event_id": "fire-c1f6abcec4",
+          "status": "ok",
+          "reason": null,
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 1052.4,
+          "fire_evidence": {
+            "n_points": 318,
+            "first_detected": "2024-09-19",
+            "last_detected": "2024-09-25",
+            "max_frp_mw": 308.02
+          },
+          "pair": {
+            "pre": "2024-09-14",
+            "post": "2024-09-29",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20240914T082601_N0511_R021_T37TDL_20240914T124653",
+            "post_scene_id": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TDL_20240929T114417",
+            "gap_days": 15,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9945,
+            "removed_ha": 503.56,
+            "removed_share": 0.3068,
+            "removed_by_landcover_ha": {
+              "пашня": 10.32,
+              "водно-болотные угодья": 493.24
+            }
+          },
+          "buffer_edge": {
+            "share": 0.0573,
+            "touches": false
+          },
+          "area_per_point_ha": 3.31
+        },
+        {
+          "event_id": "fire-97234abf33",
+          "status": "ok",
+          "reason": null,
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "контур упирается в границу зоны поиска на 25% периметра — гарь не замыкается вокруг очага"
+          ],
+          "burn_area_ha": 31.56,
+          "fire_evidence": {
+            "n_points": 14,
+            "first_detected": "2024-09-22",
+            "last_detected": "2024-09-23",
+            "max_frp_mw": 5.93
+          },
+          "pair": {
+            "pre": "2024-09-21",
+            "post": "2024-09-29",
+            "cloud_pre": 0.0152,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20240921T081631_N0511_R121_T37TCL_20240921T113900",
+            "post_scene_id": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TCL_20240929T114417",
+            "gap_days": 8,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.4523,
+            "removed_ha": 43.68,
+            "removed_share": 0.1248,
+            "removed_by_landcover_ha": {
+              "водно-болотные угодья": 43.68
+            }
+          },
+          "buffer_edge": {
+            "share": 0.2549,
+            "touches": true
+          },
+          "area_per_point_ha": 2.25
+        }
+      ],
+      "query_area_ha": 3812.4,
+      "event": {
+        "start": "2024-09-18",
+        "end": "2024-09-25",
+        "centre": [
+          37.6898,
+          45.3494
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_391560_5017700",
+          "event_id": "fire-c1f6abcec4",
+          "pre": "S2A_MSIL2A_20240914T082601_N0511_R021_T37TDL_20240914T124653",
+          "post": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TDL_20240929T114417",
+          "pre_date": "2024-09-14",
+          "post_date": "2024-09-29",
+          "area_pixels": 95232,
+          "observed_fraction": 0.9813
+        },
+        {
+          "tile": "BS_area_32637_390580_5020900",
+          "event_id": "fire-97234abf33",
+          "pre": "S2A_MSIL2A_20240921T081631_N0511_R121_T37TCL_20240921T113900",
+          "post": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TCL_20240929T114417",
+          "pre_date": "2024-09-21",
+          "post_date": "2024-09-29",
+          "area_pixels": 41173,
+          "observed_fraction": 0.9836
+        }
+      ],
+      "seconds": 177.1
+    },
+    "clms-d8113fcdf137b53b": {
+      "reference_ha": 711.5,
+      "predicted_ha": 1286.5,
+      "intersection_ha": 671.8,
+      "iou": 0.5066,
+      "reference_covered": 0.9442,
+      "detected": true,
+      "predicted_outside_reference_ha": 322.6,
+      "area_ratio": 1.808,
+      "all_predicted_ha": 1306.6,
+      "all_intersection_ha": 676.9,
+      "all_iou": 0.5047,
+      "all_reference_covered": 0.9513,
+      "all_area_ratio": 1.836,
+      "observed_fraction": 0.9951,
+      "status": "ok",
+      "unreliable_ha": 20.1,
+      "events": [
+        {
+          "event_id": "fire-9ede675524",
+          "status": "ok",
+          "reason": null,
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 1286.52,
+          "fire_evidence": {
+            "n_points": 223,
+            "first_detected": "2024-09-20",
+            "last_detected": "2024-09-23",
+            "max_frp_mw": 51.72
+          },
+          "pair": {
+            "pre": "2024-09-19",
+            "post": "2024-09-24",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0025,
+            "pre_scene_id": "S2B_MSIL2A_20240919T082559_N0511_R021_T37TDL_20240919T111913",
+            "post_scene_id": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TDL_20240924T120548",
+            "gap_days": 5,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9953,
+            "removed_ha": 136.2,
+            "removed_share": 0.0957,
+            "removed_by_landcover_ha": {
+              "водно-болотные угодья": 136.2
+            }
+          },
+          "buffer_edge": {
+            "share": 0.0353,
+            "touches": false
+          },
+          "area_per_point_ha": 5.77
+        },
+        {
+          "event_id": "fire-a85a736593",
+          "status": "ok",
+          "reason": null,
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "слабый ночной огонь — вероятно тление",
+            "контур упирается в границу зоны поиска на 26% периметра — гарь не замыкается вокруг очага"
+          ],
+          "burn_area_ha": 20.12,
+          "fire_evidence": {
+            "n_points": 2,
+            "first_detected": "2024-09-23",
+            "last_detected": "2024-09-23",
+            "max_frp_mw": 0.84
+          },
+          "pair": {
+            "pre": "2024-09-21",
+            "post": "2024-09-24",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20240921T081631_N0511_R121_T37TCL_20240921T113900",
+            "post_scene_id": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TCL_20240924T120548",
+            "gap_days": 3,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9545,
+            "removed_ha": 16.4,
+            "removed_share": 0.0161,
+            "removed_by_landcover_ha": {
+              "водно-болотные угодья": 16.4
+            }
+          },
+          "buffer_edge": {
+            "share": 0.2576,
+            "touches": true
+          },
+          "area_per_point_ha": 479.32
+        },
+        {
+          "event_id": "fire-01521f5ba5",
+          "status": "no_scar",
+          "reason": "no_scar_at_detections",
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "слабый ночной огонь — вероятно тление"
+          ],
+          "burn_area_ha": 0.0,
+          "fire_evidence": {
+            "n_points": 1,
+            "first_detected": "2024-09-25",
+            "last_detected": "2024-09-25",
+            "max_frp_mw": 0.91
+          },
+          "pair": {
+            "pre": "2024-09-24",
+            "post": "2024-09-29",
+            "cloud_pre": 0.0064,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TDL_20240924T120548",
+            "post_scene_id": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TDL_20240929T114417",
+            "gap_days": 5,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.365,
+            "removed_ha": 0.0,
+            "removed_share": 0.0,
+            "removed_by_landcover_ha": {}
+          },
+          "buffer_edge": {
+            "share": 0.0,
+            "touches": false
+          },
+          "area_per_point_ha": 0.0
+        }
+      ],
+      "query_area_ha": 3844.9,
+      "event": {
+        "start": "2024-09-20",
+        "end": "2024-09-27",
+        "centre": [
+          37.6691,
+          45.3868
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_390340_5020700",
+          "event_id": "fire-9ede675524",
+          "pre": "S2B_MSIL2A_20240919T082559_N0511_R021_T37TDL_20240919T111913",
+          "post": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TDL_20240924T120548",
+          "pre_date": "2024-09-19",
+          "post_date": "2024-09-24",
+          "area_pixels": 95937,
+          "observed_fraction": 0.9951
+        },
+        {
+          "tile": "BS_area_32637_390980_5024900",
+          "event_id": "fire-a85a736593",
+          "pre": "S2A_MSIL2A_20240921T081631_N0511_R121_T37TCL_20240921T113900",
+          "post": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TCL_20240924T120548",
+          "pre_date": "2024-09-21",
+          "post_date": "2024-09-24",
+          "area_pixels": 56952,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_area_32637_394400_5020980",
+          "event_id": "fire-01521f5ba5",
+          "pre": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TDL_20240924T120548",
+          "post": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TDL_20240929T114417",
+          "pre_date": "2024-09-24",
+          "post_date": "2024-09-29",
+          "area_pixels": 37835,
+          "observed_fraction": 0.9876
+        }
+      ],
+      "seconds": 176.1
+    },
+    "clms-ebd5a63ee6c7b1fc": {
+      "reference_ha": 461.6,
+      "predicted_ha": 417.0,
+      "intersection_ha": 181.8,
+      "iou": 0.2609,
+      "reference_covered": 0.3939,
+      "detected": true,
+      "predicted_outside_reference_ha": 56.7,
+      "area_ratio": 0.903,
+      "all_predicted_ha": 946.0,
+      "all_intersection_ha": 354.1,
+      "all_iou": 0.3361,
+      "all_reference_covered": 0.7671,
+      "all_area_ratio": 2.049,
+      "observed_fraction": 0.9986,
+      "status": "ok",
+      "unreliable_ha": 535.6,
+      "events": [
+        {
+          "event_id": "fire-eba5369aae",
+          "status": "ok",
+          "reason": null,
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 418.36,
+          "fire_evidence": {
+            "n_points": 46,
+            "first_detected": "2024-10-03",
+            "last_detected": "2024-10-05",
+            "max_frp_mw": 103.19
+          },
+          "pair": {
+            "pre": "2024-09-29",
+            "post": "2024-10-06",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TDL_20240929T114417",
+            "post_scene_id": "S2B_MSIL2A_20241006T081729_N0511_R121_T37TDL_20241006T102739",
+            "gap_days": 7,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9999,
+            "removed_ha": 0.92,
+            "removed_share": 0.0017,
+            "removed_by_landcover_ha": {
+              "травяные угодья": 0.04,
+              "пашня": 0.12,
+              "водно-болотные угодья": 0.76
+            }
+          },
+          "buffer_edge": {
+            "share": 0.0,
+            "touches": false
+          },
+          "area_per_point_ha": 9.09
+        },
+        {
+          "event_id": "fire-4901427dcc",
+          "status": "ok",
+          "reason": null,
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "контур упирается в границу зоны поиска на 27% периметра — гарь не замыкается вокруг очага"
+          ],
+          "burn_area_ha": 535.64,
+          "fire_evidence": {
+            "n_points": 35,
+            "first_detected": "2024-09-28",
+            "last_detected": "2024-09-30",
+            "max_frp_mw": 40.47
+          },
+          "pair": {
+            "pre": "2024-09-21",
+            "post": "2024-10-04",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20240921T081631_N0511_R121_T37TDL_20240921T113900",
+            "post_scene_id": "S2A_MSIL2A_20241004T082811_N0511_R021_T37TDL_20241004T115852",
+            "gap_days": 13,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 1.0,
+            "removed_ha": 47.28,
+            "removed_share": 0.0444,
+            "removed_by_landcover_ha": {
+              "травяные угодья": 0.4,
+              "пашня": 20.84,
+              "водно-болотные угодья": 26.04
+            }
+          },
+          "buffer_edge": {
+            "share": 0.2677,
+            "touches": true
+          },
+          "area_per_point_ha": 15.3
+        },
+        {
+          "event_id": "fire-0fc682663a",
+          "status": "no_scar",
+          "reason": "no_scar_at_detections",
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 0.0,
+          "fire_evidence": {
+            "n_points": 2,
+            "first_detected": "2024-10-08",
+            "last_detected": "2024-10-08",
+            "max_frp_mw": 4.84
+          },
+          "pair": {
+            "pre": "2024-10-04",
+            "post": "2024-10-11",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20241004T082811_N0511_R021_T37TDL_20241004T115852",
+            "post_scene_id": "S2A_MSIL2A_20241011T081851_N0511_R121_T37TDL_20241011T114107",
+            "gap_days": 7,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 1.0,
+            "removed_ha": 0.0,
+            "removed_share": 0.0,
+            "removed_by_landcover_ha": {}
+          },
+          "buffer_edge": {
+            "share": 0.0,
+            "touches": false
+          },
+          "area_per_point_ha": 0.0
+        }
+      ],
+      "query_area_ha": 2743.4,
+      "event": {
+        "start": "2024-09-28",
+        "end": "2024-10-09",
+        "centre": [
+          38.2404,
+          45.5616
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_434780_5041020",
+          "event_id": "fire-eba5369aae",
+          "pre": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TDL_20240929T114417",
+          "post": "S2B_MSIL2A_20241006T081729_N0511_R121_T37TDL_20241006T102739",
+          "pre_date": "2024-09-29",
+          "post_date": "2024-10-06",
+          "area_pixels": 68768,
+          "observed_fraction": 0.997
+        },
+        {
+          "tile": "BS_area_32637_437040_5043480",
+          "event_id": "fire-4901427dcc",
+          "pre": "S2A_MSIL2A_20240921T081631_N0511_R121_T37TDL_20240921T113900",
+          "post": "S2A_MSIL2A_20241004T082811_N0511_R021_T37TDL_20241004T115852",
+          "pre_date": "2024-09-21",
+          "post_date": "2024-10-04",
+          "area_pixels": 68768,
+          "observed_fraction": 0.9998
+        },
+        {
+          "tile": "BS_area_32637_434380_5040580",
+          "event_id": "fire-0fc682663a",
+          "pre": "S2A_MSIL2A_20241004T082811_N0511_R021_T37TDL_20241004T115852",
+          "post": "S2A_MSIL2A_20241011T081851_N0511_R121_T37TDL_20241011T114107",
+          "pre_date": "2024-10-04",
+          "post_date": "2024-10-11",
+          "area_pixels": 23104,
+          "observed_fraction": 0.9996
+        }
+      ],
+      "seconds": 181.5
+    },
+    "clms-08e64a483c8d1077": {
+      "reference_ha": 420.5,
+      "predicted_ha": 0.0,
+      "intersection_ha": 0.0,
+      "iou": 0.0,
+      "reference_covered": 0.0,
+      "detected": false,
+      "predicted_outside_reference_ha": 0.0,
+      "area_ratio": 0.0,
+      "all_predicted_ha": 794.5,
+      "all_intersection_ha": 386.2,
+      "all_iou": 0.466,
+      "all_reference_covered": 0.9184,
+      "all_area_ratio": 1.889,
+      "observed_fraction": 0.9997,
+      "status": "ok",
+      "unreliable_ha": 796.2,
+      "events": [
+        {
+          "event_id": "fire-7b6a1e2990",
+          "status": "ok",
+          "reason": null,
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "контур упирается в границу зоны поиска на 25% периметра — гарь не замыкается вокруг очага"
+          ],
+          "burn_area_ha": 796.2,
+          "fire_evidence": {
+            "n_points": 20,
+            "first_detected": "2024-07-11",
+            "last_detected": "2024-07-13",
+            "max_frp_mw": 23.44
+          },
+          "pair": {
+            "pre": "2024-07-06",
+            "post": "2024-07-16",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20240706T082601_N0510_R021_T37TDL_20240706T113246",
+            "post_scene_id": "S2A_MSIL2A_20240716T082601_N0510_R021_T37TDL_20240716T112850",
+            "gap_days": 10,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9932,
+            "removed_ha": 4.24,
+            "removed_share": 0.0053,
+            "removed_by_landcover_ha": {
+              "водно-болотные угодья": 4.24
+            }
+          },
+          "buffer_edge": {
+            "share": 0.2488,
+            "touches": true
+          },
+          "area_per_point_ha": 39.81
+        }
+      ],
+      "query_area_ha": 2204.0,
+      "event": {
+        "start": "2024-07-09",
+        "end": "2024-07-15",
+        "centre": [
+          37.8006,
+          45.6993
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_403040_5055840",
+          "event_id": "fire-7b6a1e2990",
+          "pre": "S2A_MSIL2A_20240706T082601_N0510_R021_T37TDL_20240706T113246",
+          "post": "S2A_MSIL2A_20240716T082601_N0510_R021_T37TDL_20240716T112850",
+          "pre_date": "2024-07-06",
+          "post_date": "2024-07-16",
+          "area_pixels": 42320,
+          "observed_fraction": 0.9997
+        }
+      ],
+      "seconds": 53.4
+    },
+    "clms-dc87a31bb9eccecf": {
+      "reference_ha": 415.6,
+      "predicted_ha": 362.2,
+      "intersection_ha": 246.2,
+      "iou": 0.4632,
+      "reference_covered": 0.5924,
+      "detected": true,
+      "predicted_outside_reference_ha": 11.3,
+      "area_ratio": 0.871,
+      "all_predicted_ha": 362.2,
+      "all_intersection_ha": 246.2,
+      "all_iou": 0.4632,
+      "all_reference_covered": 0.5924,
+      "all_area_ratio": 0.871,
+      "observed_fraction": 0.9824,
+      "status": "ok",
+      "unreliable_ha": 0.0,
+      "events": [
+        {
+          "event_id": "fire-3925412a69",
+          "status": "ok",
+          "reason": null,
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 362.8,
+          "fire_evidence": {
+            "n_points": 127,
+            "first_detected": "2024-10-07",
+            "last_detected": "2024-10-09",
+            "max_frp_mw": 48.69
+          },
+          "pair": {
+            "pre": "2024-10-06",
+            "post": "2024-10-11",
+            "cloud_pre": 0.0108,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2B_MSIL2A_20241006T081729_N0511_R121_T37TDL_20241006T102739",
+            "post_scene_id": "S2A_MSIL2A_20241011T081851_N0511_R121_T37TDL_20241011T114107",
+            "gap_days": 5,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 1.0,
+            "removed_ha": 0.0,
+            "removed_share": 0.0,
+            "removed_by_landcover_ha": {}
+          },
+          "buffer_edge": {
+            "share": 0.0,
+            "touches": false
+          },
+          "area_per_point_ha": 2.86
+        }
+      ],
+      "query_area_ha": 2529.2,
+      "event": {
+        "start": "2024-10-07",
+        "end": "2024-10-13",
+        "centre": [
+          38.326,
+          45.4564
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_441780_5028260",
+          "event_id": "fire-3925412a69",
+          "pre": "S2B_MSIL2A_20241006T081729_N0511_R121_T37TDL_20241006T102739",
+          "post": "S2A_MSIL2A_20241011T081851_N0511_R121_T37TDL_20241011T114107",
+          "pre_date": "2024-10-06",
+          "post_date": "2024-10-11",
+          "area_pixels": 63360,
+          "observed_fraction": 0.9824
+        }
+      ],
+      "seconds": 65.3
+    },
+    "clms-beb31c6f35894561": {
+      "reference_ha": 410.1,
+      "predicted_ha": 799.2,
+      "intersection_ha": 345.9,
+      "iou": 0.4007,
+      "reference_covered": 0.8436,
+      "detected": true,
+      "predicted_outside_reference_ha": 202.3,
+      "area_ratio": 1.949,
+      "all_predicted_ha": 840.4,
+      "all_intersection_ha": 352.4,
+      "all_iou": 0.3924,
+      "all_reference_covered": 0.8594,
+      "all_area_ratio": 2.049,
+      "observed_fraction": 1.0,
+      "status": "ok",
+      "unreliable_ha": 40.6,
+      "events": [
+        {
+          "event_id": "fire-afa2f848d9",
+          "status": "ok",
+          "reason": null,
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 799.76,
+          "fire_evidence": {
+            "n_points": 52,
+            "first_detected": "2025-08-15",
+            "last_detected": "2025-08-16",
+            "max_frp_mw": 87.19
+          },
+          "pair": {
+            "pre": "2025-08-09",
+            "post": "2025-08-17",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20250809T082601_N0511_R121_T37TDL_20250809T102116",
+            "post_scene_id": "S2C_MSIL2A_20250817T081621_N0511_R121_T37TDL_20250817T140515",
+            "gap_days": 8,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9322,
+            "removed_ha": 32.48,
+            "removed_share": 0.0361,
+            "removed_by_landcover_ha": {
+              "травяные угодья": 11.64,
+              "пашня": 10.56,
+              "водно-болотные угодья": 10.28
+            }
+          },
+          "buffer_edge": {
+            "share": 0.0234,
+            "touches": false
+          },
+          "area_per_point_ha": 15.38
+        },
+        {
+          "event_id": "fire-12d113ae5f",
+          "status": "ok",
+          "reason": null,
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "контур упирается в границу зоны поиска на 15% периметра — гарь не замыкается вокруг очага"
+          ],
+          "burn_area_ha": 40.6,
+          "fire_evidence": {
+            "n_points": 5,
+            "first_detected": "2025-08-16",
+            "last_detected": "2025-08-17",
+            "max_frp_mw": 21.23
+          },
+          "pair": {
+            "pre": "2025-08-09",
+            "post": "2025-08-19",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20250809T082601_N0511_R121_T37TDL_20250809T102116",
+            "post_scene_id": "S2A_MSIL2A_20250819T082021_N0511_R121_T37TDL_20250819T114315",
+            "gap_days": 10,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9314,
+            "removed_ha": 34.96,
+            "removed_share": 0.0411,
+            "removed_by_landcover_ha": {
+              "травяные угодья": 11.76,
+              "пашня": 12.8,
+              "водно-болотные угодья": 10.4
+            }
+          },
+          "buffer_edge": {
+            "share": 0.1506,
+            "touches": true
+          },
+          "area_per_point_ha": 152.77
+        },
+        {
+          "event_id": "fire-781400c8cb",
+          "status": "no_scar",
+          "reason": "no_scar_at_detections",
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 0.0,
+          "fire_evidence": {
+            "n_points": 1,
+            "first_detected": "2025-08-16",
+            "last_detected": "2025-08-16",
+            "max_frp_mw": 8.85
+          },
+          "pair": {
+            "pre": "2025-08-09",
+            "post": "2025-08-17",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20250809T082601_N0511_R121_T37TDL_20250809T102116",
+            "post_scene_id": "S2C_MSIL2A_20250817T081621_N0511_R121_T37TDL_20250817T140515",
+            "gap_days": 8,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9321,
+            "removed_ha": 32.36,
+            "removed_share": 0.0382,
+            "removed_by_landcover_ha": {
+              "травяные угодья": 11.56,
+              "пашня": 10.56,
+              "водно-болотные угодья": 10.24
+            }
+          },
+          "buffer_edge": {
+            "share": 0.0,
+            "touches": false
+          },
+          "area_per_point_ha": 0.0
+        }
+      ],
+      "query_area_ha": 3207.5,
+      "event": {
+        "start": "2025-08-13",
+        "end": "2025-08-22",
+        "centre": [
+          38.7137,
+          45.287
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_473500_5009640",
+          "event_id": "fire-afa2f848d9",
+          "pre": "S2A_MSIL2A_20250809T082601_N0511_R121_T37TDL_20250809T102116",
+          "post": "S2C_MSIL2A_20250817T081621_N0511_R121_T37TDL_20250817T140515",
+          "pre_date": "2025-08-09",
+          "post_date": "2025-08-17",
+          "area_pixels": 80157,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_area_32637_472100_5012680",
+          "event_id": "fire-12d113ae5f",
+          "pre": "S2A_MSIL2A_20250809T082601_N0511_R121_T37TDL_20250809T102116",
+          "post": "S2A_MSIL2A_20250819T082021_N0511_R121_T37TDL_20250819T114315",
+          "pre_date": "2025-08-09",
+          "post_date": "2025-08-19",
+          "area_pixels": 48238,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_area_32637_472460_5011720",
+          "event_id": "fire-781400c8cb",
+          "pre": "S2A_MSIL2A_20250809T082601_N0511_R121_T37TDL_20250809T102116",
+          "post": "S2C_MSIL2A_20250817T081621_N0511_R121_T37TDL_20250817T140515",
+          "pre_date": "2025-08-09",
+          "post_date": "2025-08-17",
+          "area_pixels": 51600,
+          "observed_fraction": 1.0
+        }
+      ],
+      "seconds": 162.4
+    },
+    "clms-ad1e6caae2e3e1ab": {
+      "reference_ha": 402.1,
+      "predicted_ha": 602.7,
+      "intersection_ha": 374.5,
+      "iou": 0.5941,
+      "reference_covered": 0.9312,
+      "detected": true,
+      "predicted_outside_reference_ha": 88.5,
+      "area_ratio": 1.499,
+      "all_predicted_ha": 602.7,
+      "all_intersection_ha": 374.5,
+      "all_iou": 0.5941,
+      "all_reference_covered": 0.9312,
+      "all_area_ratio": 1.499,
+      "observed_fraction": 1.0,
+      "status": "ok",
+      "unreliable_ha": 0.0,
+      "events": [
+        {
+          "event_id": "fire-f2ec6b37ca",
+          "status": "ok",
+          "reason": null,
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 603.32,
+          "fire_evidence": {
+            "n_points": 28,
+            "first_detected": "2025-08-31",
+            "last_detected": "2025-09-01",
+            "max_frp_mw": 31.11
+          },
+          "pair": {
+            "pre": "2025-08-29",
+            "post": "2025-09-05",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2B_MSIL2A_20250829T080609_N0511_R078_T37TGK_20250829T090947",
+            "post_scene_id": "S2A_MSIL2A_20250905T081021_N0511_R078_T37TGK_20250905T114919",
+            "gap_days": 7,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.955,
+            "removed_ha": 0.04,
+            "removed_share": 0.0001,
+            "removed_by_landcover_ha": {
+              "травяные угодья": 0.04
+            }
+          },
+          "buffer_edge": {
+            "share": 0.0414,
+            "touches": false
+          },
+          "area_per_point_ha": 21.55
+        }
+      ],
+      "query_area_ha": 2302.4,
+      "event": {
+        "start": "2025-08-29",
+        "end": "2025-09-05",
+        "centre": [
+          41.4808,
+          44.5394
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_692160_4931540",
+          "event_id": "fire-f2ec6b37ca",
+          "pre": "S2B_MSIL2A_20250829T080609_N0511_R078_T37TGK_20250829T090947",
+          "post": "S2A_MSIL2A_20250905T081021_N0511_R078_T37TGK_20250905T114919",
+          "pre_date": "2025-08-29",
+          "post_date": "2025-09-05",
+          "area_pixels": 57620,
+          "observed_fraction": 1.0
+        }
+      ],
+      "seconds": 42.9
+    },
+    "clms-ac4388e151fd8677": {
+      "reference_ha": 397.3,
+      "predicted_ha": 727.9,
+      "intersection_ha": 375.8,
+      "iou": 0.5015,
+      "reference_covered": 0.9458,
+      "detected": true,
+      "predicted_outside_reference_ha": 157.8,
+      "area_ratio": 1.832,
+      "all_predicted_ha": 727.9,
+      "all_intersection_ha": 375.8,
+      "all_iou": 0.5015,
+      "all_reference_covered": 0.9458,
+      "all_area_ratio": 1.832,
+      "observed_fraction": 0.9895,
+      "status": "ok",
+      "unreliable_ha": 0.0,
+      "events": [
+        {
+          "event_id": "fire-a3c355b9fb",
+          "status": "ok",
+          "reason": null,
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 728.24,
+          "fire_evidence": {
+            "n_points": 73,
+            "first_detected": "2025-09-15",
+            "last_detected": "2025-09-17",
+            "max_frp_mw": 112.38
+          },
+          "pair": {
+            "pre": "2025-09-14",
+            "post": "2025-09-21",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0084,
+            "pre_scene_id": "S2B_MSIL2A_20250914T082559_N0511_R021_T37TDM_20250914T104754",
+            "post_scene_id": "S2A_MSIL2A_20250921T083531_N0511_R021_T37TDM_20250921T105019",
+            "gap_days": 7,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.8764,
+            "removed_ha": 4.08,
+            "removed_share": 0.0055,
+            "removed_by_landcover_ha": {
+              "водно-болотные угодья": 4.08
+            }
+          },
+          "buffer_edge": {
+            "share": 0.042,
+            "touches": false
+          },
+          "area_per_point_ha": 9.98
+        }
+      ],
+      "query_area_ha": 2096.4,
+      "event": {
+        "start": "2025-09-14",
+        "end": "2025-09-20",
+        "centre": [
+          38.7867,
+          46.1344
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_478140_5104820",
+          "event_id": "fire-a3c355b9fb",
+          "pre": "S2B_MSIL2A_20250914T082559_N0511_R021_T37TDM_20250914T104754",
+          "post": "S2A_MSIL2A_20250921T083531_N0511_R021_T37TDM_20250921T105019",
+          "pre_date": "2025-09-14",
+          "post_date": "2025-09-21",
+          "area_pixels": 52496,
+          "observed_fraction": 0.9895
+        }
+      ],
+      "seconds": 79.3
+    },
+    "clms-9beea21509574880": {
+      "reference_ha": 352.9,
+      "predicted_ha": 0.0,
+      "intersection_ha": 0.0,
+      "iou": 0.0,
+      "reference_covered": 0.0,
+      "detected": false,
+      "predicted_outside_reference_ha": 0.0,
+      "area_ratio": 0.0,
+      "all_predicted_ha": 1280.2,
+      "all_intersection_ha": 339.3,
+      "all_iou": 0.2622,
+      "all_reference_covered": 0.9615,
+      "all_area_ratio": 3.628,
+      "observed_fraction": 0.9999,
+      "status": "ok",
+      "unreliable_ha": 1282.7,
+      "events": [
+        {
+          "event_id": "fire-7555b41a98",
+          "status": "ok",
+          "reason": null,
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "между снимками 17 дн.",
+            "контур упирается в границу зоны поиска на 45% периметра — гарь не замыкается вокруг очага"
+          ],
+          "burn_area_ha": 1282.72,
+          "fire_evidence": {
+            "n_points": 147,
+            "first_detected": "2024-08-29",
+            "last_detected": "2024-08-31",
+            "max_frp_mw": 68.48
+          },
+          "pair": {
+            "pre": "2024-08-25",
+            "post": "2024-09-11",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20240825T082601_N0511_R021_T37TDL_20240825T122149",
+            "post_scene_id": "S2A_MSIL2A_20240911T081601_N0511_R121_T37TDL_20240911T125146",
+            "gap_days": 17,
+            "reliable": false
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9935,
+            "removed_ha": 18.48,
+            "removed_share": 0.0141,
+            "removed_by_landcover_ha": {
+              "водно-болотные угодья": 18.48
+            }
+          },
+          "buffer_edge": {
+            "share": 0.4463,
+            "touches": true
+          },
+          "area_per_point_ha": 8.73
+        }
+      ],
+      "query_area_ha": 2345.4,
+      "event": {
+        "start": "2024-08-29",
+        "end": "2024-09-04",
+        "centre": [
+          37.9323,
+          45.8452
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_411520_5071760",
+          "event_id": "fire-7555b41a98",
+          "pre": "S2A_MSIL2A_20240825T082601_N0511_R021_T37TDL_20240825T122149",
+          "post": "S2A_MSIL2A_20240911T081601_N0511_R121_T37TDL_20240911T125146",
+          "pre_date": "2024-08-25",
+          "post_date": "2024-09-11",
+          "area_pixels": 58880,
+          "observed_fraction": 0.9999
+        }
+      ],
+      "seconds": 141.0
+    },
+    "clms-9dedbb07b836f31d": {
+      "reference_ha": 351.8,
+      "predicted_ha": 0.0,
+      "intersection_ha": 0.0,
+      "iou": 0.0,
+      "reference_covered": 0.0,
+      "detected": false,
+      "predicted_outside_reference_ha": 0.0,
+      "area_ratio": 0.0,
+      "all_predicted_ha": 781.6,
+      "all_intersection_ha": 308.9,
+      "all_iou": 0.3746,
+      "all_reference_covered": 0.878,
+      "all_area_ratio": 2.222,
+      "observed_fraction": 1.0,
+      "status": "ok",
+      "unreliable_ha": 783.0,
+      "events": [
+        {
+          "event_id": "fire-8eecc4f882",
+          "status": "ok",
+          "reason": null,
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "контур упирается в границу зоны поиска на 22% периметра — гарь не замыкается вокруг очага"
+          ],
+          "burn_area_ha": 782.96,
+          "fire_evidence": {
+            "n_points": 28,
+            "first_detected": "2024-07-08",
+            "last_detected": "2024-07-09",
+            "max_frp_mw": 40.56
+          },
+          "pair": {
+            "pre": "2024-07-03",
+            "post": "2024-07-13",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20240703T081611_N0510_R121_T37TFM_20240703T105149",
+            "post_scene_id": "S2A_MSIL2A_20240713T081611_N0510_R121_T37TFM_20240713T112750",
+            "gap_days": 10,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9609,
+            "removed_ha": 39.92,
+            "removed_share": 0.0466,
+            "removed_by_landcover_ha": {
+              "пашня": 39.92
+            }
+          },
+          "buffer_edge": {
+            "share": 0.2187,
+            "touches": true
+          },
+          "area_per_point_ha": 27.96
+        }
+      ],
+      "query_area_ha": 1805.4,
+      "event": {
+        "start": "2024-07-06",
+        "end": "2024-07-13",
+        "centre": [
+          41.0156,
+          46.0403
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_650740_5096400",
+          "event_id": "fire-8eecc4f882",
+          "pre": "S2A_MSIL2A_20240703T081611_N0510_R121_T37TFM_20240703T105149",
+          "post": "S2A_MSIL2A_20240713T081611_N0510_R121_T37TFM_20240713T112750",
+          "pre_date": "2024-07-03",
+          "post_date": "2024-07-13",
+          "area_pixels": 45080,
+          "observed_fraction": 1.0
+        }
+      ],
+      "seconds": 56.7
+    },
+    "clms-40e42bb12cfd9206": {
+      "reference_ha": 313.7,
+      "predicted_ha": 554.6,
+      "intersection_ha": 283.0,
+      "iou": 0.4834,
+      "reference_covered": 0.9019,
+      "detected": true,
+      "predicted_outside_reference_ha": 159.2,
+      "area_ratio": 1.768,
+      "all_predicted_ha": 554.6,
+      "all_intersection_ha": 283.0,
+      "all_iou": 0.4834,
+      "all_reference_covered": 0.9019,
+      "all_area_ratio": 1.768,
+      "observed_fraction": 0.9998,
+      "status": "ok",
+      "unreliable_ha": 0.0,
+      "events": [
+        {
+          "event_id": "fire-cdf5ee4584",
+          "status": "ok",
+          "reason": null,
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 436.56,
+          "fire_evidence": {
+            "n_points": 12,
+            "first_detected": "2025-08-05",
+            "last_detected": "2025-08-05",
+            "max_frp_mw": 144.09
+          },
+          "pair": {
+            "pre": "2025-07-30",
+            "post": "2025-08-09",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20250730T082021_N0511_R121_T37TFL_20250730T094813",
+            "post_scene_id": "S2A_MSIL2A_20250809T082601_N0511_R121_T37TFL_20250809T102116",
+            "gap_days": 10,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9961,
+            "removed_ha": 0.0,
+            "removed_share": 0.0,
+            "removed_by_landcover_ha": {}
+          },
+          "buffer_edge": {
+            "share": 0.0351,
+            "touches": false
+          },
+          "area_per_point_ha": 36.38
+        },
+        {
+          "event_id": "fire-f01b8c4321",
+          "status": "ok",
+          "reason": null,
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 118.6,
+          "fire_evidence": {
+            "n_points": 2,
+            "first_detected": "2025-08-06",
+            "last_detected": "2025-08-07",
+            "max_frp_mw": 6.77
+          },
+          "pair": {
+            "pre": "2025-07-30",
+            "post": "2025-08-09",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20250730T082021_N0511_R121_T37TFL_20250730T094813",
+            "post_scene_id": "S2A_MSIL2A_20250809T082601_N0511_R121_T37TFL_20250809T102116",
+            "gap_days": 10,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9961,
+            "removed_ha": 0.0,
+            "removed_share": 0.0,
+            "removed_by_landcover_ha": {}
+          },
+          "buffer_edge": {
+            "share": 0.0613,
+            "touches": false
+          },
+          "area_per_point_ha": 59.3
+        },
+        {
+          "event_id": "fire-0ad70c7ddd",
+          "status": "no_scar",
+          "reason": "no_scar_at_detections",
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "между снимками 17 дн."
+          ],
+          "burn_area_ha": 0.0,
+          "fire_evidence": {
+            "n_points": 2,
+            "first_detected": "2025-08-09",
+            "last_detected": "2025-08-09",
+            "max_frp_mw": 10.62
+          },
+          "pair": {
+            "pre": "2025-07-30",
+            "post": "2025-08-16",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20250730T082021_N0511_R121_T37TFL_20250730T094813",
+            "post_scene_id": "S2A_MSIL2A_20250816T081021_N0511_R078_T37TFL_20250816T125818",
+            "gap_days": 17,
+            "reliable": false
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9936,
+            "removed_ha": 0.8,
+            "removed_share": 0.001,
+            "removed_by_landcover_ha": {
+              "пашня": 0.8
+            }
+          },
+          "buffer_edge": {
+            "share": 0.0,
+            "touches": false
+          },
+          "area_per_point_ha": 0.0
+        }
+      ],
+      "query_area_ha": 1872.1,
+      "event": {
+        "start": "2025-08-03",
+        "end": "2025-08-12",
+        "centre": [
+          40.9225,
+          45.7186
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_645600_5060180",
+          "event_id": "fire-cdf5ee4584",
+          "pre": "S2A_MSIL2A_20250730T082021_N0511_R121_T37TFL_20250730T094813",
+          "post": "S2A_MSIL2A_20250809T082601_N0511_R121_T37TFL_20250809T102116",
+          "pre_date": "2025-07-30",
+          "post_date": "2025-08-09",
+          "area_pixels": 46782,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_area_32637_648300_5060100",
+          "event_id": "fire-f01b8c4321",
+          "pre": "S2A_MSIL2A_20250730T082021_N0511_R121_T37TFL_20250730T094813",
+          "post": "S2A_MSIL2A_20250809T082601_N0511_R121_T37TFL_20250809T102116",
+          "pre_date": "2025-07-30",
+          "post_date": "2025-08-09",
+          "area_pixels": 38304,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_area_32637_645920_5063400",
+          "event_id": "fire-0ad70c7ddd",
+          "pre": "S2A_MSIL2A_20250730T082021_N0511_R121_T37TFL_20250730T094813",
+          "post": "S2A_MSIL2A_20250816T081021_N0511_R078_T37TFL_20250816T125818",
+          "pre_date": "2025-07-30",
+          "post_date": "2025-08-16",
+          "area_pixels": 31464,
+          "observed_fraction": 0.9994
+        }
+      ],
+      "seconds": 176.5
+    },
+    "clms-7c28b0ee37791b9e": {
+      "reference_ha": 272.6,
+      "predicted_ha": 632.3,
+      "intersection_ha": 254.9,
+      "iou": 0.3921,
+      "reference_covered": 0.9348,
+      "detected": true,
+      "predicted_outside_reference_ha": 164.7,
+      "area_ratio": 2.319,
+      "all_predicted_ha": 632.3,
+      "all_intersection_ha": 254.9,
+      "all_iou": 0.3921,
+      "all_reference_covered": 0.9348,
+      "all_area_ratio": 2.319,
+      "observed_fraction": 0.8993,
+      "status": "ok",
+      "unreliable_ha": 0.0,
+      "events": [
+        {
+          "event_id": "fire-a1c4a18a42",
+          "status": "ok",
+          "reason": null,
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 633.56,
+          "fire_evidence": {
+            "n_points": 71,
+            "first_detected": "2024-08-29",
+            "last_detected": "2024-09-01",
+            "max_frp_mw": 48.16
+          },
+          "pair": {
+            "pre": "2024-08-25",
+            "post": "2024-09-09",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0965,
+            "pre_scene_id": "S2A_MSIL2A_20240825T082601_N0511_R021_T37TDL_20240825T122149",
+            "post_scene_id": "S2B_MSIL2A_20240909T082559_N0511_R021_T37TDL_20240909T114457",
+            "gap_days": 15,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9866,
+            "removed_ha": 3.28,
+            "removed_share": 0.0051,
+            "removed_by_landcover_ha": {
+              "водно-болотные угодья": 3.28
+            }
+          },
+          "buffer_edge": {
+            "share": 0.0719,
+            "touches": false
+          },
+          "area_per_point_ha": 8.92
+        }
+      ],
+      "query_area_ha": 1644.4,
+      "event": {
+        "start": "2024-08-29",
+        "end": "2024-09-04",
+        "centre": [
+          38.2764,
+          45.9091
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_439480_5079280",
+          "event_id": "fire-a1c4a18a42",
+          "pre": "S2A_MSIL2A_20240825T082601_N0511_R021_T37TDL_20240825T122149",
+          "post": "S2B_MSIL2A_20240909T082559_N0511_R021_T37TDL_20240909T114457",
+          "pre_date": "2024-08-25",
+          "post_date": "2024-09-09",
+          "area_pixels": 41173,
+          "observed_fraction": 0.8993
+        }
+      ],
+      "seconds": 64.5
+    },
+    "clms-cfde668c36d97081": {
+      "reference_ha": 253.5,
+      "predicted_ha": 0.0,
+      "intersection_ha": 0.0,
+      "iou": 0.0,
+      "reference_covered": 0.0,
+      "detected": false,
+      "predicted_outside_reference_ha": 0.0,
+      "area_ratio": 0.0,
+      "all_predicted_ha": 1564.9,
+      "all_intersection_ha": 234.5,
+      "all_iou": 0.1481,
+      "all_reference_covered": 0.925,
+      "all_area_ratio": 6.173,
+      "observed_fraction": 0.8814,
+      "status": "ok",
+      "unreliable_ha": 1570.3,
+      "events": [
+        {
+          "event_id": "fire-0acbbf5d26",
+          "status": "ok",
+          "reason": null,
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "между снимками 20 дн.",
+            "контур упирается в границу зоны поиска на 34% периметра — гарь не замыкается вокруг очага"
+          ],
+          "burn_area_ha": 1356.8,
+          "fire_evidence": {
+            "n_points": 291,
+            "first_detected": "2024-08-25",
+            "last_detected": "2024-09-01",
+            "max_frp_mw": 269.74
+          },
+          "pair": {
+            "pre": "2024-08-20",
+            "post": "2024-09-09",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.2226,
+            "pre_scene_id": "S2B_MSIL2A_20240820T082559_N0511_R021_T37TDL_20240820T130351",
+            "post_scene_id": "S2B_MSIL2A_20240909T082559_N0511_R021_T37TDL_20240909T114457",
+            "gap_days": 20,
+            "reliable": false
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9931,
+            "removed_ha": 25.76,
+            "removed_share": 0.0185,
+            "removed_by_landcover_ha": {
+              "водно-болотные угодья": 25.76
+            }
+          },
+          "buffer_edge": {
+            "share": 0.3376,
+            "touches": true
+          },
+          "area_per_point_ha": 4.66
+        },
+        {
+          "event_id": "fire-a02248ea55",
+          "status": "ok",
+          "reason": null,
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "контур упирается в границу зоны поиска на 37% периметра — гарь не замыкается вокруг очага"
+          ],
+          "burn_area_ha": 213.52,
+          "fire_evidence": {
+            "n_points": 2,
+            "first_detected": "2024-08-29",
+            "last_detected": "2024-08-29",
+            "max_frp_mw": 8.37
+          },
+          "pair": {
+            "pre": "2024-08-27",
+            "post": "2024-09-11",
+            "cloud_pre": 0.0001,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2B_MSIL2A_20240827T081609_N0511_R121_T37TDL_20240827T113058",
+            "post_scene_id": "S2A_MSIL2A_20240911T081601_N0511_R121_T37TDL_20240911T125146",
+            "gap_days": 15,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9978,
+            "removed_ha": 3.52,
+            "removed_share": 0.0078,
+            "removed_by_landcover_ha": {
+              "водно-болотные угодья": 3.52
+            }
+          },
+          "buffer_edge": {
+            "share": 0.3745,
+            "touches": true
+          },
+          "area_per_point_ha": 222.88
+        }
+      ],
+      "query_area_ha": 1914.2,
+      "event": {
+        "start": "2024-08-23",
+        "end": "2024-09-01",
+        "centre": [
+          38.0083,
+          45.7284
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_418020_5058340",
+          "event_id": "fire-0acbbf5d26",
+          "pre": "S2B_MSIL2A_20240820T082559_N0511_R021_T37TDL_20240820T130351",
+          "post": "S2B_MSIL2A_20240909T082559_N0511_R021_T37TDL_20240909T114457",
+          "pre_date": "2024-08-20",
+          "post_date": "2024-09-09",
+          "area_pixels": 47967,
+          "observed_fraction": 0.7773
+        },
+        {
+          "tile": "BS_area_32637_420860_5061980",
+          "event_id": "fire-a02248ea55",
+          "pre": "S2B_MSIL2A_20240827T081609_N0511_R121_T37TDL_20240827T113058",
+          "post": "S2A_MSIL2A_20240911T081601_N0511_R121_T37TDL_20240911T125146",
+          "pre_date": "2024-08-27",
+          "post_date": "2024-09-11",
+          "area_pixels": 42126,
+          "observed_fraction": 0.9999
+        }
+      ],
+      "seconds": 132.1
+    },
+    "clms-6177d1a93abf91b9": {
+      "reference_ha": 235.0,
+      "predicted_ha": 287.0,
+      "intersection_ha": 159.0,
+      "iou": 0.438,
+      "reference_covered": 0.6767,
+      "detected": true,
+      "predicted_outside_reference_ha": 76.2,
+      "area_ratio": 1.222,
+      "all_predicted_ha": 287.0,
+      "all_intersection_ha": 159.0,
+      "all_iou": 0.438,
+      "all_reference_covered": 0.6767,
+      "all_area_ratio": 1.222,
+      "observed_fraction": 0.9942,
+      "status": "ok",
+      "unreliable_ha": 0.0,
+      "events": [
+        {
+          "event_id": "fire-ce94d41101",
+          "status": "ok",
+          "reason": null,
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 287.04,
+          "fire_evidence": {
+            "n_points": 114,
+            "first_detected": "2024-09-19",
+            "last_detected": "2024-09-23",
+            "max_frp_mw": 112.81
+          },
+          "pair": {
+            "pre": "2024-09-14",
+            "post": "2024-09-24",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0036,
+            "pre_scene_id": "S2A_MSIL2A_20240914T082601_N0511_R021_T37TDL_20240914T124653",
+            "post_scene_id": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TDL_20240924T120548",
+            "gap_days": 10,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9933,
+            "removed_ha": 127.88,
+            "removed_share": 0.2952,
+            "removed_by_landcover_ha": {
+              "травяные угодья": 0.16,
+              "пашня": 49.0,
+              "водно-болотные угодья": 78.72
+            }
+          },
+          "buffer_edge": {
+            "share": 0.0342,
+            "touches": false
+          },
+          "area_per_point_ha": 2.52
+        }
+      ],
+      "query_area_ha": 1657.6,
+      "event": {
+        "start": "2024-09-17",
+        "end": "2024-09-24",
+        "centre": [
+          37.7282,
+          45.3765
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_395380_5021080",
+          "event_id": "fire-ce94d41101",
+          "pre": "S2A_MSIL2A_20240914T082601_N0511_R021_T37TDL_20240914T124653",
+          "post": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TDL_20240924T120548",
+          "pre_date": "2024-09-14",
+          "post_date": "2024-09-24",
+          "area_pixels": 41400,
+          "observed_fraction": 0.9942
+        }
+      ],
+      "seconds": 46.7
+    },
+    "clms-9970ac7770a2ed48": {
+      "reference_ha": 233.8,
+      "predicted_ha": 391.1,
+      "intersection_ha": 91.5,
+      "iou": 0.1715,
+      "reference_covered": 0.3914,
+      "detected": true,
+      "predicted_outside_reference_ha": 195.3,
+      "area_ratio": 1.673,
+      "all_predicted_ha": 465.0,
+      "all_intersection_ha": 105.6,
+      "all_iou": 0.1779,
+      "all_reference_covered": 0.4515,
+      "all_area_ratio": 1.989,
+      "observed_fraction": 0.9818,
+      "status": "ok",
+      "unreliable_ha": 73.9,
+      "events": [
+        {
+          "event_id": "fire-ade91228e7",
+          "status": "ok",
+          "reason": null,
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 391.2,
+          "fire_evidence": {
+            "n_points": 45,
+            "first_detected": "2024-09-23",
+            "last_detected": "2024-09-25",
+            "max_frp_mw": 14.21
+          },
+          "pair": {
+            "pre": "2024-09-21",
+            "post": "2024-09-26",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0222,
+            "pre_scene_id": "S2A_MSIL2A_20240921T081631_N0511_R121_T37TDL_20240921T113900",
+            "post_scene_id": "S2B_MSIL2A_20240926T081619_N0511_R121_T37TDL_20240926T112013",
+            "gap_days": 5,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.994,
+            "removed_ha": 18.2,
+            "removed_share": 0.0387,
+            "removed_by_landcover_ha": {
+              "травяные угодья": 0.56,
+              "пашня": 14.6,
+              "водно-болотные угодья": 3.04
+            }
+          },
+          "buffer_edge": {
+            "share": 0.0835,
+            "touches": false
+          },
+          "area_per_point_ha": 8.69
+        },
+        {
+          "event_id": "fire-65827ba40d",
+          "status": "ok",
+          "reason": null,
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "контур упирается в границу зоны поиска на 17% периметра — гарь не замыкается вокруг очага"
+          ],
+          "burn_area_ha": 73.92,
+          "fire_evidence": {
+            "n_points": 2,
+            "first_detected": "2024-09-23",
+            "last_detected": "2024-09-23",
+            "max_frp_mw": 14.24
+          },
+          "pair": {
+            "pre": "2024-09-21",
+            "post": "2024-09-24",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20240921T081631_N0511_R121_T37TDL_20240921T113900",
+            "post_scene_id": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TDL_20240924T120548",
+            "gap_days": 3,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9866,
+            "removed_ha": 65.4,
+            "removed_share": 0.1506,
+            "removed_by_landcover_ha": {
+              "травяные угодья": 23.44,
+              "пашня": 21.56,
+              "водно-болотные угодья": 20.4
+            }
+          },
+          "buffer_edge": {
+            "share": 0.1736,
+            "touches": true
+          },
+          "area_per_point_ha": 182.16
+        }
+      ],
+      "query_area_ha": 1904.0,
+      "event": {
+        "start": "2024-09-23",
+        "end": "2024-09-29",
+        "centre": [
+          38.3698,
+          45.6589
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_447000_5051460",
+          "event_id": "fire-ade91228e7",
+          "pre": "S2A_MSIL2A_20240921T081631_N0511_R121_T37TDL_20240921T113900",
+          "post": "S2B_MSIL2A_20240926T081619_N0511_R121_T37TDL_20240926T112013",
+          "pre_date": "2024-09-21",
+          "post_date": "2024-09-26",
+          "area_pixels": 47498,
+          "observed_fraction": 0.9752
+        },
+        {
+          "tile": "BS_area_32637_446220_5055400",
+          "event_id": "fire-65827ba40d",
+          "pre": "S2A_MSIL2A_20240921T081631_N0511_R121_T37TDL_20240921T113900",
+          "post": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TDL_20240924T120548",
+          "pre_date": "2024-09-21",
+          "post_date": "2024-09-24",
+          "area_pixels": 26040,
+          "observed_fraction": 0.9938
+        }
+      ],
+      "seconds": 90.3
+    },
+    "clms-0c17817dfcf6a391": {
+      "reference_ha": 220.5,
+      "predicted_ha": 605.5,
+      "intersection_ha": 204.8,
+      "iou": 0.3297,
+      "reference_covered": 0.9287,
+      "detected": true,
+      "predicted_outside_reference_ha": 177.6,
+      "area_ratio": 2.746,
+      "all_predicted_ha": 605.5,
+      "all_intersection_ha": 204.8,
+      "all_iou": 0.3297,
+      "all_reference_covered": 0.9287,
+      "all_area_ratio": 2.746,
+      "observed_fraction": 1.0,
+      "status": "ok",
+      "unreliable_ha": 0.0,
+      "events": [
+        {
+          "event_id": "fire-b6e956dce1",
+          "status": "ok",
+          "reason": null,
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 522.8,
+          "fire_evidence": {
+            "n_points": 67,
+            "first_detected": "2024-09-30",
+            "last_detected": "2024-10-01",
+            "max_frp_mw": 50.97
+          },
+          "pair": {
+            "pre": "2024-09-29",
+            "post": "2024-10-04",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TDL_20240929T114417",
+            "post_scene_id": "S2A_MSIL2A_20241004T082811_N0511_R021_T37TDL_20241004T115852",
+            "gap_days": 5,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 1.0,
+            "removed_ha": 0.0,
+            "removed_share": 0.0,
+            "removed_by_landcover_ha": {}
+          },
+          "buffer_edge": {
+            "share": 0.0257,
+            "touches": false
+          },
+          "area_per_point_ha": 7.8
+        },
+        {
+          "event_id": "fire-c5a04e093f",
+          "status": "ok",
+          "reason": null,
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 83.6,
+          "fire_evidence": {
+            "n_points": 3,
+            "first_detected": "2024-10-04",
+            "last_detected": "2024-10-04",
+            "max_frp_mw": 8.69
+          },
+          "pair": {
+            "pre": "2024-09-29",
+            "post": "2024-10-06",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TDL_20240929T114417",
+            "post_scene_id": "S2B_MSIL2A_20241006T081729_N0511_R121_T37TDL_20241006T102739",
+            "gap_days": 7,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 1.0,
+            "removed_ha": 0.0,
+            "removed_share": 0.0,
+            "removed_by_landcover_ha": {}
+          },
+          "buffer_edge": {
+            "share": 0.0877,
+            "touches": false
+          },
+          "area_per_point_ha": 200.56
+        }
+      ],
+      "query_area_ha": 1791.5,
+      "event": {
+        "start": "2024-09-28",
+        "end": "2024-10-05",
+        "centre": [
+          38.3252,
+          45.6323
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_442560_5049040",
+          "event_id": "fire-b6e956dce1",
+          "pre": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TDL_20240929T114417",
+          "post": "S2A_MSIL2A_20241004T082811_N0511_R021_T37TDL_20241004T115852",
+          "pre_date": "2024-09-29",
+          "post_date": "2024-10-04",
+          "area_pixels": 44744,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_area_32637_443380_5051100",
+          "event_id": "fire-c5a04e093f",
+          "pre": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TDL_20240929T114417",
+          "post": "S2B_MSIL2A_20241006T081729_N0511_R121_T37TDL_20241006T102739",
+          "pre_date": "2024-09-29",
+          "post_date": "2024-10-06",
+          "area_pixels": 43240,
+          "observed_fraction": 1.0
+        }
+      ],
+      "seconds": 132.7
+    },
+    "clms-6cf6eee1df89a89a": {
+      "reference_ha": 213.1,
+      "predicted_ha": 0.0,
+      "intersection_ha": 0.0,
+      "iou": 0.0,
+      "reference_covered": 0.0,
+      "detected": false,
+      "predicted_outside_reference_ha": 0.0,
+      "area_ratio": 0.0,
+      "all_predicted_ha": 1536.5,
+      "all_intersection_ha": 204.7,
+      "all_iou": 0.1325,
+      "all_reference_covered": 0.9607,
+      "all_area_ratio": 7.21,
+      "observed_fraction": 1.0,
+      "status": "ok",
+      "unreliable_ha": 1541.6,
+      "events": [
+        {
+          "event_id": "fire-a6c578ddd8",
+          "status": "ok",
+          "reason": null,
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "между снимками 17 дн.",
+            "контур упирается в границу зоны поиска на 85% периметра — гарь не замыкается вокруг очага"
+          ],
+          "burn_area_ha": 1541.64,
+          "fire_evidence": {
+            "n_points": 189,
+            "first_detected": "2024-08-28",
+            "last_detected": "2024-08-30",
+            "max_frp_mw": 117.1
+          },
+          "pair": {
+            "pre": "2024-08-25",
+            "post": "2024-09-11",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20240825T082601_N0511_R021_T37TDL_20240825T122149",
+            "post_scene_id": "S2A_MSIL2A_20240911T081601_N0511_R121_T37TDL_20240911T125146",
+            "gap_days": 17,
+            "reliable": false
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9948,
+            "removed_ha": 44.28,
+            "removed_share": 0.0279,
+            "removed_by_landcover_ha": {
+              "водно-болотные угодья": 44.28
+            }
+          },
+          "buffer_edge": {
+            "share": 0.8469,
+            "touches": true
+          },
+          "area_per_point_ha": 8.16
+        }
+      ],
+      "query_area_ha": 1699.1,
+      "event": {
+        "start": "2024-08-26",
+        "end": "2024-09-01",
+        "centre": [
+          37.923,
+          45.8275
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_410860_5070400",
+          "event_id": "fire-a6c578ddd8",
+          "pre": "S2A_MSIL2A_20240825T082601_N0511_R021_T37TDL_20240825T122149",
+          "post": "S2A_MSIL2A_20240911T081601_N0511_R121_T37TDL_20240911T125146",
+          "pre_date": "2024-08-25",
+          "post_date": "2024-09-11",
+          "area_pixels": 42486,
+          "observed_fraction": 1.0
+        }
+      ],
+      "seconds": 237.2
+    },
+    "clms-e608ecc92102459c": {
+      "reference_ha": 1274.5,
+      "predicted_ha": 1832.2,
+      "intersection_ha": 1206.5,
+      "iou": 0.635,
+      "reference_covered": 0.9467,
+      "detected": true,
+      "predicted_outside_reference_ha": 254.0,
+      "area_ratio": 1.438,
+      "all_predicted_ha": 1832.2,
+      "all_intersection_ha": 1206.5,
+      "all_iou": 0.635,
+      "all_reference_covered": 0.9467,
+      "all_area_ratio": 1.438,
+      "observed_fraction": 0.9963,
+      "status": "ok",
+      "unreliable_ha": 0.0,
+      "events": [
+        {
+          "event_id": "fire-57cec996f5",
+          "status": "ok",
+          "reason": null,
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 1832.4,
+          "fire_evidence": {
+            "n_points": 204,
+            "first_detected": "2024-09-15",
+            "last_detected": "2024-09-16",
+            "max_frp_mw": 342.46
+          },
+          "pair": {
+            "pre": "2024-09-14",
+            "post": "2024-09-19",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20240914T082601_N0511_R021_T37TDL_20240914T124653",
+            "post_scene_id": "S2B_MSIL2A_20240919T082559_N0511_R021_T37TDL_20240919T111913",
+            "gap_days": 5,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9968,
+            "removed_ha": 8.96,
+            "removed_share": 0.0049,
+            "removed_by_landcover_ha": {
+              "травяные угодья": 0.24,
+              "пашня": 0.52,
+              "водно-болотные угодья": 8.2
+            }
+          },
+          "buffer_edge": {
+            "share": 0.0241,
+            "touches": false
+          },
+          "area_per_point_ha": 8.98
+        },
+        {
+          "event_id": "fire-d5c3a72d3b",
+          "status": "no_scar",
+          "reason": "no_scar_at_detections",
+          "reliability": "reliable",
+          "reliability_reasons": [],
+          "burn_area_ha": 0.0,
+          "fire_evidence": {
+            "n_points": 6,
+            "first_detected": "2024-09-21",
+            "last_detected": "2024-09-21",
+            "max_frp_mw": 33.58
+          },
+          "pair": {
+            "pre": "2024-09-19",
+            "post": "2024-09-24",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0112,
+            "pre_scene_id": "S2B_MSIL2A_20240919T082559_N0511_R021_T37TDL_20240919T111913",
+            "post_scene_id": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TDL_20240924T120548",
+            "gap_days": 5,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": null,
+            "removed_ha": 0.0,
+            "removed_share": 0.0,
+            "removed_by_landcover_ha": {}
+          },
+          "buffer_edge": {
+            "share": 0.0,
+            "touches": false
+          },
+          "area_per_point_ha": 0.0
+        }
+      ],
+      "query_area_ha": 5476.6,
+      "event": {
+        "start": "2024-09-13",
+        "end": "2024-09-22",
+        "centre": [
+          37.8234,
+          45.72
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_403700_5057760",
+          "event_id": "fire-57cec996f5",
+          "pre": "S2A_MSIL2A_20240914T082601_N0511_R021_T37TDL_20240914T124653",
+          "post": "S2B_MSIL2A_20240919T082559_N0511_R021_T37TDL_20240919T111913",
+          "pre_date": "2024-09-14",
+          "post_date": "2024-09-19",
+          "area_pixels": 136800,
+          "observed_fraction": 0.9992
+        },
+        {
+          "tile": "BS_area_32637_408560_5057660",
+          "event_id": "fire-d5c3a72d3b",
+          "pre": "S2B_MSIL2A_20240919T082559_N0511_R021_T37TDL_20240919T111913",
+          "post": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TDL_20240924T120548",
+          "pre_date": "2024-09-19",
+          "post_date": "2024-09-24",
+          "area_pixels": 38532,
+          "observed_fraction": 0.9862
+        }
+      ],
+      "seconds": 192.5
+    },
+    "clms-4041b83792321be7": {
+      "reference_ha": 200.8,
+      "predicted_ha": 0.0,
+      "intersection_ha": 0.0,
+      "iou": 0.0,
+      "reference_covered": 0.0,
+      "detected": false,
+      "predicted_outside_reference_ha": 0.0,
+      "area_ratio": 0.0,
+      "all_predicted_ha": 564.6,
+      "all_intersection_ha": 183.8,
+      "all_iou": 0.3159,
+      "all_reference_covered": 0.9149,
+      "all_area_ratio": 2.811,
+      "observed_fraction": 0.9815,
+      "status": "ok",
+      "unreliable_ha": 564.6,
+      "events": [
+        {
+          "event_id": "fire-11b3dcbcef",
+          "status": "ok",
+          "reason": null,
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "контур упирается в границу зоны поиска на 35% периметра — гарь не замыкается вокруг очага"
+          ],
+          "burn_area_ha": 275.76,
+          "fire_evidence": {
+            "n_points": 8,
+            "first_detected": "2024-09-24",
+            "last_detected": "2024-09-25",
+            "max_frp_mw": 36.52
+          },
+          "pair": {
+            "pre": "2024-09-21",
+            "post": "2024-09-26",
+            "cloud_pre": 0.0,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20240921T081631_N0511_R121_T37TDL_20240921T113900",
+            "post_scene_id": "S2B_MSIL2A_20240926T081619_N0511_R121_T37TDL_20240926T112013",
+            "gap_days": 5,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 1.0,
+            "removed_ha": 0.0,
+            "removed_share": 0.0,
+            "removed_by_landcover_ha": {}
+          },
+          "buffer_edge": {
+            "share": 0.347,
+            "touches": true
+          },
+          "area_per_point_ha": 34.47
+        },
+        {
+          "event_id": "fire-ee195bfbd1",
+          "status": "ok",
+          "reason": null,
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "контур упирается в границу зоны поиска на 14% периметра — гарь не замыкается вокруг очага"
+          ],
+          "burn_area_ha": 288.76,
+          "fire_evidence": {
+            "n_points": 6,
+            "first_detected": "2024-09-25",
+            "last_detected": "2024-09-25",
+            "max_frp_mw": 29.62
+          },
+          "pair": {
+            "pre": "2024-09-24",
+            "post": "2024-09-29",
+            "cloud_pre": 0.0077,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TDL_20240924T120548",
+            "post_scene_id": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TDL_20240929T114417",
+            "gap_days": 5,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9996,
+            "removed_ha": 0.28,
+            "removed_share": 0.0005,
+            "removed_by_landcover_ha": {
+              "пашня": 0.24,
+              "водно-болотные угодья": 0.04
+            }
+          },
+          "buffer_edge": {
+            "share": 0.1405,
+            "touches": true
+          },
+          "area_per_point_ha": 90.81
+        },
+        {
+          "event_id": "fire-94b31ab5b9",
+          "status": "ok",
+          "reason": null,
+          "reliability": "unreliable",
+          "reliability_reasons": [
+            "контур упирается в границу зоны поиска на 14% периметра — гарь не замыкается вокруг очага"
+          ],
+          "burn_area_ha": 0.04,
+          "fire_evidence": {
+            "n_points": 1,
+            "first_detected": "2024-09-25",
+            "last_detected": "2024-09-25",
+            "max_frp_mw": 21.38
+          },
+          "pair": {
+            "pre": "2024-09-24",
+            "post": "2024-09-29",
+            "cloud_pre": 0.0083,
+            "cloud_post": 0.0,
+            "pre_scene_id": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TDL_20240924T120548",
+            "post_scene_id": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TDL_20240929T114417",
+            "gap_days": 5,
+            "reliable": true
+          },
+          "harvest_check": {
+            "performed": true,
+            "passed": true,
+            "checked_share": 0.9996,
+            "removed_ha": 0.28,
+            "removed_share": 0.0005,
+            "removed_by_landcover_ha": {
+              "пашня": 0.24,
+              "водно-болотные угодья": 0.04
+            }
+          },
+          "buffer_edge": {
+            "share": 0.1405,
+            "touches": true
+          },
+          "area_per_point_ha": 544.92
+        }
+      ],
+      "query_area_ha": 1570.8,
+      "event": {
+        "start": "2024-09-20",
+        "end": "2024-09-29",
+        "centre": [
+          38.2423,
+          45.5239
+        ]
+      },
+      "scenes": [
+        {
+          "tile": "BS_area_32637_435500_5038140",
+          "event_id": "fire-11b3dcbcef",
+          "pre": "S2A_MSIL2A_20240921T081631_N0511_R121_T37TDL_20240921T113900",
+          "post": "S2B_MSIL2A_20240926T081619_N0511_R121_T37TDL_20240926T112013",
+          "pre_date": "2024-09-21",
+          "post_date": "2024-09-26",
+          "area_pixels": 36512,
+          "observed_fraction": 1.0
+        },
+        {
+          "tile": "BS_area_32637_438200_5037760",
+          "event_id": "fire-ee195bfbd1",
+          "pre": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TDL_20240924T120548",
+          "post": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TDL_20240929T114417",
+          "pre_date": "2024-09-24",
+          "post_date": "2024-09-29",
+          "area_pixels": 39283,
+          "observed_fraction": 0.969
+        },
+        {
+          "tile": "BS_area_32637_436860_5039060",
+          "event_id": "fire-94b31ab5b9",
+          "pre": "S2A_MSIL2A_20240924T082651_N0511_R021_T37TDL_20240924T120548",
+          "post": "S2B_MSIL2A_20240929T082639_N0511_R021_T37TDL_20240929T114417",
+          "pre_date": "2024-09-24",
+          "post_date": "2024-09-29",
+          "area_pixels": 36186,
+          "observed_fraction": 0.9765
+        }
+      ],
+      "seconds": 271.3
+    }
+  }
+}

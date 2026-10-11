@@ -1,0 +1,18 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [39.05, 45.05]},
+      "properties": {"kind": "active_fire", "point_id": "TEST-AF-1", "date": "2024-08-10",
+                     "satellite": "тестовый файл", "instrument": "тестовый файл",
+                     "region": "Тестовый регион"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Polygon", "coordinates": [[[39.00, 45.00], [39.02, 45.00], [39.02, 45.02], [39.00, 45.02], [39.00, 45.00]]]},
+      "properties": {"kind": "burn_severity", "contour_id": "TEST-BS-1", "date": "2024-08-15",
+                     "class_id": 2, "source": "тестовый файл", "region": "Тестовый регион"}
+    }
+  ]
+}

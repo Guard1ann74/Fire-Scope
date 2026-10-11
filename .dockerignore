@@ -1,0 +1,14 @@
+.git
+.venv
+.tmp
+.secrets
+data
+artifacts
+experiments
+docs
+tests
+**/__pycache__
+**/*.pyc
+service/.venv
+service/data/*.sqlite3
+service/data/*.sqlite3-*
