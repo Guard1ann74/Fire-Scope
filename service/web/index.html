@@ -6,7 +6,7 @@
     <title>Мониторинг природных пожаров</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%94%A5%3C/text%3E%3C/svg%3E" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="/static/styles.css?v=fire-first-15" />
+    <link rel="stylesheet" href="/static/styles.css?v=fire-first-16" />
   </head>
   <body>
     <!-- Штриховка зоны, где поверхность закрыта облаками: на неё ссылается .unobserved-area. -->
@@ -38,15 +38,15 @@
           <button type="button" id="useViewButton" class="quiet">Взять экран карты</button>
           <button type="button" id="clearAreaButton" class="quiet" disabled>Сбросить</button>
         </div>
-        <p id="areaHint" class="hint">Область не выбрана. Нарисуйте её на карте или возьмите текущий экран.</p>
+        <p id="areaHint" class="hint" hidden></p>
         <p id="areaEditHint" class="hint area-edit-hint" hidden>Перетащите фигуру за её середину; углы меняют размер, ↻ поворачивает. Delete удаляет фигуру.</p>
 
-        <p class="eyebrow">Период</p>
-        <div class="date-row">
+        <!-- Период задаётся автоматически (рекомендуемый) или реальным случаем; поля не показываются. -->
+        <div class="date-row" hidden>
           <label>С <input id="dateFrom" type="date" /></label>
           <label>По <input id="dateTo" type="date" /></label>
         </div>
-        <div class="preset-row" role="group" aria-label="Быстрый выбор периода">
+        <div class="preset-row" role="group" aria-label="Быстрый выбор периода" hidden>
           <button type="button" data-preset="all" class="quiet">Рекомендуемый</button>
           <button type="button" data-preset="month" class="quiet">Месяц назад</button>
           <button type="button" data-preset="year" class="quiet">Год назад</button>
@@ -64,12 +64,6 @@
         </div>
         <p id="satelliteHint" class="hint" hidden>Сервис ищет подтверждённые очаги огня NASA FIRMS в области за период (до 31 дня) и оценивает гарь только вокруг них по снимкам Sentinel-2 до и после. Область — до 60 км по стороне.</p>
 
-
-        <p class="eyebrow">Наблюдаемые области</p>
-        <div id="watchPanel">
-          <button type="button" id="saveAreaButton" class="wide" disabled>Сохранить текущую область</button>
-          <p id="watchStorageHint" class="hint">Области сохраняются только в этой вкладке до её закрытия.</p>
-        </div>
 
         <p class="eyebrow">Слои</p>
         <div class="layer-toggles">
@@ -244,7 +238,9 @@
       </aside>
       <aside class="panel archive-panel" id="archivePanel" aria-label="Архив областей" hidden>
         <p class="eyebrow">Архив областей</p>
-        <div>
+        <div id="watchPanel">
+          <button type="button" id="saveAreaButton" class="wide" disabled>Сохранить текущую область</button>
+          <p id="watchStorageHint" class="hint">Области сохраняются только в этой вкладке до её закрытия.</p>
           <ul class="watch-list" id="watchList"></ul>
           <p id="watchEmpty" class="hint">Пока ничего не сохранено.</p>
         </div>
@@ -415,8 +411,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- dashboard.js объявляет функции, которые app.js навешивает при старте,
          поэтому грузится раньше. -->
-    <script src="/static/dashboard.js?v=fire-first-15"></script>
-    <script src="/static/app.js?v=fire-first-15"></script>
+    <script src="/static/dashboard.js?v=fire-first-16"></script>
+    <script src="/static/app.js?v=fire-first-16"></script>
     <script src="/static/monitor.js?v=monitor-3"></script>
   </body>
 </html>

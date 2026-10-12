@@ -591,8 +591,8 @@ body.busy .run-label { opacity: 0.55; }
 .swatch.dot { border-radius: 50%; background: var(--swatch); box-shadow: 0 0 0 3px #ff6a2b2e, 0 0 10px #ff6a2b80; }
 
 .swatch.poly { background: linear-gradient(135deg, var(--sev-1), var(--sev-2) 50%, var(--sev-3)); box-shadow: 0 0 0 1px #00000059 inset; }
-.swatch.outline { background: transparent; border: 1.5px dashed var(--accent); }
-.swatch.unreliable { background: transparent; border: 1.5px dashed var(--sev-2); }
+.swatch.outline { background: transparent; border: 1.5px dashed #5cc8ff; }
+.swatch.unreliable { background: #e8712c24; border: 1.5px dashed var(--sev-2); }
 .swatch.hatch { background: repeating-linear-gradient(45deg, #d3dae2 0 2px, #a7b0bb29 2px 5px); border: 1px solid #d3dae280; }
 /* Leaflet задаёт заливку атрибутом; свойство CSS перекрывает его штриховкой. */
 .unobserved-area { fill: url(#unobservedHatch) !important; }

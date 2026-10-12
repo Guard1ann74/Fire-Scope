@@ -63,7 +63,7 @@ const SEVERITY_FALLBACK = [
 
 const HOTSPOT_COLOR = "#ff6a2b";
 const SESSION_AREAS_KEY = "fires.sessionAreas.v1";
-const AREA_STYLE = { color: "#ff6a2b", weight: 2, dashArray: "6 5", fill: false, interactive: false };
+const AREA_STYLE = { color: "#5cc8ff", weight: 2, dashArray: "6 5", fill: false, interactive: false };
 const EDIT_STYLE = { ...AREA_STYLE, fill: true, fillOpacity: 0.08, interactive: true, className: "editable-area" };
 
 /* ------------------------------------------------------------- Утилиты */
@@ -1162,6 +1162,7 @@ function setArea(area, description) {
   invalidateAreaResult();
   applyLayerVisibility();
   $("areaHint").textContent = `Область задана: ${description}.`;
+  $("areaHint").hidden = false;
   $("areaEditHint").hidden = state.areaPoints.length < 3;
   $("clearAreaButton").disabled = false;
   $("runButton").disabled = false;
@@ -1395,7 +1396,8 @@ function clearArea() {
   $("countHotspots").textContent = "0";
   $("countBurns").textContent = "0";
   $("countUnreliable").textContent = "0";
-  $("areaHint").textContent = "Область не выбрана. Нарисуйте её на карте или возьмите текущий экран.";
+  $("areaHint").textContent = "";
+  $("areaHint").hidden = true;
   $("areaEditHint").hidden = true;
   $("clearAreaButton").disabled = true;
   $("runButton").disabled = true;
