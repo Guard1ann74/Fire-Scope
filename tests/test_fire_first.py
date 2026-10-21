@@ -369,6 +369,28 @@ class FireFirstCacheTests(TestCase):
         self.assertIn("cached_at", again)
         self.assertTrue(dataset.burns)
 
+    def test_fresh_period_is_provisional_and_expires_in_memory(self):
+        from datetime import datetime, timedelta, timezone
+        from service.fire_first import _provisional
+
+        old = spec()
+        today = datetime.now(timezone.utc).date()
+        fresh = QuerySpec(AREA, today - timedelta(days=10), today - timedelta(days=3), "bbox")
+        config = {"scenes": {"post_window_days": 45}}
+        self.assertFalse(_provisional(old, config, today))
+        self.assertTrue(_provisional(fresh, config, today))
+        # Окно «после» закрывается через post_window_days после конца периода.
+        self.assertFalse(_provisional(fresh, config, fresh.date_to + timedelta(days=46)))
+
+        instance = predictor(FakeArchive([point(*FIRE, date(2024, 8, 10))]), FakeBackend(),
+                             Path(tempfile.mkdtemp(dir=CACHE)))
+        _, first = instance.predict(old)
+        self.assertFalse(first["provisional"])
+        # Старый период — окончательный ответ: память не сбрасывается, сколько бы он ни лежал.
+        digest = first["result_key"]
+        instance._cached_at[digest] -= timedelta(days=3)
+        self.assertIs(instance.predict(old)[1], first)
+
     def test_demo_cases_are_listed(self):
         with TemporaryDirectory() as directory, ExitStack() as clients:
             client = clients.enter_context(TestClient(create_app(Settings(

@@ -266,19 +266,30 @@ async function loadDemoCases() {
   cases.forEach((item) => {
     const button = document.createElement("button");
     button.type = "button";
-    button.className = "quiet";
-    button.innerHTML = `${escapeHtml(item.name)}<small>${escapeHtml(item.shows || "")}</small>`;
+    button.className = "demo-case";
+    // Место — название случая без даты после запятой; подробное описание — во всплывающей подсказке.
+    const place = String(item.name || "").split(",")[0].trim();
+    button.innerHTML = `<span>${escapeHtml(place)}</span><small>${escapeHtml(formatCaseDates(item.from, item.to))}</small>`;
+    button.title = item.shows || "";
     button.onclick = () => {
       const [west, south, east, north] = item.bbox;
       cancelDrawing();
       setArea({ bbox: item.bbox }, `пример: ${item.name}`);
       $("dateFrom").value = item.from;
       $("dateTo").value = item.to;
+      updatePeriod();
       state.map.fitBounds([[south, west], [north, east]], { padding: [48, 48], maxZoom: 12 });
       runQuery();
     };
     list.append(button);
   });
+}
+
+function formatCaseDates(from, to) {
+  if (!from || !to) return "";
+  if (from === to) return formatShortDate(from);
+  const sameYear = from.slice(0, 4) === to.slice(0, 4);
+  return `${sameYear ? formatShortDate(from).slice(0, 5) : formatShortDate(from)} — ${formatShortDate(to)}`;
 }
 
 async function loadRegions() {
@@ -347,7 +358,7 @@ const BASEMAPS = {
 function initMap() {
   if (!window.L) {
     $("map").innerHTML = '<div class="map-fallback">Карта не загрузилась: нет доступа к Leaflet. Проверьте интернет.</div>';
-    document.querySelectorAll("[data-tool], #useViewButton").forEach((node) => (node.disabled = true));
+    document.querySelectorAll("[data-tool]").forEach((node) => (node.disabled = true));
     return false;
   }
   $("map").replaceChildren();
@@ -635,7 +646,7 @@ function renderFireEvents(prediction) {
         landcover.map(([name, a, b, c]) => `<tr><td>${escapeHtml(name)}</td><td>${number(a, 0)}</td>` +
           `<td>${number(b, 0)}</td><td>${number(c, 0)}</td></tr>`).join("") + "</table>"
       : "";
-    // Снимки есть у события, для которого нашлась пара: видно, что увидела модель.
+    // Снимки есть у события, для которого нашлась пара: видно, на чём построен контур.
     const preview = event.pair
       ? `<button type="button" class="event-preview" data-event-preview="${escapeHtml(event.event_id)}">` +
         "Снимки до/после</button>"
@@ -883,12 +894,8 @@ function renderReport(result) {
   const s = result.summary;
   const observed = observedFraction(result.prediction);
   const hiddenShare = observed === null ? 0 : 1 - observed;
-  $("compareNotice").hidden = !result.comparison;
-  $("compareWithoutFire").hidden = true;
   if (s.empty && result.prediction?.mode === "fire_first") {
     $("reportEmptyHint").textContent = result.prediction.message;
-    // Огня нет — можно показать, что без проверки огня модель приняла бы за гарь.
-    $("compareWithoutFire").hidden = result.prediction.status !== "no_fire_evidence";
     showPane("reportEmpty");
     return;
   }
@@ -914,9 +921,7 @@ function renderReport(result) {
 
   $("totalArea").textContent = `${number(s.total_area_ha)} га`;
   const prediction = result.prediction;
-  $("totalLabel").textContent = result.comparison
-    ? "Изменения без проверки огня · не гарь"
-    : prediction?.mode === "fire_first" ? "Площадь гари · надёжная оценка" : "Суммарная площадь гари";
+  $("totalLabel").textContent = prediction?.mode === "fire_first" ? "Площадь гари · надёжная оценка" : "Суммарная площадь гари";
   if (prediction?.mode === "fire_first") {
     // Главная цифра — только надёжная площадь; ненадёжная показана отдельно.
     $("totalArea").textContent = `${number(prediction.burn_area_reliable_ha || 0)} га`;
@@ -1130,23 +1135,6 @@ function finishPolygon() {
   );
 }
 
-function useCurrentView() {
-  if (!state.map) return;
-  const bounds = state.map.getBounds();
-  cancelDrawing();
-  setArea(
-    {
-      bbox: [
-        Math.max(bounds.getWest(), -180),
-        Math.max(bounds.getSouth(), -85),
-        Math.min(bounds.getEast(), 180),
-        Math.min(bounds.getNorth(), 85),
-      ].map((value) => Number(value.toFixed(6))),
-    },
-    "экран карты",
-  );
-}
-
 function setArea(area, description) {
   stopAreaRotate();
   stopAreaMove();
@@ -1164,7 +1152,6 @@ function setArea(area, description) {
   $("areaHint").textContent = `Область задана: ${description}.`;
   $("areaHint").hidden = false;
   $("areaEditHint").hidden = state.areaPoints.length < 3;
-  $("clearAreaButton").disabled = false;
   $("runButton").disabled = false;
   if ($("monitorAddZone")) $("monitorAddZone").disabled = false;
   renderAreas();
@@ -1399,7 +1386,6 @@ function clearArea() {
   $("areaHint").textContent = "";
   $("areaHint").hidden = true;
   $("areaEditHint").hidden = true;
-  $("clearAreaButton").disabled = true;
   $("runButton").disabled = true;
   $("requestStatus").textContent = "";
   $("requestStatus").classList.remove("error");
@@ -1412,6 +1398,36 @@ function clearArea() {
 }
 
 /* ------------------------------------------------------------- Запрос */
+
+const DAY_MS = 86400000;
+
+function isoDay(offsetDays = 0) {
+  const day = new Date(Date.now() + offsetDays * DAY_MS);
+  return `${day.getFullYear()}-${String(day.getMonth() + 1).padStart(2, "0")}-${String(day.getDate()).padStart(2, "0")}`;
+}
+
+/**
+ * Честное предупреждение о свежих датах: снимок Sentinel-2 «после» появляется не раньше
+ * следующего пролёта (раз в ~5 дней) и часто закрыт облаками.
+ */
+function updatePeriod() {
+  const to = $("dateTo").value;
+  const warning = $("periodWarning");
+  const age = to ? Math.floor((new Date(`${isoDay()}T00:00:00`) - new Date(`${to}T00:00:00`)) / DAY_MS) : null;
+  if (state.sourceKind === "satellite" && age !== null && age < 16) {
+    warning.textContent = `Конец периода — ${age} ${plural(age, "день", "дня", "дней")} назад. Снимка Sentinel-2 ` +
+      "после свежих пожаров может ещё не быть или он в облаках: термоточки покажутся сразу, а гарь по " +
+      "таким событиям будет «нет снимка после» или «ненадёжно». Результат временный и пересчитывается " +
+      "раз в сутки, пока не появятся снимки.";
+    warning.hidden = false;
+  } else {
+    warning.hidden = true;
+  }
+}
+
+function formatShortDate(iso) {
+  return `${iso.slice(8, 10)}.${iso.slice(5, 7)}.${iso.slice(0, 4)}`;
+}
 
 function periodOrThrow() {
   const from = $("dateFrom").value;
@@ -1434,14 +1450,14 @@ function requestBody(extra = {}) {
   return JSON.stringify({ ...area, from, to, ...extra });
 }
 
-async function runQuery({ comparison = false } = {}) {
+async function runQuery() {
   if (!state.area) {
     toast("Сначала выделите область на карте");
     return;
   }
   let body;
   try {
-    body = requestBody({ live: $("layerLive").checked, ...(comparison ? { fire_first: false } : {}) });
+    body = requestBody({ live: $("layerLive").checked });
   } catch (error) {
     $("reportErrorText").textContent = error.message;
     showPane("reportError");
@@ -1452,13 +1468,12 @@ async function runQuery({ comparison = false } = {}) {
   document.body.classList.add("busy");
   $("runButton").disabled = true;
   setStatus(state.sourceKind === "satellite"
-    ? "Ищем спутниковые снимки и запускаем модель…"
+    ? "Ищем очаги огня и спутниковые снимки…"
     : "Запрашиваем данные…");
   showPane("reportLoading");
 
   try {
     const result = await api("/api/query", { method: "POST", body });
-    if (comparison) result.comparison = true;
     state.activeAreaId = null;
     renderResult(result);
     renderReport(result);
@@ -1473,12 +1488,10 @@ async function runQuery({ comparison = false } = {}) {
     const visibility = observed !== null && observed < 0.995
       ? ` · видно ${number(observed * 100, 0)}% участка`
       : "";
-    setStatus(comparison
-      ? `Сравнение без проверки огня: модель выдала ${s.burn_count} ` +
-        `${plural(s.burn_count, "контур", "контура", "контуров")} на ${number(s.total_area_ha, 0)} га — ` +
-        "огня NASA FIRMS здесь не видел, это не гарь"
-      : result.prediction?.mode === "fire_first"
-      ? result.prediction.message
+    setStatus(result.prediction?.mode === "fire_first"
+      ? result.prediction.message + (result.prediction.provisional
+        ? " Результат временный: снимки «после» за этот период ещё могут появиться, через сутки он пересчитается."
+        : "")
       : state.sourceKind === "satellite"
       ? `Прогноз: ${s.burn_count} ${plural(s.burn_count, "контур гари", "контура гари", "контуров гари")}${imageDates}${visibility}`
       : s.empty
@@ -1989,6 +2002,7 @@ async function openArea(id) {
     );
     $("dateFrom").value = area.from;
     $("dateTo").value = area.to;
+    updatePeriod();
     const result = await runQuery();
     if (!result) return;
     result.changes = localChanges(area.seen, result.summary, result.data_updated_at);
@@ -2019,6 +2033,7 @@ async function openArea(id) {
     );
     $("dateFrom").value = area.from;
     $("dateTo").value = area.to;
+    updatePeriod();
     state.activeAreaId = id;
     renderResult(result);
     renderReport(result);
@@ -2105,37 +2120,6 @@ function formatDateTime(iso) {
 
 /* ------------------------------------------------------------- Запуск */
 
-const PRESET_LABELS = {
-  satellite: { all: "Рекомендуемый", month: "Месяц назад", year: "Год назад" },
-  files: { all: "Все данные", month: "Последний месяц", year: "Последний год" },
-};
-
-function applyPreset(preset) {
-  const day = 86400000;
-  const shift = (iso, days) => new Date(new Date(iso).getTime() - days * day).toISOString().slice(0, 10);
-  let ranges;
-  if (state.sourceKind === "satellite") {
-    // Период события: снимок «после» должен уже существовать, поэтому всё в прошлом.
-    const { from, to } = state.suggestedPeriod;
-    ranges = {
-      all: [from, to],
-      month: [shift(from, 30), shift(to, 30)],
-      year: [shift(from, 365), shift(to, 365)],
-    };
-  } else {
-    const range = state.dataRange?.from ? state.dataRange : null;
-    if (!range) return;
-    ranges = {
-      all: [range.from, range.to],
-      month: [shift(range.to, 30) < range.from ? range.from : shift(range.to, 30), range.to],
-      year: [shift(range.to, 365) < range.from ? range.from : shift(range.to, 365), range.to],
-    };
-  }
-  const [from, to] = ranges[preset] || ranges.all;
-  $("dateFrom").value = from;
-  $("dateTo").value = to;
-  if (state.result) invalidateAreaResult();
-}
 
 function showSourceNotice(health) {
   const node = $("sourceNotice");
@@ -2163,14 +2147,15 @@ async function loadHealth({ initial = false } = {}) {
     state.dataUpdatedAt = health.source?.updated_at || null;
     state.sourceKind = health.source.kind;
     state.suggestedPeriod = health.suggested_period || null;
-    $("satelliteHint").hidden = state.sourceKind !== "satellite";
     showSourceNotice(health);
     applyLiveSupport(health.live);
-    const labels = PRESET_LABELS[state.sourceKind] || PRESET_LABELS.files;
-    document.querySelectorAll("[data-preset]").forEach((button) => {
-      button.textContent = labels[button.dataset.preset];
-    });
-    if (initial && state.sourceKind === "satellite" && state.suggestedPeriod) applyPreset("all");
+    // Период по умолчанию — рекомендуемый сервером: снимок «после» для него уже должен существовать.
+    if (initial && state.sourceKind === "satellite" && state.suggestedPeriod) {
+      $("dateFrom").value = state.suggestedPeriod.from;
+      $("dateTo").value = state.suggestedPeriod.to;
+    }
+    // Снимок «после» нужен уже сейчас: конец периода — не позже вчерашнего дня (как проверяет сервер).
+    if (state.sourceKind === "satellite") $("dateTo").max = isoDay(-1);
     if (health.date_range?.from) {
       $("dateFrom").min = health.date_range.from;
       $("dateTo").max = health.date_range.to;
@@ -2179,6 +2164,7 @@ async function loadHealth({ initial = false } = {}) {
         $("dateTo").value = health.date_range.to;
       }
     }
+    updatePeriod();
   } catch (error) {
     state.severity = SEVERITY_FALLBACK;
     state.llmEnabled = false;
@@ -2224,22 +2210,17 @@ function bindControls() {
   document.querySelectorAll("[data-tool]").forEach((button) => {
     button.onclick = () => (state.drawing === button.dataset.tool ? cancelDrawing() : startDrawing(button.dataset.tool));
   });
-  $("useViewButton").onclick = useCurrentView;
-  $("clearAreaButton").onclick = clearArea;
   $("drawCancel").onclick = cancelDrawing;
   $("drawFinish").onclick = finishPolygon;
   $("runButton").onclick = runQuery;
   ["dateFrom", "dateTo"].forEach((id) => {
     $(id).addEventListener("change", () => { if (state.result) invalidateAreaResult(); });
+    $(id).addEventListener("input", updatePeriod);
   });
   $("reportToggle").onclick = () => setRightPanel($("reportPanel").hidden ? "report" : null);
   $("archiveToggle").onclick = () => setRightPanel($("archivePanel").hidden ? "archive" : null);
   $("retryButton").onclick = runQuery;
   $("toastClose").onclick = closeToast;
-  document.querySelectorAll("[data-preset]").forEach((button) => {
-    button.onclick = () => applyPreset(button.dataset.preset);
-  });
-  $("compareWithoutFire").onclick = () => runQuery({ comparison: true });
   document.querySelectorAll("[data-export]").forEach((button) => {
     button.onclick = () => download(button.dataset.export);
   });

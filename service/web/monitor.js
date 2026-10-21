@@ -159,6 +159,7 @@ function openMonitorAlert(id) {
   setArea({ bbox }, `очаг из мониторинга (${alert.zone_name})`);
   $("dateFrom").value = first < to ? first : to;
   $("dateTo").value = to;
+  window.updatePeriod?.();
   state.map.fitBounds([[bbox[1], bbox[0]], [bbox[3], bbox[2]]], { padding: [48, 48], maxZoom: 13 });
   markAlertRead(id);
   if (last >= yesterday) {

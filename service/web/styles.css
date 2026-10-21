@@ -382,12 +382,11 @@ button[aria-pressed="true"]:hover:not(:disabled) {
 
 .tool-row button[aria-pressed="true"] svg { opacity: 1; }
 
-.tool-row.secondary { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
-.tool-row.secondary button { font-size: 12px; padding: 8px 12px; }
 
 .basemap-row button { font-size: 11.5px; padding: 8px 4px; border-radius: 9px; }
 
 /* -------------------------------------------------------------- Период */
+.period-warning { color: #e8a33c; }
 .date-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 
 /* Метка — оболочка поля: рамка на label, а input внутри без своей рамки. */
@@ -433,19 +432,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   transition: opacity 0.14s ease;
 }
 input[type="date"]:hover::-webkit-calendar-picker-indicator { opacity: 1; }
-
-.preset-row { display: flex; gap: 6px; flex-wrap: wrap; }
-
-.preset-row button {
-  font-size: 11px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border-color: var(--line);
-  background: var(--panel-raised);
-  color: var(--muted);
-}
-
-.preset-row button:hover:not(:disabled) { color: var(--ink); background: var(--panel-hi); }
 
 /* ------------------------------------------------------- Главное действие */
 button.primary {
@@ -600,8 +586,16 @@ body.busy .run-label { opacity: 0.55; }
 .fire-events[hidden] { display: none; }
 .demo-cases[hidden] { display: none; }
 .demo-case-list { display: grid; gap: 6px; }
-.demo-case-list button { text-align: left; font-size: 11.5px; line-height: 1.35; padding: 7px 9px; }
-.demo-case-list button small { display: block; margin-top: 2px; color: var(--muted); font-size: 10.5px; }
+.demo-case-list .demo-case {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  width: 100%; padding: 9px 11px; text-align: left; font-size: 12px; line-height: 1.3;
+  color: var(--ink); background: var(--panel-raised);
+  border: 1px solid #3a312d; border-radius: var(--radius-sm); cursor: pointer;
+  transition: border-color 0.14s ease, background 0.14s ease;
+}
+.demo-case-list .demo-case:hover { border-color: #5a4b44; background: var(--panel-hi); }
+.demo-case-list .demo-case:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 3px #ff6a2b26; }
+.demo-case-list .demo-case small { flex: none; color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
 .fire-events { margin-top: 12px; }
 .fire-events ul { list-style: none; margin: 6px 0 8px; padding: 0; display: grid; gap: 6px; }
 .fire-events li {
@@ -1172,9 +1166,7 @@ body.drawing .leaflet-container { cursor: crosshair; }
 
 /* Узкий телефон: ломаем в одну колонку только то, что действительно не влезает. */
 @media (max-width: 360px) {
-  .tool-row.secondary { grid-template-columns: 1fr; }
   .total-card strong { font-size: 23px; }
-  .preset-row button { font-size: 10.5px; padding: 6px 8px; }
 }
 
 /* Телефон в альбомной ориентации: карта не должна занимать весь экран. */
@@ -1186,7 +1178,6 @@ body.drawing .leaflet-container { cursor: crosshair; }
    тач-экранах «залипают» после тапа. */
 @media (pointer: coarse) {
   button { padding: 11px 13px; }
-  .preset-row button { padding: 9px 13px; }
   .switch { padding: 11px 9px; }
   .switch input { width: 36px; height: 20px; }
   .switch input::after { width: 16px; height: 16px; }
@@ -1826,8 +1817,6 @@ button.dash-open svg { width: 17px; height: 17px; fill: none; stroke: currentCol
 
 /* Подготовка набора открывается поверх карты, как подробная аналитика. */
 
-.compare-notice { border-color: #e5534b; color: var(--ink); }
-#compareWithoutFire { margin-top: 10px; }
 
 /* Прототип: учётные записи и ручная разметка отключены в интерфейсе (код и API остались). */
 #account { display: none !important; }

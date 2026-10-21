@@ -28,10 +28,9 @@ class SatelliteQueryTests(TestCase):
         )
         metadata = {"model": "test-model", "scenes": [{"pre_date": "2024-07-05",
                                                       "post_date": "2024-07-20"}]}
-        with patch.object(app.state.predictor, "predict", return_value=(predicted, metadata)) as predict:
+        with patch.object(app.state.fire_first, "predict", return_value=(predicted, metadata)) as predict:
             response = TestClient(app).post("/api/query", json={
                 "bbox": "42.0,46.4,42.03,46.43", "from": "2024-07-06", "to": "2024-07-19",
-                "fire_first": False,
             })
         self.assertEqual(response.status_code, 200)
         body = response.json()

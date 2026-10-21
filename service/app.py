@@ -53,9 +53,6 @@ class QueryBody(BaseModel):
     geometry: dict[str, Any] | None = Field(default=None, description="GeoJSON Polygon/MultiPolygon")
     bbox: str | list[float] | None = Field(default=None, description="minLon,minLat,maxLon,maxLat")
     live: bool = Field(default=False, description="Добавить живые термоточки NASA FIRMS")
-    fire_first: bool | None = Field(
-        default=None, description="Оценивать гарь только вокруг подтверждённых очагов огня "
-                                  "(по умолчанию — из configs/service.yaml); false — прежнее поведение")
 
 
 class Credentials(BaseModel):
@@ -229,14 +226,14 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         raw = body.bbox if isinstance(body.bbox, str) else ",".join(str(v) for v in body.bbox)
         return QuerySpec(area=parse_bbox(raw), date_from=start, date_to=end, source="bbox")
 
-    def execute(spec: QuerySpec, live: bool = False, use_fire_first: bool | None = None) -> dict[str, Any]:
+    def execute(spec: QuerySpec, live: bool = False) -> dict[str, Any]:
         if settings.query_mode == "satellite":
             if model_problem:
                 raise DataSourceError(model_problem)
             if not predictor.configured:
                 raise DataSourceError("Для прогноза нужны CDSE_CLIENT_ID и CDSE_CLIENT_SECRET "
                                       "или локальный файл .secrets/cdse.env")
-            if fire_first is not None and (fire_first_default if use_fire_first is None else use_fire_first):
+            if fire_first is not None and fire_first_default:
                 dataset, prediction = fire_first.predict(spec)
             else:
                 dataset, prediction = predictor.predict(spec)
@@ -426,14 +423,12 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     def query_get(
         spec: QuerySpec = spec_dependency,
         live: Annotated[bool, Query(description="Добавить живые термоточки NASA FIRMS")] = False,
-        fire_first: Annotated[bool | None, Query(
-            description="Гарь только вокруг подтверждённых очагов; false — прежнее поведение")] = None,
     ) -> dict[str, Any]:
-        return execute(spec, live, fire_first)
+        return execute(spec, live)
 
     @app.post("/api/query", tags=["Запрос"], summary="То же по GeoJSON-полигону")
     def query_post(body: QueryBody) -> dict[str, Any]:
-        return execute(spec_from_body(body), body.live, body.fire_first)
+        return execute(spec_from_body(body), body.live)
 
     @app.post("/api/area-preview", tags=["Наблюдение"],
               summary="Лёгкая выборка для мини-карты сохранённой области")
@@ -533,9 +528,9 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     def event_preview(spec: QuerySpec, event_id: str) -> Response:
         from service.event_preview import PreviewError, render_event
 
-        if fire_first is None or settings.query_mode != "satellite":
+        if fire_first is None or not fire_first_default or settings.query_mode != "satellite":
             raise HTTPException(status_code=404, detail="Снимки событий есть только в режиме «огонь прежде гари»")
-        execute(spec, use_fire_first=True)  # те же проверки и тот же кеш, что у запроса
+        execute(spec)  # те же проверки и тот же кеш, что у запроса
         dataset, prediction = fire_first.predict(spec)
         try:
             image = render_event(dataset, prediction, event_id, settings.satellite_cache_dir,

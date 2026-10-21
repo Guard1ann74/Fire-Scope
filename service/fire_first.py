@@ -146,6 +146,9 @@ class FireFirstPredictor:
                                             self.config["events"].get("industrial_radius_m", 500))
         self.weather: Weather | None = Weather(settings.satellite_cache_dir.parent / "weather-cache")
         self._cache: OrderedDict[str, tuple[Dataset, dict[str, Any]]] = OrderedDict()
+        # Когда ответ попал в память: временный ответ (свежий период) живёт в памяти не дольше суток,
+        # как и на диске, — иначе работающий сервис показывал бы его до перезапуска.
+        self._cached_at: dict[str, datetime] = {}
         self._lock = Lock()
 
     # ------------------------------------------------------------ запрос
@@ -174,7 +177,11 @@ class FireFirstPredictor:
             + json.dumps({k: v for k, v in self.config.items() if k != "monitor"}, sort_keys=True).encode()
             + masks.encode()
         ).hexdigest()
+        now = datetime.now(timezone.utc)
+        provisional = _provisional(spec, self.config, now.date())
         with self._lock:
+            if digest in self._cache and provisional and now - self._cached_at[digest] > timedelta(days=1):
+                del self._cache[digest]
             if digest in self._cache:
                 self._cache.move_to_end(digest)
                 return self._cache[digest]
@@ -189,9 +196,12 @@ class FireFirstPredictor:
                     self._store(digest, result, spec)
             # По ключу ответа находятся сохранённые снимки событий (картинки «до/после»).
             result[1]["result_key"] = digest
+            result[1]["provisional"] = provisional
             self._cache[digest] = result
+            self._cached_at[digest] = now
             if len(self._cache) > 8:
-                self._cache.popitem(last=False)
+                evicted, _ = self._cache.popitem(last=False)
+                self._cached_at.pop(evicted, None)
             return result
 
     def _compute(self, spec: QuerySpec, selected: dict, digest: str, gsd: int,
@@ -355,8 +365,7 @@ class FireFirstPredictor:
         import json
 
         dataset, prediction = result
-        window_end = spec.date_to + timedelta(days=self.config["scenes"]["post_window_days"])
-        record = {"final": window_end < datetime.now(timezone.utc).date(),
+        record = {"final": not _provisional(spec, self.config, datetime.now(timezone.utc).date()),
                   "stored_at": datetime.now(timezone.utc).isoformat(),
                   "dataset": _dump_dataset(dataset), "prediction": prediction}
         path = self._result_path(digest)
@@ -908,6 +917,11 @@ class FireFirstPredictor:
             candidate.haze = self._haze(tiles, candidate.scl, candidate.when)
         limit = self.config["scenes"].get("haze_dark_b2")
         return candidate.haze is not None and limit is not None and candidate.haze > limit
+
+
+def _provisional(spec: QuerySpec, config: dict, today: date) -> bool:
+    """Окно поиска снимков «после» ещё не закончилось: новые снимки могут изменить ответ."""
+    return spec.date_to + timedelta(days=config["scenes"]["post_window_days"]) >= today
 
 
 _REASONS = {
